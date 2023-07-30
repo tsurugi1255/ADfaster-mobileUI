@@ -92,7 +92,7 @@ function bigCrunchUpdateStatistics() {
   );
 
   player.records.bestInfinity.time =
-    Math.min(player.records.bestInfinity.time, player.records.thisInfinity.time);
+    Math.min(player.records.bestInfinity.time, player.records.thisInfinity.time / getGlobalSpeedFactor());
   player.records.bestInfinity.realTime =
     Math.min(player.records.bestInfinity.realTime, player.records.thisInfinity.realTime);
 

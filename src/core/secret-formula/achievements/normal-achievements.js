@@ -720,7 +720,7 @@ export const normalAchievements = [
     id: 104,
     name: "That wasn't an eternity",
     get description() { return `Eternity in under ${formatInt(30)} seconds.`; },
-    checkRequirement: () => Time.thisEternity.totalSeconds <= 30,
+    checkRequirement: () => Time.thisEternity.totalSeconds / getGlobalSpeedFactor() <= 30,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     get reward() { return `Start Eternities with ${format(5e25)} Infinity Points.`; },
     effect: 5e25
@@ -739,7 +739,7 @@ export const normalAchievements = [
     id: 106,
     name: "The swarm",
     get description() { return `Get ${formatInt(10)} Replicanti Galaxies in ${formatInt(15)} seconds.`; },
-    checkRequirement: () => Replicanti.galaxies.total >= 10 && Time.thisInfinity.totalSeconds <= 15,
+    checkRequirement: () => Replicanti.galaxies.total >= 10 && Time.thisInfinity.totalSeconds / getGlobalSpeedFactor() <= 15,
     checkEvent: GAME_EVENT.REPLICANTI_TICK_AFTER
   },
   {
@@ -785,7 +785,7 @@ export const normalAchievements = [
     id: 113,
     name: "Eternities are the new infinity",
     get description() { return `Eternity in under ${formatInt(250)}ms.`; },
-    checkRequirement: () => Time.thisEternity.totalMilliseconds <= 250,
+    checkRequirement: () => Time.thisEternity.totalMilliseconds / getGlobalSpeedFactor() <= 250,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     get reward() { return `Gain ${formatX(2)} more Eternities.`; },
     effect: 2,
@@ -993,7 +993,7 @@ export const normalAchievements = [
     },
     checkRequirement: () =>
       Currency.antimatter.exponent >= 260000 &&
-      Time.thisEternity.totalMinutes <= 1 &&
+      Time.thisEternity.totalMinutes / getGlobalSpeedFactor() <= 1 &&
       player.dilation.active,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Gain ${formatX(2)} Dilated Time and Time Theorems while Dilated.`; },
@@ -1128,7 +1128,7 @@ export const normalAchievements = [
     id: 154,
     name: "I am speed",
     get description() { return `Reality in under ${formatInt(5)} seconds (game time).`; },
-    checkRequirement: () => Time.thisReality.totalSeconds <= 5,
+    checkRequirement: () => Time.thisReality.totalSeconds / getGlobalSpeedFactor() <= 5,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     get reward() { return `${formatPercents(0.1)} chance each Reality of ${formatX(2)} Realities and Perk Points.`; },
     effect: 0.1
@@ -1192,7 +1192,7 @@ export const normalAchievements = [
       second (game time) in your current Reality.`;
     },
     checkRequirement: () => EternityChallenges.all.map(ec => ec.completions).min() >= 5 &&
-      Time.thisReality.totalSeconds <= 1,
+      Time.thisReality.totalSeconds / getGlobalSpeedFactor() <= 1,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {

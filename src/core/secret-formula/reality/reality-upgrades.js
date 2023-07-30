@@ -329,8 +329,8 @@ export const realityUpgrades = [
     cost: 100000,
     requirement: () => `Reality in under ${formatInt(15)} minutes of game time
       (Fastest: ${Time.bestReality.toStringShort()})`,
-    hasFailed: () => Time.thisReality.totalMinutes >= 15,
-    checkRequirement: () => Time.thisReality.totalMinutes < 15,
+    hasFailed: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() >= 15,
+    checkRequirement: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() < 15,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     description: "Replicanti speed is boosted based on your fastest game-time Reality",
     effect: () => 15 / Math.clamp(Time.bestReality.totalMinutes, 1 / 12, 15),

@@ -22,6 +22,9 @@ export const h2p = {
 Welcome to the How to Play!
 <br>
 <br>
+<b>See the next How To Play entry to view the changes in this mod.</b>
+<br>
+<br>
 This modal (pop-up window) contains in-depth explanations and additional details for everything you will encounter
 as you progress through the game. As you unlock new features and mechanics, you will also gain access to additional
 pages here. If you ever feel lost or confused about how something in the game works, you may find a helpful
@@ -34,6 +37,70 @@ visible tab and subtab, if such an entry exists.
 `,
       isUnlocked: () => true,
       tags: ["h2p", "how", "to", "play", "modal"],
+      tab: ""
+    },
+    {
+      name: "What has changed",
+      info: () => `
+As the mod name, almost all mechanics are speeded up by ${formatX(globalSpeedFactor)}. This is called the global speed factor.<br>
+<br>
+To make the game run normally and still balanced in some way, some mechanics are not speeded up:<br>
+- Playtime tracking is not speeded up.<br>
+- Autobuyers are not speeded up.<br>
+- The timers for some achievements or others are not speeded up.<br>
+${PlayerProgress.infinityUnlocked()?`
+- The timers that record the fastest completion of challenges or prestiges are not speeded up.<br>
+- The normal matter appear in some challenges is not speeded up, or these challenges will be impossible to beat.<br>
+`:""}
+${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()?`
+- The production drop in Infinity Challenge 8 in not speeded up for the same reason.<br>
+`:""}
+${PlayerProgress.eternityUnlocked()?`
+- Time Study 141's multiplier's drop is not speeded up.<br>
+`:""}
+${player.blackHole[0].unlocked?`
+- Black Hole ticking is still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}. Notice that both inactive time and duration are speeded up.<br>
+`:""}
+${Player.automatorUnlocked?`
+- Automator running speed is not speeded up.<br>
+`:""}
+${EffarigUnlock.eternity.isUnlocked?`
+- Charging real time doesn't charge ${formatX(globalSpeedFactor)} time.<br>
+`:""}
+${VUnlocks.raUnlock.isUnlocked?`
+- Memory chunk and memory production are still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
+`:""}
+${Laitela.isUnlocked?`
+- In Lai'tela's Reality, entropy production and game speed recovery are not speeded up.<br>
+- Dark Matter Dimensions are still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
+`:""}
+${Pelle.isDoomed?`
+- In Doomed Reality, the global speed factor is square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
+`:""}
+${PelleStrikes.infinity.hasStrike?`
+- Filling Pelle Rifts is not speeded up.<br>
+`:""}
+${Achievement(188).isUnlocked?`
+- The ending animation is not speeded up.<br>
+`:""}
+${Achievement(188).isUnlocked?"":
+`More mechanics will show here as you reach them.<br>`
+}
+<br>
+Also, there are some extra buffs to the game.<br>
+${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()?`
+- The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
+${PlayerProgress.eternityUnlocked()?`
+- You gain a multiplier to eternities gained on eternity based on your current eternities, to a minimal of ${formatX(5)} and a maximal of ${formatX(1000)}.<br>
+`:""}
+${PlayerProgress.eternityUnlocked()?"":
+`More buffs will show here as you reach them.`
+}
+`:"These buffs will show here as you reach them."
+}
+`,
+      isUnlocked: () => true,
+      tags: ["mod", "speed", "change"],
       tab: ""
     },
     {

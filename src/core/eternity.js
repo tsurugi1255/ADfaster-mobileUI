@@ -3,10 +3,10 @@ import { DC } from "./constants";
 import FullScreenAnimationHandler from "./full-screen-animation-handler";
 
 function giveEternityRewards(auto) {
-  player.records.bestEternity.time = Math.min(player.records.thisEternity.time, player.records.bestEternity.time);
+  player.records.bestEternity.time = Math.min(player.records.thisEternity.time / getGlobalSpeedFactor(), player.records.bestEternity.time);
   Currency.eternityPoints.add(gainedEternityPoints());
 
-  const newEternities = gainedEternities();
+  const newEternities = gainedEternities().times(Currency.eternities.value.pow(2/3).floor().max(5).min(1000));
 
   if (Currency.eternities.eq(0) && newEternities.lte(10)) {
     Tab.dimensions.time.show();

@@ -45,7 +45,7 @@ export default {
         if (this.currentEternityChallengeId === 4) {
           this.currentResource.copyFrom(Currency.infinities);
         } else {
-          this.currentResource = new Decimal(Time.thisEternity.totalSeconds);
+          this.currentResource = new Decimal(Time.thisEternity.totalSeconds / getGlobalSpeedFactor());
         }
         this.maximumResource = new Decimal(EternityChallenge.current.config.restriction(
           EternityChallenge.current.completions));
