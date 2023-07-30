@@ -44,16 +44,16 @@ visible tab and subtab, if such an entry exists.
       info: () => `
 As the mod name, almost all mechanics are speeded up by ${formatX(globalSpeedFactor)}. This is called the global speed factor.<br>
 <br>
-To make the game run normally and still balanced in some way, some mechanics are not speeded up:<br>
+To make the game run normally and still balanced in some way, some mechanics are not speeded up${player.blackHole[0].unlocked?" or speeded up by a lower factor":""}:<br>
 - Playtime tracking is not speeded up.<br>
 - Autobuyers are not speeded up.<br>
-- The timers for some achievements or others are not speeded up.<br>
+- The timers of requirements of some achievements or others are not speeded up.<br>
 ${PlayerProgress.infinityUnlocked()?`
 - The timers that record the fastest completion of challenges or prestiges are not speeded up.<br>
-- The normal matter appear in some challenges is not speeded up, or these challenges will be impossible to beat.<br>
+- The normal matter appear in some challenges is not speeded up.<br>
 `:""}
 ${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()?`
-- The production drop in Infinity Challenge 8 in not speeded up for the same reason.<br>
+- The production drop in Infinity Challenge 8 in not speeded up.<br>
 `:""}
 ${PlayerProgress.eternityUnlocked()?`
 - Time Study 141's multiplier's drop is not speeded up.<br>
@@ -62,7 +62,7 @@ ${player.blackHole[0].unlocked?`
 - Black Hole ticking is still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}. Notice that both inactive time and duration are speeded up.<br>
 `:""}
 ${Player.automatorUnlocked?`
-- Automator running speed is not speeded up.<br>
+- Automator running is not speeded up.<br>
 `:""}
 ${EffarigUnlock.eternity.isUnlocked?`
 - Charging real time doesn't charge ${formatX(globalSpeedFactor)} time.<br>
