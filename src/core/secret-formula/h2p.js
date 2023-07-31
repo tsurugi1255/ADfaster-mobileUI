@@ -50,10 +50,10 @@ To make the game run normally and still balanced in some way, some mechanics are
 - The timers of requirements of some achievements or others are not speeded up.<br>
 ${PlayerProgress.infinityUnlocked()?`
 - The timers that record the fastest completion of challenges or prestiges are not speeded up.<br>
-- The normal matter appear in some challenges is not speeded up.<br>
+- The normal matter appears in some challenges is not speeded up.<br>
 `:""}
 ${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()?`
-- The production drop in Infinity Challenge 8 in not speeded up.<br>
+- The production drop in Infinity Challenge 8 is not speeded up.<br>
 `:""}
 ${PlayerProgress.eternityUnlocked()?`
 - Time Study 141's multiplier's drop is not speeded up.<br>
@@ -68,7 +68,7 @@ ${EffarigUnlock.eternity.isUnlocked?`
 - Charging real time doesn't charge ${formatX(globalSpeedFactor)} time.<br>
 `:""}
 ${VUnlocks.raUnlock.isUnlocked?`
-- Memory chunk and memory production are still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
+- Memory Chunk and Memory production are still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
 `:""}
 ${Laitela.isUnlocked?`
 - In Lai'tela's Reality, entropy production and game speed recovery are not speeded up.<br>
@@ -97,7 +97,9 @@ ${PlayerProgress.eternityUnlocked()?"":
 `More buffs will show here as you reach them.`
 }
 `:"These buffs will show here as you reach them."
-}
+}<br>
+<br>
+Visit here often to be clear about what has changed, especially when unlocking a new mechanic.
 `,
       isUnlocked: () => true,
       tags: ["mod", "speed", "change"],
