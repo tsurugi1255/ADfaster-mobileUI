@@ -166,7 +166,7 @@ export const normalAchievements = [
         ? `Be offline for a period of over ${formatInt(6)} hours (real time).`
         : `Be offline for a period of over ${formatInt(6)} hours.`;
     },
-    checkRequirement: () => Date.now() - player.lastUpdate >= 21600000,
+    checkRequirement: () => (Date.now() - player.lastUpdate) / getGlobalSpeedFactor() >= 21600000,
     checkEvent: GAME_EVENT.GAME_TICK_BEFORE
   },
   {
