@@ -92,12 +92,13 @@ ${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()?`
 - The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
 ${PlayerProgress.eternityUnlocked()?`
 - You gain a multiplier to eternities gained on eternity based on your current eternities, to a minimal of ${formatX(5)} and a maximal of ${formatX(1000)}.<br>
+- Unlocking Achievement 138 also unlock Achievement 108 (on next eternity), or it would be almost impossible to achieve without TS133's debuff.<br>
 `:""}
 ${PlayerProgress.eternityUnlocked()?"":
-`More buffs will show here as you reach them.`
+`More buffs will show here as you reach them.<br>`
 }
-`:"These buffs will show here as you reach them."
-}<br>
+`:"These buffs will show here as you reach them.<br>"
+}
 <br>
 Visit here often to be clear about what has changed, especially when unlocking a new mechanic.
 `,

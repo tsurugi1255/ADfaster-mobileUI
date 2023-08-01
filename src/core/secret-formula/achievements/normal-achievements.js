@@ -753,7 +753,7 @@ export const normalAchievements = [
     id: 108,
     name: "We COULD afford 9",
     get description() { return `Eternity with exactly ${formatInt(9)} Replicanti.`; },
-    checkRequirement: () => Replicanti.amount.round().eq(9),
+    checkRequirement: () => Replicanti.amount.round().eq(9) || Achievement(138).isUnlocked,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
   },
   {

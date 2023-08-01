@@ -17,7 +17,7 @@ export const changelog = [
 <li>Added some minor buffs to the game.</li>
 </ul>
 More details can be found in the 'What has changed' How To Play entry.
-    `
+`
   },
   {
     date: [2023, 7, 18],
