@@ -341,8 +341,8 @@ export const normalAchievements = [
     get reward() {
       return `All Antimatter Dimensions are stronger in the first ${formatInt(3)} minutes of Infinities.`;
     },
-    effect: () => Math.max(6 / (Time.thisInfinity.totalMinutes + 3), 1),
-    effectCondition: () => Time.thisInfinity.totalMinutes < 3,
+    effect: () => Math.max(6 / (Time.thisInfinity.totalMinutes / getGlobalSpeedFactor() + 3), 1),
+    effectCondition: () => Time.thisInfinity.totalMinutes / getGlobalSpeedFactor() < 3,
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -416,8 +416,8 @@ export const normalAchievements = [
       return `All Antimatter Dimensions are stronger in the first ${formatInt(3)} minutes of Infinities,
       but only in Challenges.`;
     },
-    effect: () => (Player.isInAnyChallenge ? Math.max(4 / (Time.thisInfinity.totalMinutes + 1), 1) : 1),
-    effectCondition: () => Player.isInAnyChallenge && Time.thisInfinity.totalMinutes < 3,
+    effect: () => (Player.isInAnyChallenge ? Math.max(4 / (Time.thisInfinity.totalMinutes / getGlobalSpeedFactor() + 1), 1) : 1),
+    effectCondition: () => Player.isInAnyChallenge && Time.thisInfinity.totalMinutes / getGlobalSpeedFactor() < 3,
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -622,8 +622,8 @@ export const normalAchievements = [
       return `All Antimatter Dimensions are significantly stronger in the
       first ${formatInt(5)} seconds of Infinities.`;
     },
-    effect: () => Math.max((5 - Time.thisInfinity.totalSeconds) * 60, 1),
-    effectCondition: () => Time.thisInfinity.totalSeconds < 5,
+    effect: () => Math.max((5 - Time.thisInfinity.totalSeconds / getGlobalSpeedFactor()) * 60, 1),
+    effectCondition: () => Time.thisInfinity.totalSeconds / getGlobalSpeedFactor() < 5,
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
@@ -638,8 +638,8 @@ export const normalAchievements = [
       return `All Antimatter Dimensions are significantly stronger in the
       first ${formatInt(60)} seconds of Infinities.`;
     },
-    effect: () => Math.max((1 - Time.thisInfinity.totalMinutes) * 100, 1),
-    effectCondition: () => Time.thisInfinity.totalMinutes < 1,
+    effect: () => Math.max((1 - Time.thisInfinity.totalMinutes / getGlobalSpeedFactor()) * 100, 1),
+    effectCondition: () => Time.thisInfinity.totalMinutes / getGlobalSpeedFactor() < 1,
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
