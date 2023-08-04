@@ -48,7 +48,7 @@ To make the game run normally and still balanced in some way, some mechanics are
 - Playtime tracking is not speeded up.<br>
 - Autobuyers are not speeded up.<br>
 - The timers of requirements of some achievements or others are not speeded up.<br>
-- The timers of achievement rewards that drops over time are not speeded up.
+- The timers of achievement rewards that drops over time are not speeded up.<br>
 ${PlayerProgress.infinityUnlocked()?`
 - The timers that record the fastest completion of challenges or prestiges are not speeded up.<br>
 - The normal matter appears in some challenges is not speeded up.<br>
