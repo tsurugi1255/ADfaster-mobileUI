@@ -78,9 +78,6 @@ ${Laitela.isUnlocked?`
 ${Pelle.isDoomed?`
 - In Doomed Reality, the global speed factor is square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
 `:""}
-${PelleStrikes.infinity.hasStrike?`
-- Filling Pelle Rifts is not speeded up.<br>
-`:""}
 ${Achievement(188).isUnlocked?`
 - The ending animation is not speeded up.<br>
 `:""}
