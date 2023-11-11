@@ -275,7 +275,7 @@ export const normalTimeStudies = [
     description: () => (Perk.studyActiveEP.isBought
       ? `You gain ${formatX(50)} more Eternity Points`
       : `You gain more EP based on how fast your last ten Eternities
-      were${PlayerProgress.realityUnlocked() ? " (real time)" : ""}`),
+      were${PlayerProgress.realityUnlocked() ? " (real real time)" : ""}`),
     effect: () => (Perk.studyActiveEP.isBought
       ? 50
       : Math.clamp(250 / Player.averageRealTimePerEternity, 1, 50)),

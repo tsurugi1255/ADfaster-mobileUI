@@ -327,7 +327,7 @@ export const realityUpgrades = [
     name: "Replicative Rapidity",
     id: 23,
     cost: 100000,
-    requirement: () => `Reality in under ${formatInt(15)} minutes of game time
+    requirement: () => `Reality in under ${formatInt(15)} minutes of real game time
       (Fastest: ${Time.bestReality.toStringShort()})`,
     hasFailed: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() >= 15,
     checkRequirement: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() < 15,

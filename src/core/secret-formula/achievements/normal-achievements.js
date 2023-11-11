@@ -161,11 +161,7 @@ export const normalAchievements = [
   {
     id: 35,
     name: "Don't you dare sleep",
-    get description() {
-      return PlayerProgress.realityUnlocked()
-        ? `Be offline for a period of over ${formatInt(6)} hours (real time).`
-        : `Be offline for a period of over ${formatInt(6)} hours.`;
-    },
+    get description(){return `Be offline for a period of over ${formatInt(6)} hours (game real time).`;},
     checkRequirement: () => (((Date.now() - player.lastUpdate) * getGlobalSpeedFactor()) >= 21600000),
     checkEvent: GAME_EVENT.GAME_TICK_BEFORE
   },
@@ -248,7 +244,7 @@ export const normalAchievements = [
     name: "Over in 30 Seconds",
     get description() {
       return `Have antimatter per second exceed your current antimatter
-      for ${formatInt(30)} consecutive seconds.`;
+      for ${formatInt(30)} consecutive seconds (game game time).`;
     },
     checkRequirement: () => AchievementTimers.marathon1
       .check(Currency.antimatter.productionPerSecond.gt(Currency.antimatter.value), 30),
@@ -505,7 +501,7 @@ export const normalAchievements = [
   {
     id: 76,
     name: "One for each dimension",
-    get description() { return `Play for ${formatInt(8)} days.`; },
+    get description() { return `Play for ${formatInt(8)} days (game game time).`; },
     checkRequirement: () => Time.totalTimePlayed.totalDays >= 8,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     reward: "Extremely small multiplier to Antimatter Dimensions based on time played.",
@@ -752,8 +748,8 @@ export const normalAchievements = [
   {
     id: 108,
     name: "We COULD afford 9",
-    get description() { return `Eternity with exactly ${formatInt(9)} Replicanti.`; },
-    checkRequirement: () => Replicanti.amount.round().eq(9) || Achievement(138).isUnlocked,
+    get description() { return `Eternity with exactly ${formatInt(9)} Replicanti. Tip: Find a way to slow that down.`; },
+    checkRequirement: () => Replicanti.amount.round().eq(9),
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
   },
   {
@@ -1128,7 +1124,7 @@ export const normalAchievements = [
   {
     id: 154,
     name: "I am speed",
-    get description() { return `Reality in under ${formatInt(5)} seconds (game time).`; },
+    get description() { return `Reality in under ${formatInt(5)} seconds (real game time).`; },
     checkRequirement: () => Time.thisReality.totalSeconds / getGlobalSpeedFactor() <= 5,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     get reward() { return `${formatPercents(0.1)} chance each Reality of ${formatX(2)} Realities and Perk Points.`; },
@@ -1137,7 +1133,7 @@ export const normalAchievements = [
   {
     id: 155,
     name: "Achievement #15983",
-    get description() { return `Play for ${formatFloat(13.7, 1)} billion years.`; },
+    get description() { return `Play for ${formatFloat(13.7, 1)} billion years (game game time).`; },
     checkRequirement: () => Time.totalTimePlayed.totalYears > 13.7e9,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Black Hole durations are ${formatPercents(0.1)} longer.`; },
@@ -1190,7 +1186,7 @@ export const normalAchievements = [
     name: "Actually, super easy! Barely an inconvenience!",
     get description() {
       return `Complete all the Eternity Challenges ${formatInt(5)} times with less than ${formatInt(1)}
-      second (game time) in your current Reality.`;
+      second (real game time) in your current Reality.`;
     },
     checkRequirement: () => EternityChallenges.all.map(ec => ec.completions).min() >= 5 &&
       Time.thisReality.totalSeconds / getGlobalSpeedFactor() <= 1,
