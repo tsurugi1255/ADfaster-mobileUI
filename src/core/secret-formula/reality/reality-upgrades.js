@@ -332,7 +332,7 @@ export const realityUpgrades = [
     hasFailed: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() >= 15,
     checkRequirement: () => Time.thisReality.totalMinutes / getGlobalSpeedFactor() < 15,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "Replicanti speed is boosted based on your fastest game-time Reality",
+    description: "Replicanti speed is boosted based on your fastest real game time Reality",
     effect: () => 15 / Math.clamp(Time.bestReality.totalMinutes, 1 / 12, 15),
     cap: 180,
     formatEffect: value => formatX(value, 2, 2)
@@ -341,7 +341,7 @@ export const realityUpgrades = [
     name: "Synthetic Symbolism",
     id: 24,
     cost: 100000,
-    requirement: () => `Reality for ${formatInt(5000)} Reality Machines without equipped Glyphs`,
+    requirement: () => `Reality for ${formatInt(5000)} Reality Machines (before amplification) without equipped Glyphs`,
     hasFailed: () => Glyphs.activeWithoutCompanion.length > 0,
     checkRequirement: () => MachineHandler.gainedRealityMachines.gte(5000) &&
       Glyphs.activeWithoutCompanion.length === 0,

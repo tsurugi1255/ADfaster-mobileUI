@@ -100,7 +100,7 @@ ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - You gain a multiplier to eternities gained on eternity based on your current eternities, to a minimal of ${formatX(5)} and a maximal of ${formatX(1000)}.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
-- Realities are always amplified +${format(4)}×.<br>
+- Realities are always simuated +${format(4)}× (additive with other amplify mutipliers).<br>
 - You gain a multiplier to perk points gained on reality based on your current realities, to a maximal of ${formatX(20)}.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?"":
