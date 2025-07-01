@@ -19,12 +19,12 @@ export default {
 
 <template>
   <span class="l-autobuyers-tab">
+    <!-- <MultipleSingleAutobuyersGroup /> -->
     <MultipleAutobuyersBox
       v-for="(type, id) in multiple"
       :key="id"
       :type="type"
     />
-    <MultipleSingleAutobuyersGroup />
   </span>
 </template>
 

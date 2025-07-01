@@ -9,6 +9,7 @@ import OpenModalHotkeysButton from "@/components/OpenModalHotkeysButton";
 import RealityAutobuyerBox from "./RealityAutobuyerBox";
 import SimpleAutobuyersMultiBox from "./SimpleAutobuyersMultiBox";
 import TickspeedAutobuyerBox from "./TickspeedAutobuyerBox";
+import MultipleSingleAutobuyersGroup from "./MultipleSingleAutobuyersGroup";
 
 export default {
   name: "AutobuyersTab",
@@ -22,7 +23,8 @@ export default {
     DimensionBoostAutobuyerBox,
     TickspeedAutobuyerBox,
     DimensionAutobuyerBox,
-    SimpleAutobuyersMultiBox
+    SimpleAutobuyersMultiBox,
+    MultipleSingleAutobuyersGroup
   },
   data() {
     return {
@@ -66,29 +68,33 @@ export default {
 
 <template>
   <div class="l-autobuyers-tab">
-    <AutobuyerToggles />
-    <OpenModalHotkeysButton />
-    <div v-if="hasSeenGamespeedAlteringEffects">
-      Autobuyer intervals and time-based settings are always <b>real time</b> and therefore
-      <br>
-      unaffected by anything which may alter how fast the game itself is running.
-      <br>
-      <br>
+    <div class="autobuyer-header">
+      <AutobuyerToggles />
+      <OpenModalHotkeysButton />
+      <div v-if="hasSeenGamespeedAlteringEffects" class="autobuyer-info">
+        Autobuyer intervals and time-based settings are always <b>real time</b> and therefore
+        <br>
+        unaffected by anything which may alter how fast the game itself is running.
+        <br>
+        <br>
+      </div>
+      <div v-if="!hasInfinity" class="autobuyer-info">
+        Challenges for upgrading autobuyers are unlocked by reaching Infinity.
+      </div>
+      <b class="autobuyer-info">Autobuyers with no displayed bulk have unlimited bulk by default.</b>
+      <b class="autobuyer-info">
+        Antimatter Dimension Autobuyers can have their bulk upgraded once interval is below {{ formatInt(100) }} ms.
+      </b>
+      <b v-if="hasInstant" class="autobuyer-info">Autobuyers with "Instant" interval will trigger every game tick ({{ gameTickLength }}).</b>
     </div>
-    <div v-if="!hasInfinity">
-      Challenges for upgrading autobuyers are unlocked by reaching Infinity.
-    </div>
-    <b>Autobuyers with no displayed bulk have unlimited bulk by default.</b>
-    <b>
-      Antimatter Dimension Autobuyers can have their bulk upgraded once interval is below {{ formatInt(100) }} ms.
-    </b>
-    <b v-if="hasInstant">Autobuyers with "Instant" interval will trigger every game tick ({{ gameTickLength }}).</b>
     <RealityAutobuyerBox class="c-reality-pos" />
     <EternityAutobuyerBox class="c-eternity-pos" />
     <BigCrunchAutobuyerBox class="c-infinity-pos" />
     <GalaxyAutobuyerBox />
     <DimensionBoostAutobuyerBox />
-    <TickspeedAutobuyerBox v-if="!hasContinuum" />
+    <TickspeedAutobuyerBox v-if="!hasContinuum" class="c-tickspeed-pos" />
+    <MultipleSingleAutobuyersGroup v-if="!hasContinuum" />
+    <MultipleSingleAutobuyersGroup v-if="hasContinuum" class="l-autobuyer-singlet-group__continuum" />
     <template v-if="displayADAutobuyersIndividually">
       <DimensionAutobuyerBox
         v-for="tier in 8"
@@ -96,7 +102,8 @@ export default {
         :tier="tier"
       />
     </template>
-    <SimpleAutobuyersMultiBox />
+    
+    <SimpleAutobuyersMultiBox class="c-additional-autobuyers" />
   </div>
 </template>
 
@@ -107,6 +114,7 @@ its own stacking context, which means that all z-indices specified within are es
 AutobuyerBox components will always render in page order regardless of internal z-indices without these. */
 .c-reality-pos {
   z-index: 3;
+  grid-column: 1/-1;
 }
 
 .c-eternity-pos {
@@ -116,4 +124,8 @@ AutobuyerBox components will always render in page order regardless of internal 
 .c-infinity-pos {
   z-index: 1;
 }
+
+/* .c-tickspeed-pos {
+  grid-column: 1/-1;
+} */
 </style>

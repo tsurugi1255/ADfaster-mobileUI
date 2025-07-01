@@ -447,11 +447,11 @@ export const normalAchievements = [
     id: 71,
     name: "ERROR 909: Dimension not found",
     description:
-      `Get to Infinity with only a single 1st Antimatter Dimension without Dimension Boosts
+      `Get to Infinity with only 10 1st Antimatter Dimension without Dimension Boosts
       or Antimatter Galaxies, while in the 2nd Antimatter Dimension Autobuyer Challenge.`,
     checkRequirement: () =>
       NormalChallenge(2).isOnlyActiveChallenge &&
-      AntimatterDimension(1).amount.eq(1) &&
+      AntimatterDimension(1).amount.eq(10) &&
       DimBoost.purchasedBoosts === 0 &&
       player.galaxies === 0,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
@@ -1219,8 +1219,8 @@ export const normalAchievements = [
   {
     id: 166,
     name: "Nicenice.",
-    get description() { return `Get a Glyph with level exactly ${formatInt(6969)}.`; },
-    checkRequirement: () => gainedGlyphLevel().actualLevel === 6969,
+    get description() { return `Get a Glyph with level more than ${formatInt(6969)}.`; },
+    checkRequirement: () => gainedGlyphLevel().actualLevel >= 6969,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     get reward() { return `+${formatInt(69)} to Glyph level.`; },
     effect: 69

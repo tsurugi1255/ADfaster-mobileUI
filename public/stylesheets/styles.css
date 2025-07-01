@@ -1980,6 +1980,7 @@ br {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  /* justify-self: center; */
   padding-bottom: 0.8rem;
 }
 
@@ -1987,7 +1988,7 @@ br {
 
 /* #region o-prestige-button */
 
-.c-prestige-button-container {
+.c-prestige-button-container { 
   display: flex;
   flex-direction: column;
   height: 14rem;
@@ -2727,8 +2728,6 @@ br {
 }
 
 .c-options-tab__hotkeys-link {
-  width: 22rem;
-  align-self: center;
   cursor: pointer;
 }
 
@@ -4028,17 +4027,22 @@ br {
 
 /* #region l-autobuyers-tab */
 
-.l-autobuyers-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+div.l-autobuyers-tab {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   color: var(--color-text);
+  max-width: 80vw; /* New */
 }
 
-.l-autobuyers-tab td {
+.autobuyer-header {
+  grid-column: 1/-1;
+  padding: 0 10vw;
+}
+
+/* .l-autobuyers-tab td {
   text-align: center;
   padding: 0;
-}
+} */
 
 /* #endregion l-autobuyers-tab */
 
@@ -4376,7 +4380,7 @@ br {
 
 .c-autobuyer-box-row {
   display: flex;
-  width: 96rem;
+  flex-direction: column;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -4386,6 +4390,41 @@ br {
   margin: 0.5rem;
   padding: 1rem 2rem;
 }
+
+.c-autobuyer-box-row__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.c-autobuyer-box-row__Slots {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5%;
+  row-gap: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.c-reality-pos .c-autobuyer-box-row__Slots {
+  flex-direction: row;
+}
+
+.c-autobuyer-box-row__Input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.c-additional-autobuyers {
+  grid-column: 1/-1;
+}
+
+
 
 /* For some reason, we need to specifically define the font size here or else it balloons up to a size
 bigger than that of the autobuyer tab. We also explicitly set the border color in order for it to appear
@@ -4449,10 +4488,13 @@ properly on certain themes. */
 }
 
 .l-autobuyer-singlet-group {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  width: 97rem;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.l-autobuyer-singlet-group__continuum {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-column: 1/-1;
 }
 
 .c-small-autobuyer-input {
@@ -4501,10 +4543,14 @@ properly on certain themes. */
 
 /* stylelint-disable selector-class-pattern */
 .c-autobuyer-box-row__intervalSlot,
-.c-autobuyer-box-row__toggleSlot,
-.c-autobuyer-box-row__checkboxSlot,
 .l-autobuyer-box__header {
-  width: 25%;
+  width: 100%;
+}
+
+
+.c-autobuyer-box-row__toggleSlot,
+.c-autobuyer-box-row__checkboxSlot {
+  width: auto;
 }
 /* stylelint-enable selector-class-pattern */
 
@@ -4513,10 +4559,9 @@ properly on certain themes. */
 }
 
 .l-autobuyer-box__autobuyers {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  width: 80rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  width: 100%;
 }
 
 .l-autobuyer-box__autobuyers-internal {
@@ -9228,8 +9273,7 @@ input.o-automator-block-input {
 
 .c-autobuyer-buy-box {
   display: flex;
-  width: 96rem;
-  height: 6.4rem;
+  height: 10rem;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;

@@ -154,31 +154,37 @@ export default {
         {{ extraInfo }}
       </div>
     </div>
-    <div class="c-autobuyer-box-row__intervalSlot">
-      <slot name="intervalSlot" />
-    </div>
-    <div class="c-autobuyer-box-row__toggleSlot">
-      <slot name="toggleSlot" />
-    </div>
-    <div class="c-autobuyer-box-row__checkboxSlot">
-      <slot name="checkboxSlot" />
-    </div>
-    <div class="c-autobuyer-box-row__optionSlot">
-      <slot name="optionSlot" />
-    </div>
-    <div
-      class="l-autobuyer-box__footer"
-      @click="toggle"
-    >
-      <label :class="autobuyerStateClass">
-        <span :class="autobuyerToggleClass" />
-      </label>
-      <input
-        :checked="isActive && globalToggle"
-        :disabled="!globalToggle"
-        :name="name"
-        type="checkbox"
+    <div class="c-autobuyer-box-row__content">
+      <div class="c-autobuyer-box-row__Slots">
+        <div class="c-autobuyer-box-row__intervalSlot">
+          <slot name="intervalSlot" />
+        </div>
+        <div class="c-autobuyer-box-row__Input">
+          <div class="c-autobuyer-box-row__toggleSlot">
+            <slot name="toggleSlot" />
+          </div>
+          <div class="c-autobuyer-box-row__checkboxSlot">
+            <slot name="checkboxSlot" />
+          </div>
+        </div>
+      </div>
+      <div class="c-autobuyer-box-row__optionSlot">
+        <slot name="optionSlot" />
+      </div>
+      <div
+        class="l-autobuyer-box__footer"
+        @click="toggle"
       >
+        <label :class="autobuyerStateClass">
+          <span :class="autobuyerToggleClass" />
+        </label>
+        <input
+          :checked="isActive && globalToggle"
+          :disabled="!globalToggle"
+          :name="name"
+          type="checkbox"
+        >
+      </div>
     </div>
   </div>
   <div
