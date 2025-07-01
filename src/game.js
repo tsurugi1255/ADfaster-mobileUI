@@ -582,6 +582,10 @@ export function gameLoop(passDiff, options = {}) {
   const gain = Math.clampMin(FreeTickspeed.fromShards(Currency.timeShards.value).newAmount - player.totalTickGained, 0);
   player.totalTickGained += gain;
 
+  if (InfinityUpgrade.ipOffline.isBought) {
+    Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * getGlobalSpeedFactor() / 2));
+  }
+
   updatePrestigeRates();
   tryCompleteInfinityChallenges();
 

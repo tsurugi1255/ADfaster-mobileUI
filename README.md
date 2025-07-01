@@ -7,6 +7,7 @@ Credits go to the following:
 - [Ivark](https://github.com/IvarK/AntimatterDimensionsSourceCode): for the AD source code
 - [Wyxkk](https://github.com/WYXkk/ADfaster): for the AD Fast Dimensions mods
 - [Asanned](https://github.com/Asanned/AD_MWGP): for the code to enable glyph selection on mobile
+- [realjman](https://github.com/realjman/ADfasterer): for the code to convert offline IP gen to online
 
 ## Run
 
