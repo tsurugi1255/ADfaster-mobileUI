@@ -1,5 +1,13 @@
 # Antimatter Dimensions
 
+This is a modification of Wyxkk's Antimatter Fast Dimensions mod, slightly redesigned to be playable on a mobile browser. Please note that the changes are only applied to the **Modern UI**.
+
+## Credits
+Credits go to the following:
+- [Ivark](https://github.com/IvarK/AntimatterDimensionsSourceCode): for the AD source code
+- [Wyxkk](https://github.com/WYXkk/ADfaster): for the AD Fast Dimensions mods
+- [Asanned](https://github.com/Asanned/AD_MWGP): for the code to enable glyph selection on mobile
+
 ## Run
 
 To run the game locally, you will need to install
