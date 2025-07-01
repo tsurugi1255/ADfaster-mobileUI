@@ -168,6 +168,17 @@ export default {
         @click.native="select(index)"
       />
     </div>
+    <div
+      v-if="!firstReality"
+      class="l-glyph-selection__row"
+    >
+      <PrimaryButton
+	  class="l-glyph-equip-button"
+        v-for="(_, index) in glyphs"
+        :key="index"
+        @click.native="select(index)"
+      >Select glyph {{index+1}}</PrimaryButton>
+    </div>
     <div v-if="!firstReality">
       {{ levelStats }}
       <br>
