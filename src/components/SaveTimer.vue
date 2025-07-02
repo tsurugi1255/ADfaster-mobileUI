@@ -51,13 +51,13 @@ export default {
 .o-save-timer {
   white-space: nowrap;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: 5;
   text-align: left;
   color: var(--color-text);
   background-color: var(--color-base);
-  border-top: 0.1rem solid var(--color-accent);
+  border-bottom: 0.1rem solid var(--color-accent);
   border-right: 0.1rem solid var(--color-accent);
   padding: 0 0.5rem;
   pointer-events: auto;

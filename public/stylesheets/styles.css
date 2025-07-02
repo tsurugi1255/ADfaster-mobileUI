@@ -687,27 +687,10 @@ button:focus {
   text-shadow: 0 0 0.3rem;
 }
 
-.o-tab-btn:hover {
-  color: var(--color-prestige--accent);
-  background: var(--color-accent);
-}
-
-.o-tab-btn--modern-tabs:last-child {
-  border-bottom-right-radius: var(--var-border-radius, 0.5rem);
-}
-
-.o-tab-btn--modern-tabs:last-child:hover {
-  border-bottom-right-radius: 0;
-}
-
 .o-tab-btn--infinity {
   color: var(--color-infinity);
   background-color: var(--color-prestige--accent);
   border-color: var(--color-infinity);
-}
-
-.o-tab-btn--infinity:hover {
-  background: var(--color-infinity);
 }
 
 .o-tab-btn--eternity {
@@ -716,28 +699,16 @@ button:focus {
   border-color: var(--color-eternity);
 }
 
-.o-tab-btn--eternity:hover {
-  background: var(--color-eternity);
-}
-
 .o-tab-btn--reality {
   color: var(--color-reality);
   background-color: var(--color-prestige--accent);
   border-color: var(--color-reality);
 }
 
-.o-tab-btn--reality:hover {
-  background: var(--color-reality);
-}
-
 .o-tab-btn--celestial {
   color: var(--color-celestials);
   background-color: var(--color-prestige--accent);
   border-color: var(--color-celestials);
-}
-
-.o-tab-btn--celestial:hover {
-  background: var(--color-celestials);
 }
 
 /* #endregion tab buttons */
