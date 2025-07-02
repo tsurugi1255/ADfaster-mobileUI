@@ -87,6 +87,7 @@ body.t-s12 {
   -ms-overflow-style: none;
   scrollbar-width: none;
   border: none;
+  background-color: var(--color-base);
 }
 
 .c-modern-sidebar::-webkit-scrollbar {
@@ -130,7 +131,6 @@ body.t-s12 {
   border-radius: 0;
   border-width: 0;
   border-color: var(--color-accent);
-  margin-top: -0.1rem;
   transition-delay: 0.2s;
   transition-duration: 0.15s;
 }
