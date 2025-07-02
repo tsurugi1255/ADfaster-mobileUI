@@ -9,6 +9,9 @@
 
 :root {
   --sidebar-width: 12.8rem;
+  --navbar-height: 5vh;
+  --tab-width: 15vw;
+  --subtab-width: 30vw;
   --color-antimatter--bg: #df50504d;
   --color-infinity--bg: #b67f334d;
   --color-eternity--bg: #b341e04d;
@@ -72,12 +75,22 @@ body.t-s12 {
 
 .c-modern-sidebar {
   display: flex;
-  flex-direction: column;
-  width: var(--sidebar-width);
+  flex-direction: row;
+  width: 100vw;
+  height: var(--navbar-height);
   position: absolute;
   left: 0;
+  bottom: var(--navbar-height);
   z-index: 5;
   pointer-events: auto;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border: none;
+}
+
+.c-modern-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .c-modern-sidebar:hover .subtabs,
@@ -110,22 +123,16 @@ body.t-s12 {
 }
 
 .o-tab-btn {
-  height: 4.6rem;
+  height: 100%;
+  min-width: 15vw;
   position: relative;
-  font-size: 1.4rem;
-  border-width: 0.1rem;
+  font-size: 3rem;
   border-radius: 0;
+  border-width: 0;
+  border-color: var(--color-accent);
   margin-top: -0.1rem;
   transition-delay: 0.2s;
   transition-duration: 0.15s;
-}
-
-.o-tab-btn:hover {
-  z-index: 1;
-}
-
-.c-modern-sidebar > .o-tab-btn {
-  border-left-width: 0;
 }
 
 .l-tab-btn-inner {
@@ -140,44 +147,24 @@ body.t-s12 {
 }
 
 .o-tab-btn:hover .subtabs {
-  left: calc(var(--sidebar-width) + 2.3rem);
   opacity: 1;
   pointer-events: all;
 }
 
-.o-tab-btn::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: calc(0% + -0.1rem);
-  left: calc(100% + 0.1rem);
-  z-index: 4;
-  border-top: 2.3rem solid transparent;
-  border-bottom: 2.3rem solid transparent;
-  border-left: 0 solid var(--color-accent);
-  transition-delay: 0.2s;
-  transition-duration: 0.15s;
+.o-tab-btn--infinity {
+  border-color: var(--color-infinity);
 }
 
-.o-tab-btn--subtabs:hover::after {
-  border-left-width: 2.2rem;
+.o-tab-btn--eternity {
+  border-color: var(--color-eternity);
 }
 
-.o-tab-btn--infinity::after {
-  border-left-color: var(--color-infinity);
+.o-tab-btn--reality {
+  border-color: var(--color-reality);
 }
 
-.o-tab-btn--eternity::after {
-  border-left-color: var(--color-eternity);
-}
-
-.o-tab-btn--reality::after {
-  border-left-color: var(--color-reality);
-}
-
-.o-tab-btn--celestial::after {
-  border-left-color: var(--color-celestials);
+.o-tab-btn--celestial {
+  border-color: var(--color-celestials);
 }
 
 .tab-button.shop {
@@ -189,8 +176,7 @@ body.t-s12 {
 }
 
 .game-container {
-  width: calc(100% - var(--sidebar-width));
-  margin-left: var(--sidebar-width);
+  width: 100%;
 }
 
 .t-s4 .game-container {
@@ -202,6 +188,7 @@ body.t-s12 {
   flex-direction: column;
   position: relative;
   justify-content: center;
+  align-items: center;
 }
 
 .tab-container > .l-antimatter-dim-tab {
@@ -221,21 +208,31 @@ body.t-s12 {
 
 .subtabs {
   display: flex;
-  position: absolute;
-  top: -0.6rem;
-  left: var(--sidebar-width);
-  z-index: 4;
-  opacity: 0;
-  padding: 0.5rem;
+  flex-wrap: nowrap;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: var(--navbar-height);
+  z-index: 6;
+  opacity: 1;
   padding-left: 0;
   transition: pointer-events 0s linear 0s, all 0.15s linear 0.2s;
-  pointer-events: none;
+  pointer-events: all;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.subtabs::-webkit-scrollbar {
+  display: none;
 }
 
 .o-tab-btn--subtab {
-  width: 4.7rem;
-  height: 4.7rem;
-  font-size: 2.3rem;
+  flex: 1 1 45%;
+  min-width: 45%;
+  height: 100%;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 4.5rem;
   margin-left: -0.1rem;
@@ -243,95 +240,16 @@ body.t-s12 {
   -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 0.5rem solid transparent;
 }
 
 .o-tab-btn--subtab .o-tab-btn--cel3 {
   font-weight: normal;
   transform: rotate(45deg);
-}
-
-.o-subtab__tooltip {
-  width: 20rem;
-  height: 3rem;
-  position: absolute;
-  bottom: 100%;
-  z-index: 2;
-  font-size: 1.4rem;
-  font-weight: bold;
-  line-height: 2.8rem;
-  opacity: 0;
-  color: var(--color-text);
-  background: var(--color-base);
-  border: 0.1rem solid var(--color-accent);
-  border-radius: var(--var-border-radius, 0.4rem);
-  margin-left: -7.7rem;
-  transition-duration: 0.2s;
-  pointer-events: none;
-}
-
-.o-subtab__tooltip::after {
-  content: " ";
-  width: 0;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  z-index: 0;
-  border-top: 0 solid var(--color-accent);
-  border-right: 0.7rem solid transparent;
-  border-left: 0.7rem solid transparent;
-  margin-bottom: 0;
-  margin-left: -0.7rem;
-  transition-duration: 0.2s;
-}
-
-.o-tab-btn--subtab:hover .o-subtab__tooltip {
-  bottom: calc(100% + 0.7rem);
-  opacity: 1;
-}
-
-.o-tab-btn--subtab:hover .o-subtab__tooltip::after {
-  border-top-width: 0.7rem;
-  margin-bottom: -0.7rem;
-}
-
-.o-tab-btn--infinity .o-subtab__tooltip {
-  color: var(--color-infinity);
-  background: var(--color-prestige--accent);
-  border-color: var(--color-infinity);
-}
-
-.o-tab-btn--infinity .o-subtab__tooltip::after {
-  border-top-color: var(--color-infinity);
-}
-
-.o-tab-btn--eternity .o-subtab__tooltip {
-  color: var(--color-eternity);
-  background: var(--color-prestige--accent);
-  border-color: var(--color-eternity);
-}
-
-.o-tab-btn--eternity .o-subtab__tooltip::after {
-  border-top-color: var(--color-eternity);
-}
-
-.o-tab-btn--reality .o-subtab__tooltip {
-  color: var(--color-reality);
-  background: var(--color-prestige--accent);
-  border-color: var(--color-reality);
-}
-
-.o-tab-btn--reality .o-subtab__tooltip::after {
-  border-top-color: var(--color-reality);
-}
-
-.o-tab-btn--celestial .o-subtab__tooltip {
-  color: var(--color-celestials);
-  background: var(--color-prestige--accent);
-  border-color: var(--color-celestials);
-}
-
-.o-tab-btn--celestial .o-subtab__tooltip::after {
-  border-top-color: var(--color-celestials);
 }
 
 .active {
@@ -660,7 +578,7 @@ body.t-s12 {
 .l-dimension-single-row {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  height: 5.5rem;
+  height: 10rem;
   align-content: center;
 }
 
