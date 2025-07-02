@@ -188,6 +188,7 @@ body.t-s12 {
   flex-direction: column;
   position: relative;
   justify-content: center;
+  align-items: center;
 }
 
 .tab-container > .l-antimatter-dim-tab {
@@ -577,7 +578,7 @@ body.t-s12 {
 .l-dimension-single-row {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  height: 5.5rem;
+  height: 10rem;
   align-content: center;
 }
 
