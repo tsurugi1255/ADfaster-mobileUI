@@ -49,7 +49,7 @@ export default {
 .c-custom-save-name__input {
   text-align: center;
   font-family: Typewriter;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: bold;
   border: 0.1rem solid black;
   border-radius: var(--var-border-radius, 0.3rem);

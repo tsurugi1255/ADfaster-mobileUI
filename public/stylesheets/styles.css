@@ -1511,6 +1511,8 @@ br {
 
 .c-game-tab {
   padding-bottom: 2rem;
+  margin-bottom: 10vh;
+  width: 90%
 }
 
 .c-wide-canvas-element {
@@ -2686,7 +2688,14 @@ br {
 }
 
 .c-options-tab__hotkeys-link {
+  font-size: 2rem;
   cursor: pointer;
+  margin-top: 1rem;
+}
+
+.c-options-tab__hotkeys-link kbd {
+  font-size: 2rem;
+  padding: 8px;
 }
 
 .c-file-import-button {
@@ -2713,6 +2722,7 @@ br {
 .l-options-grid {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .l-options-grid__row {
@@ -2722,8 +2732,15 @@ br {
 }
 
 .l-options-grid__button {
-  width: 22rem;
+  flex: 1;
+  font-size: 2rem;
+  font-weight: normal;
+  height: 10rem;
   margin: 0.5rem 0.8rem;
+}
+
+.l-options-grid__button * {
+  font-weight: normal;
 }
 
 .l-options-grid__button--hidden {
@@ -2735,11 +2752,18 @@ br {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .c-options-grid__notations {
+  height: 10rem !important;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.c-options-grid__notations * {
+  font-size: 2rem; 
+  font-weight: normal;
 }
 
 .c-cloud-options-header {
@@ -2809,6 +2833,7 @@ br {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 }
 
 .o-primary-btn.c-select-notation__item,

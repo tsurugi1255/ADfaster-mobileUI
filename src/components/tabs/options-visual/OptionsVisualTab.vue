@@ -81,32 +81,6 @@ export default {
         </OptionsButton>
       </div>
       <div class="l-options-grid__row">
-        <ExpandingControlBox
-          class="l-options-grid__button c-options-grid__notations"
-          button-class="o-primary-btn o-primary-btn--option l-options-grid__notations-header"
-          :label="themeLabel"
-        >
-          <template #dropdown>
-            <SelectThemeDropdown />
-          </template>
-        </ExpandingControlBox>
-        <ExpandingControlBox
-          class="l-options-grid__button c-options-grid__notations"
-          button-class="o-primary-btn o-primary-btn--option l-options-grid__notations-header"
-          :label="notationLabel"
-        >
-          <template #dropdown>
-            <SelectNotationDropdown />
-          </template>
-        </ExpandingControlBox>
-        <OptionsButton
-          class="o-primary-btn--option"
-          onclick="Modal.notation.show();"
-        >
-          Open Exponent Notation Options
-        </OptionsButton>
-      </div>
-      <div class="l-options-grid__row">
         <OptionsButton
           class="o-primary-btn--option"
           onclick="Modal.animationOptions.show();"
@@ -138,14 +112,30 @@ export default {
           class="o-primary-btn--option l-options-grid__button"
           label="Relative prestige gain text coloring:"
         />
+        <OptionsButton
+          class="o-primary-btn--option"
+          onclick="Modal.notation.show();"
+        >
+          Open Exponent Notation Options
+        </OptionsButton>
+      </div>
+      <div class="l-options-grid__row">
         <ExpandingControlBox
-          v-if="$viewModel.newUI"
           class="l-options-grid__button c-options-grid__notations"
           button-class="o-primary-btn o-primary-btn--option l-options-grid__notations-header"
-          :label="sidebarLabel"
+          :label="themeLabel"
         >
           <template #dropdown>
-            <SelectSidebarDropdown />
+            <SelectThemeDropdown />
+          </template>
+        </ExpandingControlBox>
+        <ExpandingControlBox
+          class="l-options-grid__button c-options-grid__notations"
+          button-class="o-primary-btn o-primary-btn--option l-options-grid__notations-header"
+          :label="notationLabel"
+        >
+          <template #dropdown>
+            <SelectNotationDropdown />
           </template>
         </ExpandingControlBox>
       </div>
