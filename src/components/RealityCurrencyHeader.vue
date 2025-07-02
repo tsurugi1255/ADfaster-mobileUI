@@ -43,8 +43,8 @@ export default {
 
 <style scoped>
 .c-reality-currency {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 2.7rem;
+  color: rgb(109, 109, 109);
 }
 
 .c-shard-color {

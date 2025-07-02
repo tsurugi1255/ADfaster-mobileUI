@@ -35,15 +35,6 @@ export default {
     v-if="showContainer"
     class="c-prestige-button-container"
   >
-    <div
-      v-if="showEP"
-      class="c-eternity-points"
-    >
-      You have
-      <span class="c-game-header__ep-amount">{{ format(eternityPoints, 2) }}</span>
-      {{ pluralize("Eternity Point", eternityPoints) }}.
-      <span v-if="showNextEP">(Next EP at {{ format(nextEP, 1) }} IP)</span>
-    </div>
     <UnlockInfinityDimButton />
     <EternityButton />
   </div>

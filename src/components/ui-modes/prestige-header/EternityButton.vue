@@ -213,11 +213,13 @@ const EP_BUTTON_DISPLAY_TYPE = {
       <span v-else> Eternity {{ pluralize("Point", gainedEP) }}</span>
       <br>
       <template v-if="showEPRate">
-        Current: {{ format(currentEPRate, 2, 2) }} EP/min
-        <br>
-        Peak: {{ format(peakEPRate, 2, 2) }} EP/min
-        <br>
-        at {{ format(peakEPRateVal, 2, 2) }} EP
+        <div class="EP-info">
+          Current: {{ format(currentEPRate, 2, 2) }} EP/min
+          <br>
+          Peak: {{ format(peakEPRate, 2, 2) }} EP/min
+          <br>
+          at {{ format(peakEPRateVal, 2, 2) }} EP
+        </div>
       </template>
     </template>
 
@@ -268,5 +270,7 @@ const EP_BUTTON_DISPLAY_TYPE = {
 </template>
 
 <style scoped>
-
+.EP-info {
+  font-size: 1.7rem;
+}
 </style>

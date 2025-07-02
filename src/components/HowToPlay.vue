@@ -65,6 +65,7 @@ export default {
 
 <style scoped>
 .l-help-me {
+  display: none;
   position: absolute;
   width: 2rem;
   height: 2rem;
@@ -77,6 +78,10 @@ export default {
   cursor: pointer;
   transition-delay: 0s;
   z-index: 1;
+}
+
+.l-information {
+  display: none;
 }
 
 .h2p-tutorial--glow {
