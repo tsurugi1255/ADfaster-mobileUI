@@ -766,8 +766,9 @@ button:focus {
   background: var(--color-background);
   border-style: solid;
   border-width: var(--var-border-width, 0.2rem);
-  border-radius: var(--var-border-radius, 0.4rem);
+  border-radius: var(--var-border-radius, 1.4rem);
   transition-duration: 0.2s;
+  padding: 2rem 1rem;
 }
 
 .c-reality-button--special {
@@ -1510,6 +1511,8 @@ br {
 
 .c-game-tab {
   padding-bottom: 2rem;
+  margin-bottom: 10vh;
+  width: 100%
 }
 
 .c-wide-canvas-element {
@@ -1563,6 +1566,9 @@ br {
   height: 100%;
   border: var(--var-border-width, 0.2rem) solid var(--color-accent);
   margin: 0.3rem;
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 .o-primary-btn--subtab-option:hover {
@@ -1939,6 +1945,7 @@ br {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   grid-auto-rows: 1fr;
+  justify-items: center;
   width: 100%;
 }
 
@@ -1949,7 +1956,6 @@ br {
 .c-prestige-button-container { 
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   padding: 1rem 0;
 }
@@ -1963,7 +1969,7 @@ br {
   border-radius: var(--var-border-radius, 1.4rem);
   transition-duration: 0.2s;
   cursor: pointer;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 }
 
 .o-prestige-button br {
@@ -2683,10 +2689,18 @@ br {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 90%;
 }
 
 .c-options-tab__hotkeys-link {
+  font-size: 2rem;
   cursor: pointer;
+  margin-top: 1rem;
+}
+
+.c-options-tab__hotkeys-link kbd {
+  font-size: 2rem;
+  padding: 8px;
 }
 
 .c-file-import-button {
@@ -2713,6 +2727,7 @@ br {
 .l-options-grid {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .l-options-grid__row {
@@ -2722,8 +2737,15 @@ br {
 }
 
 .l-options-grid__button {
-  width: 22rem;
+  flex: 1;
+  font-size: 2rem;
+  font-weight: normal;
+  height: 10rem;
   margin: 0.5rem 0.8rem;
+}
+
+.l-options-grid__button * {
+  font-weight: normal;
 }
 
 .l-options-grid__button--hidden {
@@ -2735,11 +2757,18 @@ br {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .c-options-grid__notations {
+  height: 10rem !important;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.c-options-grid__notations * {
+  font-size: 2rem; 
+  font-weight: normal;
 }
 
 .c-cloud-options-header {
@@ -2809,6 +2838,7 @@ br {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 }
 
 .o-primary-btn.c-select-notation__item,
@@ -2951,18 +2981,15 @@ br {
 /* #region o-achievement */
 
 .o-achievement {
-  width: 10.6rem;
-  height: 10.6rem;
   position: relative;
   text-align: center;
   font-family: Typewriter, serif;
   font-size: 0.8rem;
   color: black;
-  border: var(--var-border-width, 0.2rem) solid;
-  border-radius: var(--var-border-radius, 0.8rem);
-  margin: 0 auto;
+  border: var(--var-border-width, 0.1rem) solid;
   -webkit-user-select: none;
   user-select: none;
+  zoom: 115%;
 }
 
 .o-achievement--normal {
@@ -3219,7 +3246,7 @@ br {
   width: 60rem;
   position: relative;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 0.6rem;
   -webkit-user-select: none;
   user-select: none;
@@ -3254,15 +3281,18 @@ br {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .l-achievement-grid__row {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .l-achievement-grid__cell {
-  margin: 0.6rem 0.8rem;
+  flex: 1;
+  aspect-ratio: 1/1;
 }
 
 .c-achievement-grid__row--completed {
