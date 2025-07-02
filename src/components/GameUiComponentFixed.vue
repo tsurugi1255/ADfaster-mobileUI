@@ -11,13 +11,12 @@ import PopupModal from "@/components/modals/PopupModal";
 import SaveTimer from "@/components/SaveTimer";
 import SpectateGame from "@/components/SpectateGame";
 import SpeedrunStatus from "@/components/SpeedrunStatus";
-import TimeTheoremShop from "@/components/tabs/time-studies/tt-shop/TimeTheoremShop";
+// import TimeTheoremShop from "@/components/tabs/time-studies/tt-shop/TimeTheoremShop";
 
 export default {
   name: "GameUiComponentFixed",
   components: {
     HowToPlay,
-    TimeTheoremShop,
     ModernSidebar,
     SaveTimer,
     SpeedrunStatus,
@@ -65,10 +64,10 @@ export default {
       class="l-notification-container"
     />
     <HowToPlay :style="hideIfMatoFullscreen" />
-    <TimeTheoremShop
+    <!-- <TimeTheoremShop
       v-if="view.subtab === 'studies'"
       class="l-time-studies-tab__tt-shop"
-    />
+    /> -->
     <ModernSidebar
       v-if="view.newUI && view.theme !== 'S12'"
       :style="hideIfMatoFullscreen"

@@ -172,11 +172,12 @@ export default {
 <style scoped>
 .l-tt-save-load-btn__wrapper {
   position: relative;
-  margin: 0.3rem;
+  /* margin: 0.3rem; */
 }
 
 .l-tt-save-load-btn {
-  min-width: 2rem;
+  width: 100%;
+  height: 3.5rem;
 }
 
 .l-tt-save-load-btn__menu {

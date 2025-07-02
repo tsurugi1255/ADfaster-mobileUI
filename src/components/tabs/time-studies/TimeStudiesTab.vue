@@ -10,6 +10,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecretTimeStudy from "./SecretTimeStudy";
 import TimeStudyConnection from "./TimeStudyConnection";
 import TriadTimeStudy from "./TriadTimeStudy";
+import TimeTheoremShop from "./tt-shop/TimeTheoremShop";
 
 export default {
   name: "TimeStudiesTab",
@@ -22,11 +23,11 @@ export default {
     TriadTimeStudy,
     SecretTimeStudy,
     TimeStudyConnection,
-    HiddenTimeStudyConnection
+    HiddenTimeStudyConnection,
+    TimeTheoremShop
   },
   data() {
     return {
-      respec: player.respec,
       layoutType: STUDY_TREE_LAYOUT_TYPE.NORMAL,
       vLevel: 0,
       renderedStudyCount: 0,
@@ -56,18 +57,9 @@ export default {
         width: `${this.layout.width}rem`,
         height: `${this.layout.height}rem`
       };
-    },
-    respecClassObject() {
-      return {
-        "o-primary-btn--subtab-option": true,
-        "o-primary-btn--respec-active": this.respec
-      };
     }
   },
   watch: {
-    respec(newValue) {
-      player.respec = newValue;
-    },
     vLevel() {
       // When vLevel changes, we recompute the study tree because of triad studies
       this.$recompute("layout");
@@ -108,7 +100,6 @@ export default {
   },
   methods: {
     update() {
-      this.respec = player.respec;
       this.layoutType = STUDY_TREE_LAYOUT_TYPE.current;
       this.vLevel = Ra.pets.v.level;
       this.isEnslaved = Enslaved.isRunning || Date.now() - this.delayTimer < 1000;
@@ -136,26 +127,9 @@ export default {
 
 <template>
   <div class="l-time-studies-tab">
-    <div class="c-subtab-option-container">
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        @click="exportStudyTree"
-      >
-        Export tree
-      </PrimaryButton>
-      <PrimaryButton
-        :class="respecClassObject"
-        @click="respec = !respec"
-      >
-        Respec Time Studies on next Eternity
-      </PrimaryButton>
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        onclick="Modal.studyString.show({ id: -1 })"
-      >
-        Import tree
-      </PrimaryButton>
-    </div>
+    <TimeTheoremShop
+      class="l-time-studies-tab__tt-shop"
+    />
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
       :style="treeStyleObject"

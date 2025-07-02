@@ -1,4 +1,5 @@
 <script>
+import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import TimeStudySaveLoadButton from "./TimeStudySaveLoadButton";
 import TimeTheoremBuyButton from "./TimeTheoremBuyButton";
@@ -6,6 +7,7 @@ import TimeTheoremBuyButton from "./TimeTheoremBuyButton";
 export default {
   name: "TimeTheoremShop",
   components: {
+    PrimaryButton,
     PrimaryToggleButton,
     TimeTheoremBuyButton,
     TimeStudySaveLoadButton
@@ -34,6 +36,7 @@ export default {
       hasTTGen: false,
       showTTGen: false,
       invertTTgenDisplay: false,
+      respec: player.respec,
     };
   },
   computed: {
@@ -76,6 +79,12 @@ export default {
       return {
         height: this.hasTTAutobuyer ? "6.7rem" : "4.4rem",
       };
+    },
+    respecClassObject() {
+      return {
+        "o-primary-btn--subtab-option": true,
+        "o-primary-btn--respec-active": this.respec
+      };
     }
   },
   watch: {
@@ -85,6 +94,9 @@ export default {
     invertTTgenDisplay(newValue) {
       player.options.invertTTgenDisplay = newValue;
     },
+    respec(newValue) {
+      player.respec = newValue;
+    }
   },
   methods: {
     minimize() {
@@ -112,6 +124,7 @@ export default {
       TimeTheorems.buyMax(false);
     },
     update() {
+      this.respec = player.respec;
       this.theoremAmount.copyFrom(Currency.timeTheorems);
       this.theoremGeneration.copyFrom(getTTPerSecond().times(getGameSpeedupForDisplay()));
       this.totalTimeTheorems.copyFrom(Currency.timeTheorems.max);
@@ -135,6 +148,14 @@ export default {
     },
     toggleTTgen() {
       this.invertTTgenDisplay = !this.invertTTgenDisplay;
+    },
+    exportStudyTree() {
+      if (player.timestudy.studies.length === 0) {
+        GameUI.notify.error("You cannot export an empty Time Study Tree!");
+      } else {
+        copyToClipboard(GameCache.currentStudyTree.value.exportString);
+        GameUI.notify.info("Exported current Time Studies to your clipboard");
+      }
     }
   },
 };
@@ -147,84 +168,65 @@ export default {
         data-role="page"
         class="ttbuttons-row ttbuttons-top-row"
       >
-        <button
-          class="l-tt-save-load-btn c-tt-buy-button c-tt-buy-button--unlocked"
-          onClick="Modal.preferredTree.show()"
-        >
-          <i class="fas fa-cog" />
-        </button>
         <p class="timetheorems">
           <span class="c-tt-amount">
-            {{ quantify("Time Theorem", theoremAmount, 2, 0, formatTimeTheoremType) }}
+            You have {{ quantify("Time Theorem", theoremAmount, 2, 0, formatTimeTheoremType) }}
           </span>
           <span v-if="showST">
             <br>
-            {{ quantifyInt("Space Theorem", STamount) }}
+            You have {{ quantifyInt("Space Theorem", STamount) }}
           </span>
         </p>
-        <div class="l-load-tree-area">
-          <div class="l-tree-load-button-wrapper">
-            <span class="c-ttshop__save-load-text">{{ saveLoadText }}</span>
-            <TimeStudySaveLoadButton
-              v-for="saveslot in 6"
-              :key="saveslot"
-              :saveslot="saveslot"
-            />
-          </div>
-          <div class="tt-gen-container">
-            <span
-              v-if="hasTTGen"
-              class="checkbox-margin"
-              ach-tooltip="This shows TT generation by default and total TT if you hold shift.
-                Check this box to swap this behavior."
-            >
-              <input
-                v-model="invertTTgenDisplay"
-                type="checkbox"
-                :value="invertTTgenDisplay"
-                class="o-clickable"
-                @input="toggleTTgen()"
-              >
-            </span>
-            <span v-if="showTTGen">
-              You are gaining {{ TTgenRateText }}.
-            </span>
-            <span v-else>
-              You have {{ totalTimeTheoremText }}.
-            </span>
-          </div>
+        <div class="tt-gen-container">
+          <span
+            v-if="hasTTGen"
+            class="checkbox-margin"
+            ach-tooltip="This shows TT generation by default and total TT if you hold shift.
+              Check this box to swap this behavior."
+          >
+          </span>
+          <span v-if="showTTGen">
+            You are gaining {{ TTgenRateText }}.
+          </span>
+          <span v-else>
+            You have {{ totalTimeTheoremText }}.
+          </span>
         </div>
-      </div>
-      <div
-        v-if="!minimized"
-        class="ttbuttons-row"
-        :style="shopBottomRowHeightStyle"
-      >
-        <TimeTheoremBuyButton
-          :budget="budget.am"
-          :cost="costs.am"
-          :format-cost="formatAM"
-          :action="buyWithAM"
-        />
-        <TimeTheoremBuyButton
-          :budget="budget.ip"
-          :cost="costs.ip"
-          :format-cost="formatIP"
-          :action="buyWithIP"
-        />
-        <TimeTheoremBuyButton
-          :budget="budget.ep"
-          :cost="costs.ep"
-          :format-cost="formatEP"
-          :action="buyWithEP"
-        />
-        <div class="l-tt-buy-max-vbox">
+
+        <div class="c-subtab-option-container">
+          <PrimaryButton
+            class="o-primary-btn--subtab-option"
+            @click="exportStudyTree"
+          >
+            Export tree
+          </PrimaryButton>
+          <PrimaryButton
+            :class="respecClassObject"
+            @click="respec = !respec"
+          >
+            Respec Time Studies on next Eternity
+          </PrimaryButton>
+          <PrimaryButton
+            class="o-primary-btn--subtab-option"
+            onclick="Modal.studyString.show({ id: -1 })"
+          >
+            Import tree
+          </PrimaryButton>
+        </div>
+        
+        <div class="l-load-tree-area"><div class="l-tt-buy-max-vbox">
           <button
             v-if="!minimized"
             class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
             @click="buyMaxTheorems"
           >
             Buy max
+          </button>
+          <button
+            class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
+            onClick="Modal.preferredTree.show()"
+          >
+            Select Preferred Path
           </button>
           <PrimaryToggleButton
             v-if="!minimized && hasTTAutobuyer"
@@ -233,22 +235,47 @@ export default {
             label="Auto:"
           />
         </div>
+          <div class="l-tree-load-button-wrapper">
+            <TimeStudySaveLoadButton
+              v-for="saveslot in 6"
+              :key="saveslot"
+              :saveslot="saveslot"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        v-if="!minimized"
+        class="ttbuttons-row"
+        :style="shopBottomRowHeightStyle"
+      >
+        
+        <div class="tt-buy-buttons">
+          <TimeTheoremBuyButton
+            :budget="budget.am"
+            :cost="costs.am"
+            :format-cost="formatAM"
+            :action="buyWithAM"
+          />
+          <TimeTheoremBuyButton
+            :budget="budget.ip"
+            :cost="costs.ip"
+            :format-cost="formatIP"
+            :action="buyWithIP"
+          />
+          <TimeTheoremBuyButton
+            :budget="budget.ep"
+            :cost="costs.ep"
+            :format-cost="formatEP"
+            :action="buyWithEP"
+          />
+        </div>
       </div>
       <div
         v-else
         class="ttbuttons-row ttbuttons-bottom-row-hide"
       />
     </div>
-    <button
-      v-if="minimizeAvailable"
-      class="ttshop-minimize-btn ttshop-background"
-      @click="minimize"
-    >
-      <span
-        class="minimize-arrow"
-        :style="minimizeArrowStyle"
-      >▼</span>
-    </button>
   </div>
 </template>
 
@@ -256,15 +283,15 @@ export default {
 .l-load-tree-area {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  align-items: left;
+  width: 100%;
+  align-items: center;
+  margin-top: 0.6rem
 }
 
 .l-tree-load-button-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  width: 100%;
 }
 
 .ttbuttons-bottom-row-hide {
@@ -280,5 +307,10 @@ export default {
 
 .checkbox-margin {
   margin: 0 0.4rem;
+}
+
+.tt-buy-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 </style>
