@@ -1512,7 +1512,7 @@ br {
 .c-game-tab {
   padding-bottom: 2rem;
   margin-bottom: 10vh;
-  width: 90%
+  width: 100%
 }
 
 .c-wide-canvas-element {
@@ -1566,6 +1566,9 @@ br {
   height: 100%;
   border: var(--var-border-width, 0.2rem) solid var(--color-accent);
   margin: 0.3rem;
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 .o-primary-btn--subtab-option:hover {
@@ -1942,6 +1945,7 @@ br {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   grid-auto-rows: 1fr;
+  justify-items: center;
   width: 100%;
 }
 
@@ -2685,6 +2689,7 @@ br {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 90%;
 }
 
 .c-options-tab__hotkeys-link {
@@ -2976,18 +2981,15 @@ br {
 /* #region o-achievement */
 
 .o-achievement {
-  width: 10.6rem;
-  height: 10.6rem;
   position: relative;
   text-align: center;
   font-family: Typewriter, serif;
   font-size: 0.8rem;
   color: black;
-  border: var(--var-border-width, 0.2rem) solid;
-  border-radius: var(--var-border-radius, 0.8rem);
-  margin: 0 auto;
+  border: var(--var-border-width, 0.1rem) solid;
   -webkit-user-select: none;
   user-select: none;
+  zoom: 115%;
 }
 
 .o-achievement--normal {
@@ -3244,7 +3246,7 @@ br {
   width: 60rem;
   position: relative;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 0.6rem;
   -webkit-user-select: none;
   user-select: none;
@@ -3279,15 +3281,18 @@ br {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .l-achievement-grid__row {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .l-achievement-grid__cell {
-  margin: 0.6rem 0.8rem;
+  flex: 1;
+  aspect-ratio: 1/1;
 }
 
 .c-achievement-grid__row--completed {

@@ -180,13 +180,6 @@ export default {
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
-    <HintText
-      :key="garbleKey"
-      type="achievements"
-      class="l-hint-text--achievement"
-    >
-      {{ processedId }}
-    </HintText>
     <div class="o-achievement__tooltip">
       <template v-if="isMouseOver">
         <div class="o-achievement__tooltip__name">

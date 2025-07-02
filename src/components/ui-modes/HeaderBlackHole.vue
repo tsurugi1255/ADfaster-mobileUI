@@ -154,15 +154,17 @@ export default {
   vertical-align: middle;
   margin: 0.2rem;
   font-size: 2rem;
+  font-weight: normal;
   height: auto;
   width: auto;
   padding: 1rem;
-  margin: 1rem;
+  margin: 5px;
 }
 
 .c-black-hole-status-text {
   margin: 0 0.8rem;
   font-size: 2rem;
+  font-weight: normal;
 }
 
 .o-bh-charge-disabled {
