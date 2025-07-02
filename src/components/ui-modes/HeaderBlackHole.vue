@@ -76,83 +76,93 @@ export default {
 </script>
 
 <template>
-  <span
+  <div
     v-if="canModifyBlackHoles"
     class="c-black-hole-header"
   >
-    <PrimaryButton
-      class="o-primary-btn--buy-max c-primary-btn--black-hole-header"
-      onclick="BlackHoles.togglePause()"
-    >
-      {{ pauseText }}
-    </PrimaryButton>
-    <span v-if="canCharge">
+    <div class="c-black-hole-header-section">
       <PrimaryButton
-        :class="chargingClassObject()"
-        onclick="Enslaved.toggleStoreBlackHole()"
-      >
-        <span v-if="isCharging">
-          Stop Charging
-        </span>
-        <span v-else>
-          Charge
-        </span>
-      </PrimaryButton>
-    </span>
-    <span
-      v-if="displaySingle"
-      class="c-black-hole-status-text"
-      v-html="'🌀:' + singleState"
-    />
-    <span v-else>
-      <HeaderBlackHoleStatusText
-        v-for="(blackHole, i) in blackHoles"
-        :key="'state' + i"
-        :black-hole="blackHole"
-      />
-    </span>
-    <span v-if="canCharge">
-      <PrimaryButton
-        class="o-discharge-btn c-primary-btn--black-hole-header"
-        :class="{ 'o-small-discharge-text': hasLongText }"
-        onclick="Enslaved.useStoredTime(false)"
-      >
-        {{ dischargeText }}
-      </PrimaryButton>
-    </span>
-    <span v-if="canAutoRelease">
-      <PrimaryToggleButton
-        v-model="isAutoReleasing"
         class="o-primary-btn--buy-max c-primary-btn--black-hole-header"
-        label="Pulse:"
+        onclick="BlackHoles.togglePause()"
+      >
+        {{ pauseText }}
+      </PrimaryButton>
+      <span v-if="canCharge">
+        <PrimaryButton
+          :class="chargingClassObject()"
+          onclick="Enslaved.toggleStoreBlackHole()"
+        >
+          <span v-if="isCharging">
+            Stop Charging
+          </span>
+          <span v-else>
+            Charge
+          </span>
+        </PrimaryButton>
+      </span>
+      <span v-if="canAutoRelease">
+        <PrimaryToggleButton
+          v-model="isAutoReleasing"
+          class="o-primary-btn--buy-max c-primary-btn--black-hole-header"
+          label="Pulse:"
+        />
+      </span>
+    </div>
+    <div class="c-black-hole-header-section">
+      <span
+        v-if="displaySingle"
+        class="c-black-hole-status-text"
+        v-html="'🌀:' + singleState"
       />
-    </span>
-  </span>
+      <span v-else>
+        <HeaderBlackHoleStatusText
+          v-for="(blackHole, i) in blackHoles"
+          :key="'state' + i"
+          :black-hole="blackHole"
+        />
+      </span>
+      <span v-if="canCharge">
+        <PrimaryButton
+          class="o-discharge-btn c-primary-btn--black-hole-header"
+          :class="{ 'o-small-discharge-text': hasLongText }"
+          onclick="Enslaved.useStoredTime(false)"
+        >
+          {{ dischargeText }}
+        </PrimaryButton>
+      </span>
+    </div>
+  </div>
 </template>
 
 <style scoped>
 .c-black-hole-header {
   font-weight: bold;
   color: var(--color-text);
+  height: fit-content;
+  margin-top: 2rem;
+}
+
+.c-black-hole-header-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .c-primary-btn--black-hole-header {
   vertical-align: middle;
   margin: 0.2rem;
+  font-size: 2rem;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .c-black-hole-status-text {
   margin: 0 0.8rem;
-}
-
-.o-discharge-btn {
-  width: 20rem;
-  font-size: 1rem;
-}
-
-.o-small-discharge-text {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 2rem;
 }
 
 .o-bh-charge-disabled {

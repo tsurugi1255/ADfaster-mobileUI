@@ -27,7 +27,7 @@ export default {
 .c-prestige-info-blocks {
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  /* height: fit-content; */
   width: 100%;
   color: var(--color-text);
 }
@@ -36,26 +36,15 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: stretch;
   min-height: 40%;
 }
 
 .l-game-header__eternity {
-  /* position: absolute; */
   flex: 1;
-  /* left: calc(25% - 22rem);
-  width: 22rem; */
 }
 
-/* .l-game-header__center {
-  position: absolute;
-  right: calc(50% - 25rem);
-  width: 50rem;
-} */
-
 .l-game-header__infinity {
-  /* position: absolute; */
   flex: 1;
-  /* right: calc(25% - 22rem);
-  width: 22rem; */
 }
 </style>

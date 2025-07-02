@@ -70,7 +70,8 @@ export default {
 
 <style scoped>
 .c-gamespeed {
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 2rem;
   color: var(--color-text);
 }
 </style>

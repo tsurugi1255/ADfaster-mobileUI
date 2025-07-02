@@ -5,6 +5,8 @@ import RealityCurrencyHeader from "../../RealityCurrencyHeader";
 import HeaderTickspeedInfo from "../HeaderTickspeedInfo";
 
 import RealityButton from "./RealityButton";
+import { DC } from "../../../core/constants";
+import { PlayerProgress } from "../../../core/player-progress";
 
 // This component contains antimatter and antimatter rate at the start of the game, as well as some additional
 // information depending on the UI (tickspeed for Classic, game speed for Modern). Everything but antimatter is
@@ -23,6 +25,7 @@ export default {
       showEP: false,
       showNextEP: false,
       eternityPoints: new Decimal(0),
+      showIP: false,
       infinityPoints: new Decimal(0),
       isModern: false,
       hasRealityButton: false,
@@ -36,8 +39,9 @@ export default {
       this.shouldDisplay = player.break || !Player.canCrunch;
       if (!this.shouldDisplay) return;
       this.showEP = PlayerProgress.eternityUnlocked();
-      this.showNextEP = Player.canEternity && player.records.thisReality.maxEP.lt(100) &&
+      this.showNextEP = Player.canEternity && player.records.thisReality.maxEP.lt(100) && gainedEternityPoints().lt(100);
       this.eternityPoints.copyFrom(Currency.eternityPoints.value.floor());
+      this.showIP = PlayerProgress.infinityUnlocked();
       this.infinityPoints.copyFrom(Currency.infinityPoints.value.floor());
 
       this.isModern = player.options.newUI;
@@ -66,7 +70,7 @@ export default {
       />
       <RealityButton v-else />
     </div>
-    <RealityCurrencyHeader />
+    <RealityCurrencyHeader v-if="hasRealityButton" />
     <div
         v-if="showEP"
         class="c-eternity-points"
@@ -75,13 +79,16 @@ export default {
       <span class="c-game-header__ep-amount">{{ format(eternityPoints, 2) }}</span>
       {{ pluralize("Eternity Point", eternityPoints) }}.
     </div>
-    <div class="c-infinity-points">
+    <div 
+      v-if="showIP"
+      class="c-infinity-points"
+      >
       You have
       <span class="c-game-header__ip-amount">{{ format(infinityPoints, 2) }}</span>
       {{ pluralize("Infinity Point", infinityPoints) }}.
     </div>
     <span class="c-antimatter-amt">You have <span class="c-game-header__antimatter">{{ format(antimatter, 2, 1) }}</span> antimatter.</span>
-    <div v-if="!hasRealityButton">
+    <div v-if="!hasRealityButton" class="c-game-header-am-tickspeed-gain">
       You are getting {{ format(antimatterPerSec, 2) }} antimatter per second.
       <br>
       <HeaderTickspeedInfo />
@@ -104,5 +111,9 @@ export default {
 .c-antimatter-amt {
   font-size: 2.7rem;
   color: rgb(109, 109, 109);
+}
+
+.c-game-header-am-tickspeed-gain {
+  font-size: 2rem;
 }
 </style>

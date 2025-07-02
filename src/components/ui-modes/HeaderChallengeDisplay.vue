@@ -197,16 +197,19 @@ export default {
     v-if="isVisible"
     class="l-game-header__challenge-text"
   >
-    <span
-      :class="textClassObject()"
-      @click="textClicked"
-    >
-      You are currently in {{ challengeDisplay }}
-    </span>
-    <FailableEcText v-if="isInFailableEC" />
+    <div class="challenge-text-only">
+      <span
+        :class="textClassObject()"
+        @click="textClicked"
+      >
+        You are currently in {{ challengeDisplay }}
+      </span>
+      <FailableEcText v-if="isInFailableEC" />
+    </div>
     <span class="l-padding-line" />
     <PrimaryButton
       v-if="showExit"
+      class="exit-challenge-btn"
       @click="exitButtonClicked"
     >
       {{ exitText }}
@@ -217,14 +220,23 @@ export default {
 <style scoped>
 .l-game-header__challenge-text {
   display: flex;
-  height: 2rem;
-  top: 50%;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: var(--color-text);
   margin: 0.5rem;
+}
+
+.challenge-text-only {
+  display: flex;
+  flex-direction: column;
+}
+
+.exit-challenge-btn {
+  font-size: 2rem;
+  width: auto;
+  height: auto;
 }
 
 .l-challenge-display {
