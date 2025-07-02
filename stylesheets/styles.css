@@ -671,7 +671,7 @@ button:focus {
   white-space: nowrap;
   font-family: Typewriter;
   font-size: 1.8rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: var(--color-text);
   background-color: var(--color-base);
   border: var(--var-border-width, 0.2rem) solid var(--color-accent);
@@ -737,8 +737,9 @@ button:focus {
 }
 
 .l-reality-button {
-  width: 35rem;
-  height: 6rem;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
 }
 
 .t-metro .l-reality-button {
@@ -752,7 +753,7 @@ button:focus {
 }
 
 .c-reality-button__header {
-  font-size: 1.2rem;
+  font-size: 2.3rem;
   line-height: 1.6;
 }
 
@@ -760,7 +761,7 @@ button:focus {
   width: 100%;
   height: 100%;
   font-family: Typewriter;
-  font-size: 1.2rem;
+  font-size: 2.3rem;
   font-weight: bold;
   background: var(--color-background);
   border-style: solid;
@@ -1948,21 +1949,21 @@ br {
 .c-prestige-button-container { 
   display: flex;
   flex-direction: column;
-  height: 14rem;
-  justify-content: space-around;
+  height: 100%;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .o-prestige-button {
-  width: 22rem;
-  height: 7rem;
+  width: 95%;
+  height: 100%;
   font-family: Typewriter, serif;
-  font-size: 1.1rem;
+  font-size: 2.3rem;
   border: var(--var-border-width, 0.2rem) solid;
-  border-radius: var(--var-border-radius, 0.4rem);
+  border-radius: var(--var-border-radius, 1.4rem);
   transition-duration: 0.2s;
   cursor: pointer;
+  padding: 0 1rem;
 }
 
 .o-prestige-button br {
@@ -2202,7 +2203,7 @@ br {
 }
 
 .c-game-header__ip-amount {
-  font-weight: bold;
+  font-size: 3.7rem;
 }
 
 .t-dark .c-game-header__ip-amount,
@@ -2231,7 +2232,7 @@ br {
 }
 
 .c-game-header__ep-amount {
-  font-weight: bold;
+  font-size: 3.4rem;
 }
 
 .t-dark .c-game-header__ep-amount,
@@ -2255,7 +2256,7 @@ br {
 /* #region c-game-header__antimatter */
 
 .c-game-header__antimatter {
-  font-size: 2.5rem;
+  font-size: 4rem;
   color: black;
 }
 
@@ -8670,6 +8671,7 @@ kbd {
 
 .c-reality-tab__reality-machines {
   color: var(--color-reality);
+  font-size: 3.1rem;
 }
 
 /* #region themes */
