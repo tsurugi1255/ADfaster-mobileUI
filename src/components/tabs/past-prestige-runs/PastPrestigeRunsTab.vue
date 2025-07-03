@@ -72,7 +72,7 @@ export default {
 </script>
 
 <template>
-  <div class="c-stats-tab">
+  <div class="c-stats-tab l-past-runs-tab">
     <div class="c-subtab-option-container">
       <button
         class="o-primary-btn o-primary-btn--subtab-option"

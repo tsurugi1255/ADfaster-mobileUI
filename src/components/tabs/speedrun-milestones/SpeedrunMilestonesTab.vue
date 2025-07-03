@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="l-speedrun-milestone-container">
     <PrimaryToggleButton
       v-model="displayAll"
       class="o-primary-btn--subtab-option"

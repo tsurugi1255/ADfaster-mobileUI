@@ -227,7 +227,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="condition">
+  <div v-if="condition" class="c-past-runs-container">
     <div
       class="c-past-runs-header"
       @click="toggleShown"
@@ -239,12 +239,13 @@ export default {
         <h3>Last {{ formatInt(10) }} {{ plural }}:</h3>
       </span>
     </div>
-    <div v-show="shown">
+    <div v-show="shown" class="c-past-runs-content">
       <div class="c-row-container">
         <span
           v-for="(entry, col) in infoCol()"
           :key="col"
           :style="cellStyle(col, true)"
+          class="c-run-cell"
         >
           {{ entry }}
         </span>
@@ -252,6 +253,7 @@ export default {
       <div
         v-for="(run, index) in runs"
         :key="index"
+        class="c-indiv-run-content"
       >
         <span
           v-if="run[0] === Number.MAX_VALUE"
@@ -273,6 +275,7 @@ export default {
             v-for="(entry, col) in infoArray(run, index)"
             :key="10 * index + col"
             :style="cellStyle(col, false)"
+            class="c-run-cell"
           >
             {{ entry }}
           </span>
@@ -284,10 +287,28 @@ export default {
 </template>
 
 <style scoped>
+
+.c-past-runs-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.c-past-runs-content {
+  width: 100%;
+}
 .c-row-container {
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+
+.c-run-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  flex: 1;
 }
 
 .c-empty-row {

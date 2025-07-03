@@ -47,6 +47,7 @@ export default {
     <div
       v-for="(set, idx) in recordGlyphInfo"
       :key="idx"
+      class="l-glyph-set-entry-container"
     >
       <div
         v-if="set[0]"
@@ -59,6 +60,7 @@ export default {
           :glyphs="set[1]"
           :text="set[2]"
           :text-hidden="true"
+          class="l-glyph-set-entry-preview"
         />
         {{ set[3] }}
         <br>
@@ -66,3 +68,10 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+  .l-glyph-set-entry-preview {
+    font-size: 2rem !important;
+  }
+
+</style>

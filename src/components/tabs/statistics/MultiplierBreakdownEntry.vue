@@ -465,7 +465,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  max-width: 100rem;
+  /* max-width: 100rem; */
   border: var(--var-border-width, 0.2rem) solid var(--color-text);
   padding: 0.5rem;
   font-weight: normal;

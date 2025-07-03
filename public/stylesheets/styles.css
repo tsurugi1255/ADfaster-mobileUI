@@ -1511,7 +1511,7 @@ br {
 
 .c-game-tab {
   padding-bottom: 2rem;
-  margin-bottom: 10vh;
+  margin-bottom: 20vh;
   width: 100%
 }
 
@@ -2858,8 +2858,10 @@ br {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--color-text);
+  margin-top: 2rem;
+  width: 80%;
 }
 
 .t-dark .c-stats-tab {
@@ -2906,14 +2908,9 @@ br {
 
 .l-challenge-records-tab {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.l-challenge-records-tab__infinity_challenges {
-  margin-top: auto;
-  margin-left: 2rem;
 }
 
 /* #endregion Challenge Records */
@@ -2922,52 +2919,60 @@ br {
 
 .l-glyph-set-tab {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   width: 75%;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  margin-top: 0;
+  margin-top: 2rem;
+}
+
+.l-glyph-set-entry-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 .l-glyph-set-entry {
   display: flex;
   flex-direction: column;
-  width: 35rem;
-  height: 12rem;
   justify-content: space-between;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: var(--color-text);
   border: var(--var-border-width, 0.2rem) solid var(--color-text);
-  border-radius: var(--var-border-radius, 0.5rem);
+  border-radius: var(--var-border-radius, 1rem);
   margin: 0.2rem;
-  padding: 0.2rem;
+  padding: 2rem 0.2rem;
 }
 
 /* #endregion Glyph Set Records */
 
 /* #region Speedrun Stats */
 
+.l-speedrun-milestone-container {
+  font-size: 2rem;
+}
+
 .l-speedrun-milestone-tab {
   display: flex;
   flex-flow: row wrap;
   width: 95%;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   margin: auto;
 }
 
 .l-speedrun-milestone-entry {
   display: flex;
   flex-direction: column;
-  width: 25rem;
-  height: 8rem;
+  width: calc(50% - 0.4rem);
   justify-content: space-between;
   color: var(--color-text);
   border: var(--var-border-width, 0.2rem) solid var(--color-text);
   border-radius: var(--var-border-radius, 0.5rem);
   margin: 0.2rem;
-  padding: 0.2rem;
+  padding: 2rem;
 }
 
 .l-speedrun-milestone-entry--completed {
@@ -3010,8 +3015,9 @@ br {
 
 .o-achievement--hidden {
   background-color: #555555;
-  background-image: url("../images/mobile-ach-img/achhidden.webp");
+  background-image: url("../images/mobile-ach-img/achhidden.webp") !important;
   border-color: black;
+  zoom: 110%;
 }
 
 .o-achievement:hover .o-achievement__tooltip {

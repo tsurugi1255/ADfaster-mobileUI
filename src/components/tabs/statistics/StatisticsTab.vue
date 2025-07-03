@@ -171,7 +171,7 @@ export default {
 <template>
   <div class="c-stats-tab">
     <div>
-      <PrimaryButton onclick="Modal.catchup.show(0)">
+      <PrimaryButton onclick="Modal.catchup.show(0)" class="content-summary-btn">
         View Content Summary
       </PrimaryButton>
       <div class="c-stats-tab-title c-stats-tab-general">
@@ -324,21 +324,30 @@ export default {
 </template>
 
 <style scoped>
+
+.content-summary-btn {
+  font-size: 2rem;
+  width: auto;
+  height: auto;
+}
 .c-matter-scale-container {
   height: 5rem;
 }
 
 .c-stats-tab-general {
   color: var(--color-text);
+  height: fit-content;
 }
 
 .c-stats-tab-title {
   font-size: 2rem;
   font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .c-stats-tab-subheader {
-  height: 15rem;
+  height: fit-content;
 }
 
 .c-stats-tab-infinity {
