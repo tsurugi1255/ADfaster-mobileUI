@@ -52,15 +52,15 @@ export default {
           {}
         ]
         : [
+          { isRunButton: true },
+          {},
           VRunUnlocks.all[0],
           VRunUnlocks.all[1],
-          {},
-          VRunUnlocks.all[5],
-          { isRunButton: true },
           VRunUnlocks.all[2],
-          VRunUnlocks.all[4],
+          {},
           VRunUnlocks.all[3],
-          {}
+          VRunUnlocks.all[4],
+          VRunUnlocks.all[5],
         ];
     },
     vUnlock: () => VUnlocks.vAchievementUnlock,
@@ -69,10 +69,12 @@ export default {
         [
           VUnlocks.shardReduction,
           VUnlocks.adPow,
-          VUnlocks.fastAutoEC
         ],
         [
+          VUnlocks.fastAutoEC,
           VUnlocks.autoAutoClean,
+        ],
+        [
           VUnlocks.achievementBH,
           VUnlocks.raUnlock
         ],
@@ -338,7 +340,8 @@ export default {
 
 <style scoped>
 .o-v-start-text {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .l-placeholder-invisible {

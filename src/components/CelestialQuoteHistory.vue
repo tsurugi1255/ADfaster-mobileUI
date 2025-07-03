@@ -54,6 +54,7 @@ export default {
   background-color: var(--color-base);
   border: var(--var-border-width, 0.2rem) solid var(--scoped-cel-color);
   border-radius: var(--var-border-radius, 0.5rem);
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   transition: 0.2s;

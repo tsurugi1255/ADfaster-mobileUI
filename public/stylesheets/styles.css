@@ -6673,68 +6673,66 @@ kbd {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
+}
+
+.l-v-celestial-tab > div {
+  width: 100%;
 }
 
 .l-v-unlocks-container {
-  display: flex;
-  overflow: hidden;
-  flex-wrap: wrap;
-  width: 97.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  width: 100%;
   justify-content: center;
   box-sizing: border-box;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 5rem 0;
 }
 
 .l-v-unlocks-container li {
   visibility: visible;
   overflow: hidden;
   list-style-type: none;
-  width: 27rem;
+  width: 100%;
   position: relative;
-  padding: 0 0 31.2rem;
+  padding: 0 0 115%;
   transform: rotate(-60deg) skewY(30deg);
 }
 
 /* required for hex structure */
-.l-v-unlocks-container li:nth-child(3n+2) {
-  margin: 0 1%;
+.l-v-unlocks-container li:not(:nth-child(4n+1)) {
+  margin-top: -26%;
+  margin-bottom: -26%;
 }
 
-.l-v-unlocks-container li:nth-child(6n+4),
-.l-v-unlocks-container li:nth-child(6n+5),
-.l-v-unlocks-container li:nth-child(6n+6) {
-  margin-top: -7%;
-  margin-bottom: -7%;
-}
-
-.l-v-unlocks-container li:nth-child(6n+1),
-.l-v-unlocks-container li:nth-child(6n+2),
-.l-v-unlocks-container li:nth-child(6n+3) {
+.l-v-unlocks-container li:nth-child(4n+1) {
   transform: translateX(50%) rotate(-60deg) skewY(30deg);
 }
 
-.l-v-unlocks-container li:nth-child(6n+1) {
-  margin-left: 1%;
+.l-v-unlocks-container li:nth-child(4n+1) {
+  margin-left: 1.5%;
 }
 
 .c-v-unlock {
   color: black;
   background: whitesmoke;
+  padding: 0 4rem;
 }
 
 .o-v-unlock-name {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
-.o-v-unlock-desc {
-  font-size: 1.2rem;
+.o-v-unlock-desc,
+.o-v-unlock-record,
+.o-v-unlock-goal-reduction {
+  font-size: 2rem;
 }
 
 .o-v-unlock-amount {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -6742,17 +6740,18 @@ kbd {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .l-v-milestones-grid__row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 1rem;
+  margin: 0.5rem 0;
 }
 
 .c-v-unlock-bar {
-  width: 40rem;
+  width: 100%;
   position: relative;
   z-index: 0;
   border: var(--var-border-width, 0.2rem) solid;
@@ -6772,15 +6771,13 @@ kbd {
 .o-v-milestone {
   display: flex;
   flex-direction: column;
-  width: 25rem;
-  height: 10rem;
+  width: 100%;
   justify-content: space-around;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: black;
   background: #6b5f2e;
   border: var(--var-border-width, 0.2rem) solid #473f1f;
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: 0 0.5rem;
   padding: 1rem;
   -webkit-user-select: none;
   user-select: none;
@@ -6811,24 +6808,24 @@ kbd {
 }
 
 .l-v-reduction {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
+  width: 10%;
+  height: 10%;
+  font-size: 2rem;
   border-radius: var(--var-border-radius, 50%);
   padding: 0;
 }
 
 .c-v-info-text {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: var(--color-text);
 }
 
 .c-v-run-button {
   font-family: Typewriter;
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: black;
   background: var(--color-v--base);
-  padding: 0.5rem;
+  padding: 0 4rem;
   transition-duration: 0.2s;
 }
 
