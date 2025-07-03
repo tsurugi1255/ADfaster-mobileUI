@@ -24,7 +24,8 @@ export default {
       totalFill: new Decimal(),
       resource: new Decimal(),
       hasEffectiveFill: false,
-      effects: []
+      effects: [],
+      riftMilestones: this.strike.rift.milestones
     };
   },
   computed: {
@@ -69,6 +70,12 @@ export default {
       return this.specialRift
         ? wordShift.wordCycle(this.rift.drainResource)
         : this.rift.drainResource;
+    },
+    milestoneResourceText(milestone) {
+      const rift = this.strike.rift;
+      return `${formatPercents(milestone.requirement)}
+      (${this.formatRift(rift.config.percentageToFill(milestone.requirement))} \
+      ${rift.id === 3 ? wordShift.wordCycle(PelleRifts.decay.name) : rift.drainResource})`;
     }
   },
 };
@@ -81,25 +88,8 @@ export default {
   >
     <div class="c-pelle-rift">
       <div class="c-pelle-rift-row">
-        <div class="c-pelle-rift-column c-pelle-rift-status">
-          <h2 class="c-pelle-rift-name-header">
-            {{ riftName() }}
-          </h2>
-          <div class="c-pelle-rift-rift-info-container">
-            <div
-              v-for="(effect, idx) in effects"
-              :key="idx"
-            >
-              {{ effect || "" }}
-            </div>
-          </div>
-        </div>
-        <div class="c-pelle-rift-column">
-          <PelleStrike :strike="strike" />
-          <PelleRiftBar :rift="rift" />
-        </div>
-        <div class="c-pelle-rift-status">
-          <div class="c-pelle-rift-fill-status">
+        <div class="c-pelle-rift-row-info">
+          <div class="c-pelle-rift-column c-pelle-rift-status">
             <h2 class="c-pelle-rift-name-header">
               {{ riftName() }}
             </h2>
@@ -118,6 +108,29 @@ export default {
               <br>
               Total Filled: {{ formatRift(rift.totalFill) }}
             </div>
+            <div class="c-pelle-rift-rift-info-container">
+              <div
+                v-for="(effect, idx) in effects"
+                :key="idx"
+              >
+                {{ effect || "" }}
+              </div>
+            </div>
+          </div>
+          <div class="c-pelle-rift-column c-pelle-bar-strike-column">
+            <PelleStrike :strike="strike" />
+          </div>
+        </div>
+        <PelleRiftBar :rift="rift" />
+        <div class="c-pelle-milestones">
+          <div 
+            v-for="(milestone, idx) in riftMilestones"
+            class="c-pelle-indiv-milestone"
+            :class="{ 'c-pelle-milestone-unlocked': milestone.isUnlocked }"
+            :key="idx"
+          >
+            {{ milestoneResourceText(milestone) }}<br/>
+            {{ milestone.description }}
           </div>
         </div>
       </div>
@@ -130,6 +143,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .c-pelle-rift {
@@ -142,7 +156,7 @@ export default {
   /* transparent crimson */
   box-shadow: inset 0 0 1rem 0.1rem rgba(237, 20, 61, 45%), 0 0 1rem 0.1rem rgba(237, 20, 61, 45%);
   margin-top: 1.2rem;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 .t-s1 .c-pelle-rift {
@@ -151,26 +165,38 @@ export default {
 
 .c-pelle-rift-row {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 
-.c-pelle-rift-column {
+.c-pelle-rift-row-info {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.c-pelle-rift-column:first-child {
+  flex: 0 0 40%;
+}
+
+.c-pelle-rift-column:last-child {
+  flex: 0 0 60%;
 }
 
 .c-pelle-rift-rift-info-container {
-  height: 5rem;
-  font-weight: 400;
+  height: auto;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: normal;
   color: var(--color-text);
 }
 
 .c-pelle-rift-status {
   display: flex;
   flex-direction: column;
-  width: 28rem;
   align-items: center;
 }
 
@@ -178,5 +204,29 @@ export default {
   font-weight: bold;
   color: var(--color-pelle--base);
   padding: 0.2rem;
+}
+.c-pelle-milestones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.c-pelle-indiv-milestone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 2px solid var(--color-pelle--base);
+}
+
+.c-pelle-milestone-unlocked {
+  background-color: var(--color-pelle--base);
+  color: black;
 }
 </style>

@@ -81,10 +81,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .o-strike-warning {
   color: var(--color-pelle--base);
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 </style>

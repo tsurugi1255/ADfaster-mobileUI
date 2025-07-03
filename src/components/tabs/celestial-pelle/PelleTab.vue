@@ -109,6 +109,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+  width: 95%;
 }
 
 .l-pelle-all-content-container {
@@ -120,6 +122,7 @@ export default {
 
 .o-pelle-button {
   font-family: Typewriter;
+  font-size: 2rem;
   color: var(--color-text);
   background: var(--color-text-inverted);
   border: 0.1rem solid var(--color-pelle--base);

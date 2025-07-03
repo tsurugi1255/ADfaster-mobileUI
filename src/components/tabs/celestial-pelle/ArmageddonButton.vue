@@ -68,11 +68,13 @@ export default {
 <style scoped>
 .c-armageddon-button {
   display: block;
+  font-size: 2rem;
   font-family: Typewriter;
   color: var(--color-text);
   background: var(--color-text-inverted);
   border: 0.1rem solid var(--color-pelle--base);
   border-radius: var(--var-border-radius, 0.5rem);
+  height: fit-content;
 }
 
 .s-base--metro .c-armageddon-button {
@@ -85,9 +87,9 @@ export default {
 }
 
 .l-armageddon-button--header {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0rem;
+  font-size: 2rem;
+  font-weight: normal;
+  padding: 2rem;
 }
 
 .c-armageddon-button:hover {
@@ -102,7 +104,7 @@ export default {
 }
 
 .c-remnant-gain {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--color-pelle--base);
 }

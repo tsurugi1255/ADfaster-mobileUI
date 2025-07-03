@@ -48,8 +48,8 @@ export default {
 .c-celestial-quote-history--button {
   align-self: center;
   font-family: Typewriter;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: var(--color-text);
   background-color: var(--color-base);
   border: var(--var-border-width, 0.2rem) solid var(--scoped-cel-color);

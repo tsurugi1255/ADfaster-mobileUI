@@ -129,22 +129,33 @@ export default {
 
 <style>
 .c-remnant-factors-container {
-  position: relative;
-  z-index: 4;
+  margin-top: 1rem;
+  margin-bottom: 5px;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .c-remnant-factors-container .l-expanding-control-box {
   transition: opacity 0.5s;
+  height: auto !important;
+}
+
+.l-expanding-control-box {
+  width: 70%;
 }
 
 .c-remnant-factors {
-  z-index: 4;
-  font-weight: bold;
+  position: static !important;
+  font-size: 2rem;
+  font-weight: normal;
   color: var(--color-text);
   background-color: var(--color-text-inverted);
   border: var(--var-border-width, 0.2rem) solid var(--color-pelle--base);
   border-radius: var(--var-border-radius, 0.5rem);
-  padding: 0.3rem;
+  padding: 2rem;
+  transform: none !important;
+  min-height: 5.5rem;
 }
 
 .c-remnant-factors-text {

@@ -226,7 +226,7 @@ export default {
 /* #region CONTAINER STYLES */
 .c-pelle-rift-bar {
   display: flex;
-  width: 32rem;
+  width: 100%;
   height: 5rem;
   position: relative;
   justify-content: center;
@@ -234,6 +234,7 @@ export default {
   background: linear-gradient(45deg, #ffffff, #e6e6e6);
   border: var(--var-border-width, 0.2rem) solid var(--color-pelle--secondary);
   border-radius: var(--var-border-radius, 0.5rem);
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -349,7 +350,7 @@ export default {
 /* #region PERCENTAGE STYLES */
 .o-pelle-rift-bar-percentage {
   z-index: 2;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--color-text);
   filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--color-pelle--base));
 
