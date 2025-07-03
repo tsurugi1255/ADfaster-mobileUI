@@ -6958,17 +6958,19 @@ kbd {
 /* #startregion ra tab */
 
 .l-ra-celestial-tab {
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .c-ra-pet-header {
-  width: 35rem;
+  width: 100%;
   background: linear-gradient(#2f2f2f, #464646);
   border-radius: var(--var-border-radius, 1.5rem);
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
+  font-size: 2rem;
 }
 
 .s-base--metro .c-ra-pet-header {
@@ -6976,16 +6978,13 @@ kbd {
 }
 
 .c-ra-pet-title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .l-ra-bar-container {
   display: flex;
-  width: 100%;
-  height: 4rem;
-  margin: 0 0 2rem;
-  margin-top: 1rem;
-  margin-left: -0.2rem;
+  flex: 0 0 75%;
+  height: 100%;
 }
 
 .l-ra-lvl-chevron {
@@ -7038,8 +7037,8 @@ kbd {
 }
 
 .c-ra-exp-bar {
-  width: 100%;
-  height: 5rem;
+  height: 100%;
+  flex: 0 0 90%;
   position: relative;
   z-index: 1;
   border: var(--var-border-width, 0.2rem) solid black;
@@ -7058,8 +7057,7 @@ kbd {
 
 .c-ra-upgrade-bar {
   display: flex;
-  width: 5rem;
-  height: 2.6rem;
+  flex: 0 0 75%;
   justify-content: flex-end;
   border: var(--var-border-width, 0.2rem) solid black;
 }
@@ -7074,25 +7072,25 @@ kbd {
 
 .l-ra-pet-container {
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 .c-ra-memory-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 .c-ra-upgrade-icon {
   display: flex;
-  width: 4rem;
-  height: 4rem;
+  width: 10%;
+  aspect-ratio: 1/1;
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 2.3rem;
+  font-size: 3.5rem;
   background: #222222;
   border: 0.1rem solid #111111;
   border-radius: var(--var-border-radius, 50%);
@@ -7112,14 +7110,15 @@ kbd {
 
 .l-ra-non-pets {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .c-ra-run-button {
   display: flex;
   flex-direction: column;
-  width: 33rem;
-  height: 36rem;
+  width: 100%;
+  font-size: 2rem;
   justify-content: center;
   align-items: center;
   font-family: Typewriter;
@@ -7127,17 +7126,17 @@ kbd {
   background: black;
   border: var(--var-border-width, 0.2rem) solid #9575cd;
   border-radius: var(--var-border-radius, 2rem);
-  margin: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  margin: 1rem 0;
 }
 
 .c-ra-run-button__icon {
   display: flex;
-  width: 12rem;
-  height: 12rem;
+  width: 20%;
+  aspect-ratio: 1/1;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 7.5rem;
   color: #9575cd;
   text-shadow: 0 0 1rem;
   background-color: black;
@@ -7196,15 +7195,15 @@ kbd {
 .c-ra-remembrance-unlock {
   display: flex;
   flex-direction: column;
-  width: 33rem;
-  height: 36rem;
+  width: 100%;
   justify-content: center;
   align-items: center;
   color: white;
   background: linear-gradient(#333333, #464646);
   border-radius: var(--var-border-radius, 2rem);
-  margin: 2rem;
-  padding: 1rem;
+  margin: 1rem 0;
+  padding: 2rem;
+  font-size: 2rem;
 }
 
 .s-base--metro .c-ra-remembrance-unlock {
@@ -7212,21 +7211,20 @@ kbd {
 }
 
 .c-ra-remembrance-unlock-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-top: 1rem;
 }
 
 .c-ra-pet-remembrance-button {
-  width: 13rem;
-  height: 6.5rem;
+  width: 100%;
+  min-height: 10rem;
   text-align: center;
   font-family: Typewriter;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   border: 0.1rem solid #222222;
   border-radius: var(--var-border-radius, 1rem);
-  margin: 0.2rem;
   cursor: pointer;
 }
 
@@ -7267,12 +7265,11 @@ kbd {
 
 .l-ra-all-pets-container {
   display: flex;
-  flex-wrap: wrap;
-  width: 80rem;
-  height: 100%;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 1rem auto;
 }
 
 .l-ra-unlock {
@@ -7308,20 +7305,22 @@ kbd {
 .l-ra-pet-upgrade-container {
   display: flex;
   flex-direction: column;
+  flex: 0 0 25%;
+  height: 100%;
 }
 
 .l-ra-pet-upgrade {
   display: flex;
+  flex: 1
 }
 
 .c-ra-pet-upgrade {
   display: flex;
-  width: 2.5rem;
-  height: 2.6rem;
+  flex: 0 0 25%;
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: black;
   background: grey;
   border: var(--var-border-width, 0.2rem) solid black;
@@ -7462,12 +7461,12 @@ kbd {
 
 .c-ra-level-up-btn {
   display: flex;
-  width: 3rem;
-  height: 5rem;
+  flex: 0 0 10%;
+  height: 100%;
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: black;
   background: grey;
   border: var(--var-border-width, 0.2rem) solid black;
@@ -7538,11 +7537,11 @@ kbd {
 
 .l-ra-pet-middle-container {
   display: flex;
-  height: 4rem;
+  height: 10rem;
   justify-content: center;
   align-items: center;
   margin: 1.5rem 0;
-  padding: 0 1rem;
+  padding: 0 4rem;
 }
 
 .c-alchemy-resource-info {

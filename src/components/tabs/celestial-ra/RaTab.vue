@@ -125,18 +125,6 @@ export default {
         All Memories have been returned.
       </div>
     </div>
-    <div>
-      Mouse-over the icons below the bar to see descriptions of upgrades,
-      <br>
-      and mouse-over <i class="fas fa-question-circle" /> icons for specific resource information.
-    </div>
-    <div class="l-ra-all-pets-container">
-      <RaPet
-        v-for="(pet, i) in pets"
-        :key="i"
-        :pet-config="pet"
-      />
-    </div>
     <div class="l-ra-non-pets">
       <button class="c-ra-run-button">
         <h2 :class="{ 'o-pelle-disabled': isDoomed }">
@@ -190,6 +178,13 @@ export default {
           (you need {{ formatInt(remembranceReq - totalLevels) }} more)
         </div>
       </div>
+    </div>
+    <div class="l-ra-all-pets-container">
+      <RaPet
+        v-for="(pet, i) in pets"
+        :key="i"
+        :pet-config="pet"
+      />
     </div>
   </div>
 </template>
