@@ -417,7 +417,7 @@ body.t-s12 {
 
 .t-normal .o-achievement__tooltip::after,
 .t-s12 .o-achievement__tooltip::after {
-  border-top-color: var(--color-accent);
+  border-top-color: var(--color-base);
 }
 
 .o-infinity-upgrade-btn--unavailable {
