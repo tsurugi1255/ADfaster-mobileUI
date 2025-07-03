@@ -76,7 +76,7 @@ export default {
 <template>
   <div
     v-if="hasDimension || hasAscension || hasSingularity || hasAnnihilated"
-    class="c-laitela-singularity-container"
+    class="c-laitela-singularity-container c-laitela-autobuyer-container"
   >
     <PrimaryToggleButton
       v-if="hasDimension"

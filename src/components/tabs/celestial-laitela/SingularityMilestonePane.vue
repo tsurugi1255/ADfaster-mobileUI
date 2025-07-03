@@ -39,11 +39,13 @@ export default {
     >
       Show all milestones
     </div>
-    <SingularityMilestoneComponent
-      v-for="milestone in milestones"
-      :key="milestone.id"
-      :milestone="milestone"
-      :suppress-glow="true"
-    />
+    <div class="o-laitela-milestone-container">
+      <SingularityMilestoneComponent
+        v-for="milestone in milestones"
+        :key="milestone.id"
+        :milestone="milestone"
+        :suppress-glow="true"
+      />
+    </div>
   </div>
 </template>

@@ -1942,10 +1942,15 @@ br {
 /* #region c-subtab-option-container */
 
 .c-subtab-option-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   justify-items: center;
+  width: 100%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -7805,19 +7810,20 @@ kbd {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+  width: 95%;
 }
 
 .o-laitela-run-button {
-  width: 24rem;
-  height: 84rem;
+  width: 100%;
   font-family: Typewriter;
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
-  margin-right: 1rem;
-  padding: 2rem;
+  padding: 4rem;
+  margin-top: 1rem;
 }
 
 .o-laitela-run-button--large {
@@ -7825,22 +7831,20 @@ kbd {
 }
 
 .o-laitela-matter-amount {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
 .c-dark-matter-dimension-container {
   display: flex;
   flex-direction: column;
-  width: 51rem;
-  height: 15rem;
+  width: 100%;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: auto;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 .o-dark-matter-dimension-amount {
@@ -7849,22 +7853,22 @@ kbd {
 }
 
 .c-dark-matter-dimension-buttons {
-  display: flex;
-  height: 6rem;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 0;
+  column-gap: 1rem;
 }
 
 .o-dark-matter-dimension-button {
-  width: 15rem;
-  height: 5rem;
   font-family: Typewriter;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
   margin-bottom: 1rem;
   transition-duration: 0.15s;
+  padding: 1rem 0;
 }
 
 .o-dark-matter-dimension-button--available {
@@ -7938,23 +7942,31 @@ kbd {
 
 .l-laitela-mechanics-container {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
+}
+
+.o-laitela-milestone-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .c-laitela-milestone {
   display: flex;
   flex-direction: column;
-  width: 21rem;
-  height: 16%;
+  width: 100%;
   position: relative;
   z-index: 0;
   justify-content: center;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: 0.1rem solid;
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: 1rem 0 0;
   padding: 0.6rem;
 }
 
@@ -8009,32 +8021,49 @@ kbd {
 
 .c-laitela-singularity-container {
   display: flex;
-  width: 98rem;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: normal;
   justify-content: space-around;
   align-items: center;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
+  margin-top: 2rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
+.c-laitela-singularity-container-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .c-laitela-singularity {
-  width: 40rem;
-  height: 11rem;
+  width: 90%;
   color: white;
   background: black;
   border: var(--var-border-width, 0.2rem) solid white;
   border-radius: var(--var-border-radius, 0.5rem);
   padding: 2rem;
   transition-duration: 0.15s;
+  margin: 2rem 0;
 }
 
-.c-laitela-singularity h2 {
+.c-laitela-singularity span {
   font-family: Typewriter;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: normal;
   margin: 0;
+}
+
+.c-laitela-singularity-container-inner,
+.o-laitela-dark-energy-amount {
+  flex: 1;
 }
 
 .c-laitela-singularity--active {
@@ -8048,9 +8077,9 @@ kbd {
 }
 
 .c-laitela-singularity__cap-control {
-  width: 20rem;
+  width: 49%;
   font-family: Typewriter;
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
@@ -8068,6 +8097,12 @@ kbd {
 .c-laitela-singularity__cap-control:hover {
   color: var(--color-laitela--base);
   background: var(--color-laitela--accent);
+}
+
+.o-laitela-cap-control-btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .l-singularity-milestone-modal {
@@ -8137,9 +8172,9 @@ kbd {
 }
 
 .o-laitela-singularity-modal-button {
-  width: 21rem;
-  height: 4%;
-  font-weight: bold;
+  width: 100%;
+  font-weight: normal;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
@@ -8172,8 +8207,8 @@ kbd {
 .c-laitela-next-milestones {
   display: flex;
   flex-direction: column;
-  height: 84rem;
-  margin-left: 1rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 @keyframes a-dark-energy-glow {
@@ -8183,8 +8218,8 @@ kbd {
 }
 
 .o-laitela-run-button__icon {
-  width: 12rem;
-  height: 12rem;
+  width: 20%;
+  aspect-ratio: 1/1;
   align-items: center;
   background-color: black;
   background-image: url("../images/laitela-icon.svg");
@@ -8193,7 +8228,7 @@ kbd {
   background-size: 4.95rem;
   border: var(--var-border-width, 0.4rem) solid var(--color-laitela--accent);
   border-radius: 50%;
-  margin: 1.5rem auto;
+  margin: 2.5rem auto;
   transition-duration: 0.2s;
   animation: a-laitela-run-button__icon--scroll 15s infinite linear;
 }
@@ -8212,22 +8247,26 @@ kbd {
   100% { background-position-y: 24rem; }
 }
 
+.c-dark-matter-dimensions-grp {
+  margin-top: 1rem;
+  width: 100%;
+}
+
 .l-laitela-annihilation-container {
-  width: 51rem;
-  height: 20rem;
+  width: 100%;
   font-family: Typewriter, serif;
   font-size: 1.2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .l-laitela-annihilation-button {
-  width: 35rem;
-  height: 3rem;
+  width: 70%;
   font-family: Typewriter, serif;
+  font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
@@ -8253,23 +8292,36 @@ kbd {
   background: var(--color-laitela--accent);
 }
 
+.l-laitela-annihilation-container > span {
+  font-size: 2rem;
+}
+
 .c-laitela-annihilation-input {
+  font-size: 2.5rem;
   border-color: var(--color-laitela--accent);
+  padding: 4px 4px 0 4px;
+  width: 15% !important;
+  height: auto !important;
+}
+
+.c-laitela-autobuyer-container {
+  flex-wrap: wrap;
 }
 
 .c-laitela-automation-toggle {
-  width: 22rem;
-  height: 3rem;
+  width: 45%;
+  height: fit-content;
   font-family: Typewriter;
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
   border: var(--var-border-width, 0.2rem) solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
-  padding: 0.5rem;
+  padding: 1rem;
   transition-duration: 0.15s;
   cursor: pointer;
+  margin: 5px 0;
 }
 
 .c-laitela-automation-toggle:hover {

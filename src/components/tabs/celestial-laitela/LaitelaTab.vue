@@ -119,7 +119,7 @@ export default {
     <LaitelaAutobuyerPane v-if="autobuyersUnlocked" />
     <div class="l-laitela-mechanics-container">
       <LaitelaRunButton />
-      <div>
+      <div class="c-dark-matter-dimensions-grp">
         <DarkMatterDimensionGroup />
         <AnnihilationButton v-if="showAnnihilation" />
       </div>
@@ -127,3 +127,5 @@ export default {
     </div>
   </div>
 </template>
+
+
