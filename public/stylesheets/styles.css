@@ -6110,30 +6110,31 @@ kbd {
   border-width: 0.1rem;
 }
 
-.c-effarig-relics {
-  font-size: 1.5rem;
-  padding: 20px;
-}
-
 /* #endregion Teresa tab */
 
 /* #region effarig tab */
+.l-effarig-celestial-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
 
 .c-effarig-shop-button {
   display: flex;
   flex-direction: column;
-  width: 35rem;
+  width: 60%;
   justify-content: center;
   align-items: center;
   font-family: Typewriter;
-  font-size: 1.4rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: black;
   background: var(--color-disabled);
   border: none;
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: 1rem;
   padding: 1rem;
+  margin-top: 2rem;
   transition-duration: 0.2s;
 }
 
@@ -6382,26 +6383,29 @@ kbd {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  font-size: 2rem;
 }
 
 .l-effarig-shop-and-run {
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .l-effarig-run {
   display: inline-flex;
   flex-direction: column;
-  width: 520px;
+  width: 100%;
   align-items: center;
   border: var(--var-border-width, 0.2rem) solid var(--color-effarig--base);
   border-radius: var(--var-border-radius, 0.5rem);
-  margin-left: 3rem;
+  margin: 3rem 0;
   padding: 1rem;
+  font-size: 2rem;
 }
 
 .c-effarig-run-description {
-  font-size: larger;
   margin: 0.5rem 0;
 }
 
@@ -6410,7 +6414,7 @@ kbd {
   flex-direction: row;
   width: 100%;
   align-items: left;
-  margin: 0.5rem;
+  margin: 2rem 0;
 }
 
 .c-effarig-tab__reward-label {

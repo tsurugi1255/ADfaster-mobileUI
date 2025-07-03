@@ -95,7 +95,7 @@ export default {
 </script>
 
 <template>
-  <div class="l-teresa-celestial-tab">
+  <div class="l-effarig-celestial-tab">
     <CelestialQuoteHistory celestial="effarig" />
     <div class="l-effarig-shop-and-run">
       <div class="l-effarig-shop">
@@ -107,7 +107,6 @@ export default {
           </span>
           <span v-else>
             Each new Glyph will have its rarity increased
-            <br>
             by a random value between +{{ formatPercents(0) }} and +{{ formatPercents(shardRarityBoost, 2) }}.
           </span>
           <span v-if="shardPower > 1">
@@ -129,9 +128,7 @@ export default {
         <div class="c-effarig-relic-description">
           <br>
           More Eternity Points slightly increases Relic Shards
-          <br>
           gained. More distinct Glyph effects significantly
-          <br>
           increases Relic Shards gained.
         </div>
         <EffarigUnlockButton
@@ -185,7 +182,10 @@ export default {
 </template>
 
 <style scoped>
+
+.c-effarig-relics,
 .c-effarig-relic-description {
-  width: 46rem;
+  width: 100%;
+  padding: 0 4rem;
 }
 </style>
