@@ -45,7 +45,7 @@ export default {
     },
     styleObject() {
       return {
-        "background-position": `-${(this.achievement.column - 1) * 104}px -${(this.achievement.row - 1) * 104}px`
+        "background-image": `url(../images/mobile-ach-img/c${this.achievement.row}${this.achievement.column}.webp)`
       };
     },
     classObject() {

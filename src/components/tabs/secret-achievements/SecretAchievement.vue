@@ -82,12 +82,6 @@ export default {
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
-    <HintText
-      type="achievements"
-      class="l-hint-text--achievement"
-    >
-      S{{ id }}
-    </HintText>
     <div class="o-achievement__tooltip">
       <template v-if="isMouseOver">
         <div class="o-achievement__tooltip__name">

@@ -2989,19 +2989,18 @@ br {
   border: var(--var-border-width, 0.1rem) solid;
   -webkit-user-select: none;
   user-select: none;
-  zoom: 115%;
 }
 
-.o-achievement--normal {
-  background-image: url("../images/normal achievements.png");
-}
-
+.o-achievement--normal,
 .o-achievement--cancer {
-  background-image: url("../images/cancer achievements.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .o-achievement--secret {
   background-image: url("../images/secret achievements.png");
+  zoom: 115%;
 }
 
 .o-achievement--unlocked {
@@ -3011,7 +3010,7 @@ br {
 
 .o-achievement--hidden {
   background-color: #555555;
-  background-image: url("../images/achhidden.png");
+  background-image: url("../images/mobile-ach-img/achhidden.webp");
   border-color: black;
 }
 
