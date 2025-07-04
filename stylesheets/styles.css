@@ -1709,20 +1709,19 @@ br {
   font-size: 1rem;
 }
 
-.o-primary-btn--replicanti-unlock {
-  width: 20rem;
-  height: 8rem;
-}
-
 .o-primary-btn--replicanti-upgrade {
-  width: 18rem;
-  height: 5rem;
-  font-size: 1rem;
-  padding: 0.1rem 0.6rem;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: normal;
 }
 
 .o-primary-btn--replicanti-upgrade-toggle {
-  font-size: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  padding: 1rem;
+  height: auto;
 }
 
 .o-primary-btn--dilation-upgrade-toggle {
@@ -1740,16 +1739,23 @@ br {
   padding: 1rem;
 }
 
-.o-primary-btn--replicanti-galaxy {
-  width: 22rem;
-  height: 7rem;
-  font-size: 1.2rem;
-  padding: 0.1rem 0.6rem;
+.o-primary-btn--replicanti-galaxy,
+.o-primary-btn--replicanti-unlock {
+  width: auto;
+  max-width: 30rem;
+  height: auto;
+  font-size: 2rem;
+  font-weight: normal;
+  padding: 2rem;
 }
 
 .o-primary-btn--replicanti-galaxy-toggle {
-  width: 22rem;
-  font-size: 1.2rem;
+  width: auto;
+  min-width: 30rem;
+  height: auto;
+  font-size: 2rem;
+  font-weight: normal;
+  align-self: auto !important;
 }
 
 .o-primary-btn--time-study-options {
@@ -3750,6 +3756,8 @@ br {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
+  font-size: 2rem;
 }
 
 .l-infinity-upgrades-tab__grid {
@@ -3757,7 +3765,13 @@ br {
 }
 
 .l-infinity-upgrades-tab__mult-btn {
-  margin: 0.5rem 0.8rem;
+  flex: 1;
+}
+
+.l-infinity-upgrades-tab__mult-btn .o-primary-btn {
+  font-size: 2rem;
+  height: auto;
+  padding: 1rem;
 }
 
 /* #endregion l-infinity-upgrades-tab */
@@ -3765,8 +3779,8 @@ br {
 /* #region l-infinity-upgrade-grid */
 
 .l-infinity-upgrade-grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .l-infinity-upgrade-grid__cell {
@@ -3776,24 +3790,30 @@ br {
 /* #endregion l-infinity-upgrade-grid */
 
 .l-infinity-upgrades-bottom-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
   margin-top: 1rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 /* #region o-infinity-upgrade-btn */
 
 .o-infinity-upgrade-btn {
-  width: 19rem;
-  height: 9rem;
+  flex: 1;
+  height: auto;
+  min-height: 20rem;
   font-family: Typewriter, serif;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: white;
   background-color: #1f1f1f;
   border: 0.1rem solid black;
   border-radius: var(--var-border-radius, 0.4rem);
   transition-duration: 0.2s;
   cursor: pointer;
+  padding: 2rem;
 }
 
 .t-s6 .o-infinity-upgrade-btn,
@@ -4651,20 +4671,21 @@ properly on certain themes. */
   display: flex;
   flex-direction: column;
   color: var(--color-text);
+  font-size: 2rem;
 
   /* To prevent button jitter */
-  width: 100%;
+  width: 95%;
   align-items: center;
 }
 
 /* #region c-replicanti-description */
 
 .c-replicanti-description {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .c-replicanti-description__accent {
-  font-size: 2.3rem;
+  font-size: 3rem;
   color: #2196f3;
 }
 
@@ -4693,12 +4714,18 @@ properly on certain themes. */
 /* #endregion c-replicanti-description */
 
 .l-replicanti-upgrade-row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
 }
 
-.l-replicanti-upgrade-button {
-  margin: 0.3rem;
+.l-replicanti-galaxy-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* #endregion Replicanti */
@@ -4711,10 +4738,13 @@ properly on certain themes. */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
 }
 
 .l-break-infinity-tab__break-btn {
   margin-top: 2rem;
+  width: auto;
+  min-width: 40rem;
 }
 
 .o-infinity-upgrade-btn--feel-eternity {
@@ -4733,6 +4763,7 @@ properly on certain themes. */
 .l-break-infinity-upgrade-grid {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .l-break-infinity-upgrade-grid__row {
