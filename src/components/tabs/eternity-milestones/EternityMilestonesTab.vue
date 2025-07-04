@@ -38,17 +38,19 @@ export default {
     <div>
       Offline generation milestones are only active under certain conditions, mouse-over to see these conditions.
     </div>
-    <div
-      v-for="row in rows"
-      :key="row"
-      class="l-eternity-milestone-grid__row"
-    >
-      <EternityMilestoneButton
-        v-for="column in 3"
-        :key="row * 3 + column"
-        :get-milestone="getMilestone(row, column)"
-        class="l-eternity-milestone-grid__cell"
-      />
+    <div class="l-eternity-milestone-grid__container">
+      <div
+        v-for="row in rows"
+        :key="row"
+        class="l-eternity-milestone-grid__row"
+      >
+        <EternityMilestoneButton
+          v-for="column in 3"
+          :key="row * 3 + column"
+          :get-milestone="getMilestone(row, column)"
+          class="l-eternity-milestone-grid__cell"
+        />
+      </div>
     </div>
   </div>
 </template>

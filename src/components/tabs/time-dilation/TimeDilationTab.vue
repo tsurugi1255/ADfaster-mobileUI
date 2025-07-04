@@ -37,10 +37,12 @@ export default {
         [
           DilationUpgrade.doubleGalaxies,
           DilationUpgrade.tdMultReplicanti,
-          DilationUpgrade.ndMultDT
         ],
         [
+          DilationUpgrade.ndMultDT,
           DilationUpgrade.ipMultDT,
+        ],
+        [
           DilationUpgrade.timeStudySplit,
           DilationUpgrade.dilationPenalty
         ],
@@ -133,6 +135,7 @@ export default {
     <div
       @mouseover="isHovering = true"
       @mouseleave="isHovering = false"
+      class="l-dilation-btn-container"
     >
       <DilationButton />
     </div>
@@ -168,7 +171,7 @@ export default {
       <div
         v-for="(upgradeRow, row) in allRebuyables"
         :key="'rebuyable' + row"
-        class="l-dilation-upgrades-grid__row"
+        class="l-dilation-rebuyables-grid__row"
       >
         <DilationUpgradeButton
           v-for="upgrade in upgradeRow"
@@ -208,15 +211,28 @@ export default {
 .l-dilation-upgrades-grid {
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.l-dilation-rebuyables-grid__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.l-dilation-rebuyables-grid__row > div:first-child,
+.l-dilation-upgrades-grid__row:last-child > div {
+  grid-column: 1/-1;
+  justify-self: center;
+  width: calc(50% - 0.5rem);
 }
 
 .l-dilation-upgrades-grid__row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.l-dilation-upgrades-grid__cell {
-  margin: 1.2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 </style>

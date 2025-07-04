@@ -149,15 +149,17 @@ export default {
 
 <style scoped>
 .o-dilation-upgrade {
-  width: 19rem;
-  height: 9rem;
+  width: 100%;
+  min-height: 15rem;
+  height: 100%;
   font-family: Typewriter, serif;
-  font-size: 1rem;
+  font-size: 1.7rem;
   font-weight: bold;
   background: black;
   border: 0.1rem solid;
   border-radius: var(--var-border-radius, 0.4rem);
   transition-duration: 0.2s;
+  padding: 2rem;
 }
 
 .o-dilation-upgrade--available {
@@ -205,7 +207,7 @@ export default {
 }
 
 .o-dilation-upgrade__description--small-text {
-  font-size: 0.95rem;
+  font-size: 1.7rem;
 }
 
 .s-base--metro .o-dilation-upgrade--unavailable,

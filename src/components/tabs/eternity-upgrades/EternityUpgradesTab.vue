@@ -14,10 +14,12 @@ export default {
         [
           EternityUpgrade.idMultEP,
           EternityUpgrade.idMultEternities,
-          EternityUpgrade.idMultICRecords
         ],
         [
+          EternityUpgrade.idMultICRecords,
           EternityUpgrade.tdMultAchs,
+        ],
+        [
           EternityUpgrade.tdMultTheorems,
           EternityUpgrade.tdMultRealTime,
         ]
@@ -33,6 +35,13 @@ export default {
 
 <template>
   <div class="l-eternity-upgrades-grid">
+    <div class="l-eternity-mult-button-info">
+      The cost for the {{ formatX(5) }} multiplier jumps at {{ format(costIncreases[0]) }},
+      {{ formatPostBreak(costIncreases[1], 2) }}, and {{ formatPostBreak(costIncreases[2]) }} Eternity Points.
+      <br>
+      The cost increases super-exponentially after {{ formatPostBreak(costIncreases[3]) }} Eternity Points.
+    </div>
+    <EPMultiplierButton />
     <div
       v-for="(row, i) in grid"
       :key="i"
@@ -45,13 +54,6 @@ export default {
         class="l-eternity-upgrades-grid__cell"
       />
     </div>
-    <EPMultiplierButton />
-    <div>
-      The cost for the {{ formatX(5) }} multiplier jumps at {{ format(costIncreases[0]) }},
-      {{ formatPostBreak(costIncreases[1], 2) }}, and {{ formatPostBreak(costIncreases[2]) }} Eternity Points.
-      <br>
-      The cost increases super-exponentially after {{ formatPostBreak(costIncreases[3]) }} Eternity Points.
-    </div>
   </div>
 </template>
 
@@ -61,14 +63,29 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 95%;
+}
+
+.l-eternity-mult-button-info {
+  font-size: 1.7rem;
+  width: 50%;
+}
+
+.l-eternity-upgrades-grid > .l-spoon-btn-group {
+  max-width: 50%;
+  width: auto;
+  margin: 2rem 0;
 }
 
 .l-eternity-upgrades-grid__row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .l-eternity-upgrades-grid__cell {
-  margin: 0.5rem 0.8rem;
+  font-size: 2rem;
 }
 </style>

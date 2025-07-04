@@ -78,7 +78,7 @@ export default {
       Cost: {{ quantify("Eternity Point", cost, 2, 0) }}
     </button>
     <PrimaryButton
-      class="l--spoon-btn-group__little-spoon o-primary-btn--small-spoon"
+      class="l--spoon-btn-group__little-spoon o-primary-btn--small-spoon o-primary-btn--eternity-upgrade-toggle"
       @click="upgrade.buyMax(false)"
     >
       Max Eternity Point mult
@@ -87,7 +87,7 @@ export default {
       v-if="isAutoUnlocked"
       v-model="isAutobuyerActive"
       label="Autobuy EP mult"
-      class="l--spoon-btn-group__little-spoon o-primary-btn--small-spoon"
+      class="l--spoon-btn-group__little-spoon o-primary-btn--small-spoon o-primary-btn--eternity-upgrade-toggle"
     />
   </div>
 </template>
@@ -95,5 +95,12 @@ export default {
 <style scoped>
 .l-margin-top {
   margin-top: 0.55rem;
+}
+.o-primary-btn--eternity-upgrade-toggle {
+  font-size: 2rem;
+  padding: 1rem;
+  height: auto;
+  margin: 0.5rem 0;
+  font-weight: normal;
 }
 </style>
