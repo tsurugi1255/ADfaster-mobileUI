@@ -685,24 +685,17 @@ body.t-s12 {
   transform: translateY(-50%);
 }
 
-.l-reality-upgrade-btn {
-  width: 18rem;
-  margin: 0.6rem 0.4rem;
-}
 
 .l--spoon-btn-group__little-spoon-reality-btn {
-  width: 18rem;
   align-self: center;
-  margin-top: -0.2rem;
-  margin-bottom: 0.6rem;
 }
 
 .l-hint-text--reality-upgrade {
-  top: -1.3rem;
+  top: -3rem;
 }
 
 .c-hint-text--reality-upgrade {
-  font-size: 0.95rem;
+  font-size: 2rem;
 }
 
 .resource-eternity-canreset > div {
@@ -808,7 +801,7 @@ body.t-s12 {
 }
 
 .l-equipped-glyphs {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .t-normal .c-sacrificed-glyphs--dragover,
