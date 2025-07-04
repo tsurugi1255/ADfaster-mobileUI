@@ -8621,14 +8621,27 @@ kbd {
 .l-reality-upgrade-grid {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   align-items: center;
   margin-top: 1.2rem;
 }
 
 .l-reality-upgrade-grid__row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.l-reality-upgrade-grid__row > .l-spoon-btn-group:first-child {
+  grid-column: 1/-1;
+  width: 50%;
+  justify-self: center;
+}
+
+.l-reality-upgrade-grid__row > .l-spoon-btn-group {
+  min-height: 20rem;
 }
 
 .l-reality-upgrade-btn {

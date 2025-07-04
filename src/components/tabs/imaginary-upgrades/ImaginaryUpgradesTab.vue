@@ -76,11 +76,12 @@ export default {
 <style scoped>
 .c-cap-text {
   color: var(--color-text);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .c-info-text {
   color: var(--color-text);
   margin: 1.5rem;
+  font-size: 1.5rem;
 }
 </style>
