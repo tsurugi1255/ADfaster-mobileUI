@@ -461,20 +461,18 @@ button:focus {
   font-family: Typewriter, serif;
   color: var(--color-text);
   pointer-events: all;
-}
-
-.l-tt-buy-button {
-  margin: 0.3rem;
+  width: 100%;
 }
 
 .c-tt-buy-button {
   font-family: Typewriter, serif;
-  font-size: 1.35rem;
+  font-size: 2rem;
   font-weight: bold;
   border: 0.1rem solid #691fa5;
   border-radius: var(--var-border-radius, 4px);
   transition-duration: 0.2s;
-  height: 3.5rem !important;
+  height: auto !important;
+  padding: 1rem;
 }
 
 .c-tt-buy-button--unlocked {
@@ -500,13 +498,15 @@ button:focus {
 .timetheorems {
   flex: 1 0 auto;
   text-align: center;
-  font-size: 15px;
+  font-size: 2rem;
 }
 
 .ttbuttons-row {
   display: flex;
   flex-direction: column;
   transition: all 0.25s ease-out;
+  width: 100%;
+  height: auto !important;
 }
 
 .ttbuttons-top-row {
@@ -518,19 +518,19 @@ button:focus {
   flex-shrink: 0;
   min-height: 3rem;
   align-self: stretch;
-  font-size: 1.2rem;
-  margin: 0.3rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  font-size: 2rem;
+  /* margin: 0.3rem; */
+  padding: 1rem;
 }
 
 .o-tt-autobuyer-button {
   flex-grow: 0;
   flex-shrink: 0;
   height: 2.5rem;
-  min-width: 8rem;
+  min-width: 12rem;
   align-self: stretch;
-  font-size: 1rem !important;
+  font-size: 2rem !important;
+  font-weight: normal !important;
   margin: 0.3rem;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -538,7 +538,8 @@ button:focus {
 
 .l-tt-save-load-btn__wrapper {
   position: relative;
-  margin: 0.3rem;
+  width: 100%;
+  /* margin: 0.3rem; */
 }
 
 .l-preferred-tree-btn {
@@ -596,6 +597,8 @@ button:focus {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .ttshop-background {
@@ -610,8 +613,7 @@ button:focus {
 }
 
 .ttshop-container {
-  min-width: 60rem;
-  max-width: 80rem;
+  width: 100%;
   padding: 0 0.5rem;
   transition: all 0.25s ease-out;
 }

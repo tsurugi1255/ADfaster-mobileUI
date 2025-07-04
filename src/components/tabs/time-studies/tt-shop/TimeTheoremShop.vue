@@ -82,7 +82,7 @@ export default {
     },
     respecClassObject() {
       return {
-        "o-primary-btn--subtab-option": true,
+        // "o-primary-btn--subtab-option": true,
         "o-primary-btn--respec-active": this.respec
       };
     }
@@ -193,48 +193,76 @@ export default {
           </span>
         </div>
 
-        <div class="c-subtab-option-container">
-          <PrimaryButton
-            class="o-primary-btn--subtab-option"
+        <div
+          class="ttbuttons-row"
+          :style="shopBottomRowHeightStyle"
+        >
+          <div class="tt-max-auto-btn-grp">
+            <button
+              class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
+              @click="buyMaxTheorems"
+            >
+              Buy max
+            </button>
+            <PrimaryToggleButton
+              v-if="hasTTAutobuyer"
+              v-model="isAutobuyerOn"
+              class="o-tt-autobuyer-button c-tt-buy-button c-tt-buy-button--unlocked"
+              label="Auto:"
+            />
+          </div>
+          
+          <div class="tt-buy-buttons">
+            <TimeTheoremBuyButton
+              :budget="budget.am"
+              :cost="costs.am"
+              :format-cost="formatAM"
+              :action="buyWithAM"
+            />
+            <TimeTheoremBuyButton
+              :budget="budget.ip"
+              :cost="costs.ip"
+              :format-cost="formatIP"
+              :action="buyWithIP"
+            />
+            <TimeTheoremBuyButton
+              :budget="budget.ep"
+              :cost="costs.ep"
+              :format-cost="formatEP"
+              :action="buyWithEP"
+            />
+          </div>
+        </div>
+        <div class="l-tt-buy-max-vbox">
+          <button
+            class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
             @click="exportStudyTree"
           >
-            Export tree
-          </PrimaryButton>
-          <PrimaryButton
-            :class="respecClassObject"
-            @click="respec = !respec"
-          >
-            Respec Time Studies on next Eternity
-          </PrimaryButton>
-          <PrimaryButton
-            class="o-primary-btn--subtab-option"
-            onclick="Modal.studyString.show({ id: -1 })"
-          >
-            Import tree
-          </PrimaryButton>
-        </div>
-        
-        <div class="l-load-tree-area"><div class="l-tt-buy-max-vbox">
-          <button
-            v-if="!minimized"
-            class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
-            @click="buyMaxTheorems"
-          >
-            Buy max
+            Export Tree
           </button>
           <button
             class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
-            onClick="Modal.preferredTree.show()"
+            :class="respecClassObject"
+            @click="respec = !respec"
           >
-            Select Preferred Path
+            Respec on next Eternity
           </button>
-          <PrimaryToggleButton
-            v-if="!minimized && hasTTAutobuyer"
-            v-model="isAutobuyerOn"
-            class="o-tt-autobuyer-button c-tt-buy-button c-tt-buy-button--unlocked"
-            label="Auto:"
-          />
+          <button
+            class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
+            onclick="Modal.studyString.show({ id: -1 })"
+          >
+            Import Tree
+          </button>
         </div>
+        <div class="l-load-tree-area">
+          <div class="l-tt-buy-max-vbox">
+            <button
+              class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
+              onClick="Modal.preferredTree.show()"
+            >
+              Select Preferred Path
+            </button>
+          </div>
           <div class="l-tree-load-button-wrapper">
             <TimeStudySaveLoadButton
               v-for="saveslot in 6"
@@ -244,54 +272,35 @@ export default {
           </div>
         </div>
       </div>
-      <div
-        v-if="!minimized"
-        class="ttbuttons-row"
-        :style="shopBottomRowHeightStyle"
-      >
-        
-        <div class="tt-buy-buttons">
-          <TimeTheoremBuyButton
-            :budget="budget.am"
-            :cost="costs.am"
-            :format-cost="formatAM"
-            :action="buyWithAM"
-          />
-          <TimeTheoremBuyButton
-            :budget="budget.ip"
-            :cost="costs.ip"
-            :format-cost="formatIP"
-            :action="buyWithIP"
-          />
-          <TimeTheoremBuyButton
-            :budget="budget.ep"
-            :cost="costs.ep"
-            :format-cost="formatEP"
-            :action="buyWithEP"
-          />
-        </div>
-      </div>
-      <div
-        v-else
-        class="ttbuttons-row ttbuttons-bottom-row-hide"
-      />
     </div>
   </div>
 </template>
 
 <style scoped>
+
+.tt-max-auto-btn-grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tt-max-auto-btn-grp * {
+  margin: 3rem 0.5rem 1rem;
+  min-width: 15rem;
+}
 .l-load-tree-area {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  margin-top: 0.6rem
+  margin-bottom: 5rem;
 }
 
 .l-tree-load-button-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   width: 100%;
+  column-gap: 1rem;
 }
 
 .ttbuttons-bottom-row-hide {
@@ -303,6 +312,7 @@ export default {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  font-size: 2rem;
 }
 
 .checkbox-margin {
@@ -312,5 +322,8 @@ export default {
 .tt-buy-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  width: 100%;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 </style>
