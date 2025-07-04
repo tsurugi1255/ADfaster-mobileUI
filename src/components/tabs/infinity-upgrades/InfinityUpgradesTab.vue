@@ -130,6 +130,7 @@ export default {
         Respec Charged Infinity Upgrades on next Reality
       </PrimaryButton>
     </div>
+    <br/>
     <div v-if="chargeUnlocked">
       You have charged {{ formatInt(chargesUsed) }}/{{ formatInt(totalCharges) }} Infinity Upgrades.
       Charged Infinity Upgrades have their effect altered.
@@ -142,6 +143,16 @@ export default {
     <br>
     Within each column, the upgrades must be purchased from top to bottom.
     <br>
+    <div
+      v-if="bottomRowUnlocked"
+      class="l-infinity-upgrades-bottom-row"
+    >
+      <IpMultiplierButton class="l-infinity-upgrades-tab__mult-btn" />
+      <InfinityUpgradeButton
+        :upgrade="offlineIpUpgrade"
+        :class="btnClassObject(1)"
+      />
+    </div>
     <div class="l-infinity-upgrade-grid l-infinity-upgrades-tab__grid">
       <div
         v-for="(column, columnId) in grid"
@@ -160,22 +171,6 @@ export default {
         />
       </div>
     </div>
-    <div
-      v-if="bottomRowUnlocked"
-      class="l-infinity-upgrades-bottom-row"
-    >
-      <IpMultiplierButton class="l-infinity-upgrades-tab__mult-btn" />
-      <InfinityUpgradeButton
-        :upgrade="offlineIpUpgrade"
-        :class="btnClassObject(1)"
-      />
-    </div>
-    <div v-if="eternityUnlocked && bottomRowUnlocked">
-      The Infinity Point multiplier becomes more expensive
-      <br>
-      above {{ formatPostBreak(ipMultSoftCap) }} Infinity Points, and cannot be purchased past
-      {{ formatPostBreak(ipMultHardCap) }} Infinity Points.
-    </div>
   </div>
 </template>
 
@@ -186,7 +181,7 @@ export default {
   flex-direction: column;
   position: relative;
   border-radius: var(--var-border-radius, 0.3rem);
-  margin: 0 0.3rem;
+  margin: 1rem;
 }
 
 .c-infinity-upgrade-grid__column--background {
@@ -203,8 +198,7 @@ export default {
   opacity: 0.5;
 }
 
-.l-infinity-upgrades-bottom-row .l-infinity-upgrade-grid__cell,
-.l-infinity-upgrades-bottom-row .l-infinity-upgrades-tab__mult-btn {
-  margin: 0.5rem 1.1rem;
+.l-infinity-upgrades-bottom-row .l-infinity-upgrade-grid__cell {
+  margin: 0;
 }
 </style>

@@ -250,10 +250,10 @@ export default {
         more rapidly above {{ formatInt(distantRG) }} Replicanti Galaxies
         and even more so above {{ formatInt(remoteRG) }} Replicanti Galaxies.
       </div>
-      <br><br>
+      <br>
       <ReplicantiGainText />
       <br>
-      <ReplicantiGalaxyButton v-if="canSeeGalaxyButton" />
+      <ReplicantiGalaxyButton v-if="canSeeGalaxyButton" class="l-replicanti-galaxy-btn" />
     </template>
   </div>
 </template>

@@ -19,20 +19,24 @@ export default {
         [
           BreakInfinityUpgrade.totalAMMult,
           BreakInfinityUpgrade.currentAMMult,
-          BreakInfinityUpgrade.galaxyBoost,
         ],
         [
+          BreakInfinityUpgrade.galaxyBoost,
           BreakInfinityUpgrade.infinitiedMult,
+        ],
+        [
           BreakInfinityUpgrade.achievementMult,
           BreakInfinityUpgrade.slowestChallengeMult,
         ],
         [
           BreakInfinityUpgrade.infinitiedGen,
           BreakInfinityUpgrade.autobuyMaxDimboosts,
-          BreakInfinityUpgrade.autobuyerSpeed
         ],
         [
+          BreakInfinityUpgrade.autobuyerSpeed,
           BreakInfinityUpgrade.tickspeedCostMult,
+        ],
+        [
           BreakInfinityUpgrade.dimCostMult,
           BreakInfinityUpgrade.ipGen
         ]
