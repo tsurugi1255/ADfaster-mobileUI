@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <h3 v-if="isUnlocked">
+  <span v-if="isUnlocked">
     {{ description }} State:
     <template v-if="isPermanent">
       Permanently Active
@@ -55,7 +55,7 @@ export default {
     <template v-else>
       Inactive (Activation in {{ nextChange }})
     </template>
-  </h3>
+  </span>
 </template>
 
 <style scoped>

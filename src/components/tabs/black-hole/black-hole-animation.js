@@ -1,9 +1,9 @@
 export const BlackHoleAnimation = (function() {
-  const PLANET_SIZE = 1.5;
-  const PARTICLE_SIZE = 0.5;
+  const PLANET_SIZE = 3.0;
+  const PARTICLE_SIZE = 1.0;
   const PARTICLE_COUNT = 120;
   // Basically orbit size in pixels
-  const SEMIMAJOR_AXIS = 100;
+  const SEMIMAJOR_AXIS = 200;
   // Black Hole active time approximately corresponds to time with >2x
   const ACTIVE_THRESHOLD = 2;
 
@@ -65,7 +65,7 @@ export const BlackHoleAnimation = (function() {
 
     performDraw(context) {
       const { x, y } = Dot.calculatePosition(this.distance, this.angle);
-      context.arc(x + 200, y + 200, PLANET_SIZE, 0, 2 * Math.PI);
+      context.arc(x + 400, y + 400, PLANET_SIZE, 0, 2 * Math.PI);
       context.strokeStyle = "rgb(0, 0, 255)";
     }
   }
@@ -78,7 +78,7 @@ export const BlackHoleAnimation = (function() {
 
     performDraw(context) {
       // Glowing effect to make the hole more visible on dark themes
-      const glow = context.createRadialGradient(200, 200, 0, 200, 200, this.size * 2);
+      const glow = context.createRadialGradient(400, 400, 0, 400, 400, this.size * 2);
       if (BlackHoles.areNegative) {
         glow.addColorStop(0, "rgba(255, 255, 255, 1)");
         glow.addColorStop(0.85, "rgba(190, 190, 190, 1)");
@@ -91,7 +91,7 @@ export const BlackHoleAnimation = (function() {
         glow.addColorStop(1, "rgba(100, 100, 100, 0)");
       }
       context.fillStyle = glow;
-      context.fillRect(0, 0, 400, 400);
+      context.fillRect(0, 0, 800, 800);
       context.strokeStyle = "black";
     }
   }
@@ -187,7 +187,7 @@ export const BlackHoleAnimation = (function() {
       }
       const { x, y } = Dot.calculatePosition(this.distance, this.angle);
       if (this.respawnTick || !BlackHole(1).isActive) {
-        context.arc(x + 200, y + 200, this.size, 0, 2 * Math.PI);
+        context.arc(x + 400, y + 400, this.size, 0, 2 * Math.PI);
         if (this.isBlob) this.drawAndRotateBlob(context, x, y);
         return;
       }
@@ -199,8 +199,8 @@ export const BlackHoleAnimation = (function() {
         this.drawAndRotateBlob(context, x, y);
       } else {
         context.lineWidth *= 1;
-        context.moveTo(x + 200, y + 200);
-        context.lineTo(lastX + 200, lastY + 200);
+        context.moveTo(x + 400, y + 400);
+        context.lineTo(lastX + 400, lastY + 400);
       }
     }
 
@@ -221,7 +221,7 @@ export const BlackHoleAnimation = (function() {
       }
 
       context.save();
-      context.translate(x + 200, y + 200);
+      context.translate(x + 400, y + 400);
       context.rotate(-this.angle * Math.PI * 2 + Math.PI);
       context.fillText(this.blob, 0, 0);
       context.restore();
@@ -267,7 +267,7 @@ export const BlackHoleAnimation = (function() {
 
       this.planet.update(this.totalPhase(), this.eccentricity, this.period);
 
-      this.context.clearRect(0, 0, 400, 400);
+      this.context.clearRect(0, 0, 800, 800);
       this.hole.draw(this.context);
       for (const particle of this.particles) {
         particle.draw(this.context);

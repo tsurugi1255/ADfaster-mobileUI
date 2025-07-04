@@ -185,12 +185,6 @@ export default {
           Auto-pause: {{ pauseModeString }}
         </button>
       </div>
-      <canvas
-        ref="canvas"
-        class="c-black-hole-canvas"
-        width="400"
-        height="400"
-      />
       <div class="l-black-hole-upgrade-grid">
         <BlackHoleStateRow
           v-for="(blackHole, i) in blackHoles"
@@ -221,19 +215,23 @@ export default {
           :black-hole="blackHole"
         />
       </div>
+      <canvas
+        ref="canvas"
+        class="c-black-hole-canvas"
+        width="800"
+        height="800"
+      />
     </template>
   </div>
 </template>
 
 <style scoped>
-.l-auto-pause-button {
-  width: 30rem;
-}
 
 .l-pre-unlock-text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 2rem;
 }
 
 .c-black-hole-disabled-description {

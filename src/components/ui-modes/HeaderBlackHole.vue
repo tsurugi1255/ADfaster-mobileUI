@@ -147,7 +147,8 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .c-primary-btn--black-hole-header {

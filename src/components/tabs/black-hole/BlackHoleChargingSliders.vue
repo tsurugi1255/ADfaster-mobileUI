@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .l-black-hole-sliders {
-  width: 55rem;
+  width: 100%;
   color: var(--color-text);
 }
 

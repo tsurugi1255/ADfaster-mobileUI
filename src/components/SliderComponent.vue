@@ -387,7 +387,7 @@ export default {
       let ret = this.direction === 'vertical' ? {
         height: this.height,
       } : {
-        width: this.width,
+        width: "100%",
       }
       if (this.plusMinusButtons) {
         ret[this.direction === "vertical" ? "margin-top" : "margin-right"] = "0.5rem";
