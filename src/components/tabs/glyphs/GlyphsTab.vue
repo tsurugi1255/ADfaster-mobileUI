@@ -111,64 +111,92 @@ export default {
 <template>
   <div>
     <div class="l-glyphs-tab">
+      <div class="l-glyph-info-wrapper">
+        <span
+          class="l-glyph-color-box"
+          @click="toggleGlyphTextColors"
+        >
+          <div :class="glyphColorPosition()">
+            <label
+              :class="glyphColorState"
+            >
+              <span class="fas fa-palette" />
+            </label>
+          </div>
+        </span>
+        <div
+          v-if="sacrificeUnlocked"
+          class="c-glyph-info-options"
+        >
+          <button
+            :class="glyphInfoClass(!sacrificeDisplayed)"
+            @click="setInfoState(false)"
+          >
+            Current Glyph effects
+          </button>
+          <button
+            :class="glyphInfoClass(sacrificeDisplayed)"
+            @click="setInfoState(true)"
+          >
+            Glyph Sacrifice totals
+          </button>
+        </div>
+        <SacrificedGlyphs v-if="sacrificeUnlocked && sacrificeDisplayed" />
+        <CurrentGlyphEffects
+          v-else
+          :class="glyphInfoBorderClass()"
+        />
+      </div>
+      
+      <ExpandingControlBox
+        width-source="content"
+        label="Glyph Level Factors"
+        container-class="c-glyph-level-factors-dropdown-header"
+        class="l-glyph-level-factors"
+      >
+        <template #dropdown>
+          <GlyphLevelsAndWeights />
+        </template>
+      </ExpandingControlBox>
       <div class="l-reality-button-column">
-        <GlyphPeek />
-
-        <div
-          v-if="resetRealityDisplayed"
-          class="l-reality-button-group"
-        >
-          <RealityAmplifyButton
-            v-if="!isInCelestialReality"
-            :class="buttonGroupClass()"
-          />
-          <ResetRealityButton :class="buttonGroupClass()" />
+        <div class="l-equipped-glyphs-and-effects-container">
+          <EquippedGlyphs />
         </div>
-
-        <div
-          v-if="isInCelestialReality"
-          class="l-celestial-auto-restart-checkbox"
-        >
-          <input
-            id="autoRestart"
-            v-model="autoRestartCelestialRuns"
-            type="checkbox"
-            :value="autoRestartCelestialRuns"
-            class="o-clickable"
-            @input="toggleAutoRestartCelestial()"
+        <div class="l-reality-control-buttons">
+          <GlyphPeek />
+          <div
+            v-if="resetRealityDisplayed"
+            class="l-reality-button-group"
           >
-          <label
-            for="autoRestart"
-            class="o-clickable"
+            <RealityAmplifyButton
+              v-if="!isInCelestialReality"
+              :class="buttonGroupClass()"
+            />
+            <ResetRealityButton :class="buttonGroupClass()" />
+          </div>
+
+          <div
+            v-if="isInCelestialReality"
+            class="l-celestial-auto-restart-checkbox"
           >
-            Repeat this Celestial's Reality
-          </label>
+            <input
+              id="autoRestart"
+              v-model="autoRestartCelestialRuns"
+              type="checkbox"
+              :value="autoRestartCelestialRuns"
+              class="o-clickable"
+              @input="toggleAutoRestartCelestial()"
+            >
+            <label
+              for="autoRestart"
+              class="o-clickable"
+            >
+              Repeat this Celestial's Reality
+            </label>
+          </div>
+          <RealityReminder />
+          <SingleGlyphCustomzationPanel />
         </div>
-
-        <br>
-
-        <RealityReminder />
-
-        <div v-if="showInstability">
-          <br>
-          Glyphs are becoming unstable.
-          <br>
-          Glyph levels higher than {{ formatInt(instabilityThreshold) }} are harder to reach.
-          <br>
-          This effect is even stronger above level {{ formatInt(hyperInstabilityThreshold) }}.
-        </div>
-        <SingleGlyphCustomzationPanel />
-        <ExpandingControlBox
-          width-source="content"
-          label="Glyph Level Factors"
-          container-class="c-glyph-level-factors-dropdown-header"
-          class="l-glyph-level-factors"
-        >
-          <template #dropdown>
-            <GlyphLevelsAndWeights />
-          </template>
-        </ExpandingControlBox>
-        <GlyphTabSidebar />
       </div>
       <div class="l-player-glyphs-column">
         <div
@@ -176,58 +204,31 @@ export default {
           class="o-teresa-quotes"
           v-html="enslavedHint"
         />
-        <div class="l-equipped-glyphs-and-effects-container">
-          <EquippedGlyphs />
-          <div class="l-glyph-info-wrapper">
-            <span
-              class="l-glyph-color-box"
-              @click="toggleGlyphTextColors"
-            >
-              <div :class="glyphColorPosition()">
-                <label
-                  :class="glyphColorState"
-                >
-                  <span class="fas fa-palette" />
-                </label>
-              </div>
-            </span>
-            <div
-              v-if="sacrificeUnlocked"
-              class="c-glyph-info-options"
-            >
-              <button
-                :class="glyphInfoClass(!sacrificeDisplayed)"
-                @click="setInfoState(false)"
-              >
-                Current Glyph effects
-              </button>
-              <button
-                :class="glyphInfoClass(sacrificeDisplayed)"
-                @click="setInfoState(true)"
-              >
-                Glyph Sacrifice totals
-              </button>
-            </div>
-            <SacrificedGlyphs v-if="sacrificeUnlocked && sacrificeDisplayed" />
-            <CurrentGlyphEffects
-              v-else
-              :class="glyphInfoBorderClass()"
-            />
-          </div>
-        </div>
         <GlyphInventory />
       </div>
+      <GlyphTabSidebar />
     </div>
   </div>
 </template>
 
 <style scoped>
 .l-glyph-level-factors {
-  margin: 2rem;
+  width: 80% !important;
+  height: auto !important;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
+.l-glyph-level-factors .l-expanding-control-box__button {
+  margin-bottom: 2rem;
+}
 .o-clickable {
   cursor: pointer;
+}
+
+.l-glyph-color-position__low {
+  top: 6rem !important;
+  right: 46.5rem !important;
 }
 
 .l-celestial-auto-restart-checkbox {
@@ -235,9 +236,5 @@ export default {
   flex-direction: row;
   align-items: center;
   user-select: none;
-}
-
-.l-half-width {
-  width: 50%;
 }
 </style>

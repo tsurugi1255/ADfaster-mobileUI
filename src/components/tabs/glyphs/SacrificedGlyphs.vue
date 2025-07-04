@@ -29,6 +29,9 @@ export default {
     dropDownIconClass() {
       return this.hideAlteration ? "far fa-plus-square" : "far fa-minus-square";
     },
+    dropDownAlter() {
+      return this.hideAlteration ? "" : "alter-active"
+    },
     isDoomed() {
       return Pelle.isDoomed;
     },
@@ -128,9 +131,10 @@ export default {
         <div>The confirmation can be disabled in Options or by holding Ctrl.</div>
       </span>
     </div>
-    <div v-if="hasAlteration">
+    <div v-if="hasAlteration" class="l-altered-glyphs__help">
       <span
         class="c-altered-glyphs-toggle-button"
+        :class="dropDownAlter"
         @click="toggleAlteration"
       >
         <i :class="dropDownIconClass" />
@@ -140,7 +144,7 @@ export default {
       <div v-if="hideAlteration">
         (Details hidden, click to unhide)
       </div>
-      <div v-else>
+      <div v-else :class="dropDownAlter">
         Glyph types will have one of their effects improved<br>
         when their Glyph type's total sacrifice value is above:
         <br><br>
@@ -160,7 +164,7 @@ export default {
       Glyph Sacrifice Boosts:
     </div>
     <div v-if="anySacrifices && !isDoomed">
-      <div v-if="teresaMult > 1">
+      <div v-if="teresaMult > 1" style="font-size: 0.8rem;">
         Glyph sacrifice values are multiplied by {{ formatX(teresaMult, 2, 2) }};
         Teresa was last done at {{ lastMachines }}.
         <span v-if="hasSeenRealityGlyph">
@@ -172,6 +176,7 @@ export default {
           :key="type + glyphSymbol(type)"
           :type="type"
           :has-dragover="hasDragover"
+          style="font-size: 0.8rem; margin: 1rem 0;"
         />
       </template>
     </div>

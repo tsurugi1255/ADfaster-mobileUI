@@ -397,22 +397,21 @@ export default {
   flex-direction: row;
   top: 0;
   z-index: 2;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .c-top-left {
-  right: calc(100% - 6rem);
   color: var(--color-reality-dark);
 }
 
 .c-top-right {
-  left: calc(100% - 5rem);
+  right: 1rem;
 }
 
 .l-top-left-btn {
   cursor: pointer;
   border: var(--var-border-width, 0.2rem) solid;
-  width: 2.5rem;
+  width: auto;
   margin: 0.5rem 0 0 0.5rem;
   padding: 0.5rem;
 }
@@ -423,10 +422,9 @@ export default {
   align-items: center;
   cursor: pointer;
   border: var(--var-border-width, 0.2rem) solid;
-  width: 2rem;
-  height: 2rem;
+  width: auto;
   margin: 0.5rem 0.5rem 0 0;
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .o-borderless {

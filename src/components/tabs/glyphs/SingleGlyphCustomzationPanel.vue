@@ -131,11 +131,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 1rem);
-  height: 8rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   border: 0.1rem solid #b8b8b8;
   border-radius: var(--var-border-radius, 0.5rem);
-  padding: 0.5rem;
+  padding: 1rem;
   margin-top: 1rem;
   user-select: none;
 }

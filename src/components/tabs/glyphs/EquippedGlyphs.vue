@@ -233,13 +233,9 @@ export default {
 
 .l-glyph-equip-button {
   width: 100%;
-  height: 3.5rem;
-  margin: 0.25rem 0.5rem;
 }
 
 .l-glyph-equip-button-short {
   width: 100%;
-  height: 2.5rem;
-  margin: 0.25rem 0.5rem;
 }
 </style>

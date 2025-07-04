@@ -801,7 +801,7 @@ body.t-s12 {
 }
 
 .l-equipped-glyphs {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .t-normal .c-sacrificed-glyphs--dragover,

@@ -55,7 +55,7 @@ export default {
       const height = (this.canBeExpanded && this.isExpanded) ? `${6.5 + 1.5 * this.suggestions.length}rem` : "5rem";
       return {
         color,
-        height,
+        // height,
       };
     },
     clickText() {
