@@ -5857,19 +5857,37 @@ kbd {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
 }
 
 .l-mechanics-container {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
+  width: 100%;
+  min-height: 100rem;
 }
 
 .l-teresa-mechanic-container {
+  flex: 1;
   min-width: 40rem;
+  font-size: 2rem;
+}
+
+.c-teresa-run-and-rm-container {
+  margin-top: 2rem;
+  display: flex;
+  flex: 1
 }
 
 .l-rm-container {
   min-width: 13rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-rm-container:first-child {
+  align-items: center;
 }
 
 .l-rm-container-labels {
@@ -5877,12 +5895,12 @@ kbd {
 }
 
 .c-rm-store {
-  width: 13rem;
-  height: 50rem;
+  width: 50%;
+  max-width: 30rem;
+  height: 100%;
   position: relative;
   border: 0.1rem solid black;
   border-radius: var(--var-border-radius, 0.4rem);
-  margin: auto;
 }
 
 .c-rm-store-inner {
@@ -5902,6 +5920,7 @@ kbd {
   position: absolute;
   bottom: 0;
   font-weight: bold;
+  padding: 1rem;
   color: black;
 }
 
@@ -5914,8 +5933,8 @@ kbd {
 }
 
 .c-teresa-unlock-description {
-  width: 14rem;
-  font-size: 1rem;
+  width: 100%;
+  font-size: 2rem;
   color: var(--color-teresa--base);
   background-color: var(--color-teresa--accent);
   border: 0.1rem solid var(--color-teresa--base);
@@ -5963,17 +5982,20 @@ kbd {
 }
 
 .c-teresa-unlock {
-  width: 20rem;
+  width: 90%;
   font-weight: bold;
   color: var(--color-teresa--accent);
   background-color: var(--color-teresa--base);
   border: none;
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: 0 10rem 1rem;
-  padding: 1rem;
+  padding: 2rem;
   transition-duration: 0.15s;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.c-teresa-unlock:not(.c-teresa-run-button) {
+  margin-top: 1rem;
 }
 
 .c-teresa-run-button {
@@ -6055,21 +6077,27 @@ kbd {
 .c-teresa-shop {
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  margin-right: 2rem;
-  margin-left: 18rem;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.o-teresa-shop-btn-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .o-teresa-shop-button {
+  width: 100%;
+  height: 100%;
   font-family: Typewriter, serif;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 2rem;
   color: black;
   background-color: var(--color-disabled);
   border: var(--var-border-width, 0.2rem) solid var(--color-teresa--base);
   border-radius: var(--var-border-radius, 0.5rem);
-  margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   transition-duration: 0.15s;
 }
 
@@ -6090,8 +6118,10 @@ kbd {
 }
 
 .c-teresa-pour {
-  width: 13rem;
-  font-size: 2rem;
+  width: 50%;
+  max-width: 30rem;
+  height: auto;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
 }

@@ -144,110 +144,109 @@ export default {
 <template>
   <div class="l-teresa-celestial-tab">
     <CelestialQuoteHistory celestial="teresa" />
-    <div>
-      You have {{ quantify("Reality Machine", rm, 2, 2) }}.
-    </div>
     <div class="l-mechanics-container">
-      <div
-        v-if="hasReality"
-        class="l-teresa-mechanic-container"
-      >
-        <div class="c-teresa-unlock c-teresa-run-button">
-          <span :class="{ 'o-pelle-disabled': isDoomed }">
-            Start Teresa's Reality.
-          </span>
-          <div
-            :class="runButtonClassObject"
-            @click="startRun()"
-          >
-            Ϟ
-          </div>
-          {{ runDescription }}
-          <br><br>
-          <div>
-            This Reality can be repeated for a stronger reward based on the antimatter gained within it.
+      <div class="c-teresa-run-and-rm-container">
+        <div
+          v-if="hasReality"
+          class="l-teresa-mechanic-container"
+        >
+          <div class="c-teresa-unlock c-teresa-run-button">
+            <span :class="{ 'o-pelle-disabled': isDoomed }">
+              Start Teresa's Reality.
+            </span>
+            <div
+              :class="runButtonClassObject"
+              @click="startRun()"
+            >
+              Ϟ
+            </div>
+            {{ runDescription }}
             <br><br>
-            <span v-if="showRunReward">
-              Your record antimatter in Teresa's Reality is {{ format(bestAM, 2) }},
-              achieved with {{ lastMachinesString }}.
+            <div>
+              This Reality can be repeated for a stronger reward based on the antimatter gained within it.
               <br><br>
-              Glyph Set used:
-              <GlyphSetPreview
-                text="Teresa's Best Glyph Set"
-                :text-hidden="true"
-                :force-name-color="false"
-                :glyphs="bestAMSet"
-              />
-            </span>
-            <span v-else>
-              You have not completed Teresa's Reality yet.
-            </span>
-          </div>
-        </div>
-        <div
-          v-if="showRunReward"
-          class="c-teresa-unlock"
-        >
-          Teresa Reality reward: Glyph Sacrifice power {{ formatX(runReward, 2, 2) }}
-        </div>
-        <div
-          v-if="hasEPGen"
-          class="c-teresa-unlock"
-        >
-          <span :class="{ 'o-pelle-disabled': isDoomed }">
-            Every second, you gain {{ formatPercents(0.01) }} of your peaked Eternity Points per minute this Reality.
-          </span>
-        </div>
-      </div>
-      <div class="l-rm-container l-teresa-mechanic-container">
-        <button
-          :class="pourButtonClassObject"
-          @mousedown="pour = true"
-          @touchstart="pour = true"
-          @mouseup="pour = false"
-          @touchend="pour = false"
-          @mouseleave="pour = false"
-        >
-          {{ pourText }}
-        </button>
-        <div class="c-rm-store">
-          <div
-            class="c-rm-store-inner c-rm-store-inner--light"
-            :style="{ height: possibleFillPercentage}"
-          />
-          <div
-            class="c-rm-store-inner"
-            :style="{ height: percentage}"
-          >
-            <div class="c-rm-store-label">
-              {{ formatX(rmMult, 2, 2) }} RM gain
-              <br>
-              {{ format(pouredAmount, 2, 2) }}/{{ format(pouredAmountCap, 2, 2) }}
+              <span v-if="showRunReward">
+                Your record antimatter in Teresa's Reality is {{ format(bestAM, 2) }},
+                achieved with {{ lastMachinesString }}.
+                <br><br>
+                Glyph Set used:
+                <GlyphSetPreview
+                  text="Teresa's Best Glyph Set"
+                  :text-hidden="true"
+                  :force-name-color="false"
+                  :glyphs="bestAMSet"
+                />
+              </span>
+              <span v-else>
+                You have not completed Teresa's Reality yet.
+              </span>
             </div>
           </div>
-          <CustomizeableTooltip
-            v-for="unlockInfo in unlockInfos"
-            :key="unlockInfo.id"
-            content-class="c-teresa-unlock-description--hover-area"
-            :bottom="unlockDescriptionHeight(unlockInfo)"
-            right="0"
-            mode="right"
-            :show="true"
-            :tooltip-arrow-style="unlockInfoTooltipArrowStyle"
-            :tooltip-class="unlockInfoTooltipClass(unlockInfo)"
+          <div
+            v-if="showRunReward"
+            class="c-teresa-unlock"
           >
-            <template #mainContent>
-              <div
-                class="c-teresa-milestone-line"
-                :class="{ 'c-teresa-milestone-line--unlocked': hasUnlock(unlockInfo) }"
-              />
-            </template>
-            <template #tooltipContent>
-              <b :class="{ 'o-pelle-disabled': unlockInfo.pelleDisabled }">
-                {{ format(unlockInfo.price, 2, 2) }}: {{ unlockInfo.description }}
-              </b>
-            </template>
-          </CustomizeableTooltip>
+            Teresa Reality reward: Glyph Sacrifice power {{ formatX(runReward, 2, 2) }}
+          </div>
+          <div
+            v-if="hasEPGen"
+            class="c-teresa-unlock"
+          >
+            <span :class="{ 'o-pelle-disabled': isDoomed }">
+              Every second, you gain {{ formatPercents(0.01) }} of your peaked Eternity Points per minute this Reality.
+            </span>
+          </div>
+        </div>
+        <div class="l-rm-container l-teresa-mechanic-container">
+          <button
+            :class="pourButtonClassObject"
+            @mousedown="pour = true"
+            @touchstart="pour = true"
+            @mouseup="pour = false"
+            @touchend="pour = false"
+            @mouseleave="pour = false"
+          >
+            {{ pourText }}
+          </button>
+          <div class="c-rm-store">
+            <div
+              class="c-rm-store-inner c-rm-store-inner--light"
+              :style="{ height: possibleFillPercentage}"
+            />
+            <div
+              class="c-rm-store-inner"
+              :style="{ height: percentage}"
+            >
+              <div class="c-rm-store-label">
+                {{ formatX(rmMult, 2, 2) }} RM gain
+                <br>
+                {{ format(pouredAmount, 2, 2) }}/{{ format(pouredAmountCap, 2, 2) }}
+              </div>
+            </div>
+            <CustomizeableTooltip
+              v-for="unlockInfo in unlockInfos"
+              :key="unlockInfo.id"
+              content-class="c-teresa-unlock-description--hover-area"
+              :bottom="unlockDescriptionHeight(unlockInfo)"
+              right="0"
+              mode="right"
+              :show="true"
+              :tooltip-arrow-style="unlockInfoTooltipArrowStyle"
+              :tooltip-class="unlockInfoTooltipClass(unlockInfo)"
+            >
+              <template #mainContent>
+                <div
+                  class="c-teresa-milestone-line"
+                  :class="{ 'c-teresa-milestone-line--unlocked': hasUnlock(unlockInfo) }"
+                />
+              </template>
+              <template #tooltipContent>
+                <b :class="{ 'o-pelle-disabled': unlockInfo.pelleDisabled }">
+                  {{ format(unlockInfo.price, 2, 2) }}: {{ unlockInfo.description }}
+                </b>
+              </template>
+            </CustomizeableTooltip>
+          </div>
         </div>
       </div>
       <div
@@ -257,17 +256,19 @@ export default {
         <span class="o-teresa-pp">
           You have {{ quantify("Perk Point", perkPoints, 2, 0) }}.
         </span>
-        <PerkShopUpgradeButton
-          v-for="upgrade in upgrades"
-          :key="upgrade.id"
-          :upgrade="upgrade"
-        />
+        <div class="o-teresa-shop-btn-group">
+          <PerkShopUpgradeButton
+            v-for="upgrade in upgrades"
+            :key="upgrade.id"
+            :upgrade="upgrade"
+          />
+        </div>
         You can now modify the appearance of your Glyphs to look like Music Glyphs.
       </div>
-      <div
+      <!-- <div
         v-else
         class="l-rm-container-labels l-teresa-mechanic-container"
-      />
+      /> -->
     </div>
   </div>
 </template>
