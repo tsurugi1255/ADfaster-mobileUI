@@ -99,6 +99,7 @@ export default {
 .l-black-hole-sliders {
   width: 100%;
   color: var(--color-text);
+  font-size: 2rem;
 }
 
 .l-margin-left {
