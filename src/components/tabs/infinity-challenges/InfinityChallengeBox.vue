@@ -52,11 +52,13 @@ export default {
     @start="challenge.requestStart()"
   >
     <template #top>
-      <DescriptionDisplay :config="config" />
-      <EffectDisplay
-        v-if="isRunning"
-        :config="config"
-      />
+      <div class="infinity-challenge-header">
+        <DescriptionDisplay :config="config" />
+        <EffectDisplay
+          v-if="isRunning"
+          :config="config"
+        />
+      </div>
     </template>
     <template #bottom>
       <div class="l-challenge-box__bottom--infinity">
@@ -75,5 +77,10 @@ export default {
 </template>
 
 <style scoped>
-
+.infinity-challenge-header {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

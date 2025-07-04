@@ -67,14 +67,25 @@ export default {
     @start="challenge.requestStart()"
   >
     <template #top>
-      <DescriptionDisplay :config="descriptionDisplayConfig" />
+      <DescriptionDisplay :config="descriptionDisplayConfig" class="normal-challenge-header" />
     </template>
     <template #bottom>
-      <span :class="{ 'o-pelle-disabled': isDisabled }">Reward: {{ challenge.config.reward }}</span>
+      <span class="normal-challenge-reward" :class="{ 'o-pelle-disabled': isDisabled }">Reward: {{ challenge.config.reward }}</span>
     </template>
   </ChallengeBox>
 </template>
 
 <style scoped>
-
+.normal-challenge-header {
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.normal-challenge-reward {
+  height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

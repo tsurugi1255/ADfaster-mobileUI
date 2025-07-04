@@ -103,43 +103,56 @@ export default {
     @start="start"
   >
     <template #top>
-      <DescriptionDisplay :config="config" />
+      <DescriptionDisplay :config="config" class="eternity-challenge-header" />
     </template>
     <template #bottom>
-      <div :style="{ visiblity: completions < 5 ? 'visible' : 'hidden' }">
-        <div>
-          Completed {{ quantifyInt("time", completions) }}
+      <div class="challenge-completion-info">
+        <div :style="{ visiblity: completions < 5 ? 'visible' : 'hidden' }">
+          <div>
+            Completed {{ quantifyInt("time", completions) }}
+          </div>
+          {{ goalDisplay }}
         </div>
-        {{ goalDisplay }}
+        <span v-if="showGoalSpan">
+          Goal Span: {{ firstGoal }} IP - {{ lastGoal }} IP
+        </span>
+        <span>
+          Reward:
+          <DescriptionDisplay
+            :config="config.reward"
+            :length="55"
+            name="c-challenge-box__reward-description"
+          />
+        </span>
+        <span>
+          <EffectDisplay
+            v-if="completions > 0"
+            :config="currentRewardConfig"
+          />
+          <span v-if="completions > 0 && completions < 5">|</span>
+          <EffectDisplay
+            v-if="completions < 5"
+            :config="nextRewardConfig"
+            label="Next"
+            :ignore-capped="true"
+          />
+        </span>
       </div>
-      <span v-if="showGoalSpan">
-        Goal Span: {{ firstGoal }} IP - {{ lastGoal }} IP
-      </span>
-      <span>
-        Reward:
-        <DescriptionDisplay
-          :config="config.reward"
-          :length="55"
-          name="c-challenge-box__reward-description"
-        />
-      </span>
-      <span>
-        <EffectDisplay
-          v-if="completions > 0"
-          :config="currentRewardConfig"
-        />
-        <span v-if="completions > 0 && completions < 5">|</span>
-        <EffectDisplay
-          v-if="completions < 5"
-          :config="nextRewardConfig"
-          label="Next"
-          :ignore-capped="true"
-        />
-      </span>
     </template>
   </EternityChallengeBoxWrapper>
 </template>
 
 <style scoped>
-
+.eternity-challenge-header {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.challenge-completion-info {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

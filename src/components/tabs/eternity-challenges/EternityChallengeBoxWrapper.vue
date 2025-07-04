@@ -67,7 +67,7 @@ export default {
       return {
         position: "absolute",
         width: `${15 * Math.clampMax(this.completionCount / 5, 1)}rem`,
-        height: "3rem",
+        height: "6rem",
         background: "var(--color-good)",
         opacity: this.completionCount >= 5 ? 0 : 0.3,
         "border-top-left-radius": "var(--var-border-radius, 1rem)",
@@ -114,5 +114,4 @@ export default {
 </template>
 
 <style scoped>
-
 </style>
