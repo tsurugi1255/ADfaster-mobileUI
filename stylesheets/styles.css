@@ -1724,7 +1724,10 @@ br {
 }
 
 .o-primary-btn--dilation-upgrade-toggle {
-  font-size: 1rem;
+  font-size: 2rem;
+  padding: 1rem;
+  height: auto;
+  font-weight: normal;
 }
 
 .o-primary-btn--reality-upgrade-toggle {
@@ -4780,15 +4783,16 @@ properly on certain themes. */
 
 /* #region Eternity Upgrades */
 .o-eternity-upgrade {
-  width: 20rem;
-  height: 9rem;
+  width: 100%;
+  min-height: 17rem;
   font-family: Typewriter, serif;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   border: 0.1rem solid var(--color-eternity);
   border-radius: var(--var-border-radius, 0.4rem);
   transition-duration: 0.2s;
   cursor: pointer;
+  padding: 1rem;
 }
 
 .o-eternity-upgrade--useless {
@@ -4921,15 +4925,33 @@ properly on certain themes. */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
+  margin-top: 2rem;
+}
+
+.l-eternity-milestone-grid > div:not([class]) {
+  font-size: 2rem;
+  padding: 0 2rem;
+}
+
+.l-eternity-milestone-grid__container {
+  margin-top: 2rem;
+}
+
+.l-eternity-milestone-grid__row:first-child {
+  margin-top: 2rem;
 }
 
 .l-eternity-milestone-grid__row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .l-eternity-milestone-grid__cell {
-  margin: 0.5rem 0.8rem;
+  width: 100%;
 }
 
 .o-eternity-milestone__goal {
@@ -4938,15 +4960,17 @@ properly on certain themes. */
 }
 
 .o-eternity-milestone__reward {
-  width: 25rem;
-  height: 8rem;
+  width: 100%;
+  height: 100%;
+  min-height: 17rem;
   font-family: Typewriter, serif;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: black;
   border: 0.1rem solid var(--color-eternity);
   border-radius: var(--var-border-radius, 0.4rem);
   transition-duration: 0.2s;
+  padding: 1rem;
 }
 
 .o-eternity-milestone__reward--locked {
@@ -4959,7 +4983,7 @@ properly on certain themes. */
 }
 
 .o-eternity-milestone__reward--small-font {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 
 .s-base--metro .o-eternity-milestone__reward--locked,
@@ -4991,6 +5015,8 @@ properly on certain themes. */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 95%;
+  font-size: 2rem;
 }
 
 /* #region c-dilation-tab */
@@ -5079,15 +5105,20 @@ properly on certain themes. */
 
 /* #region o-dilation-btn */
 
+.l-dilation-btn-container {
+  width: 100%;
+}
+
 .o-dilation-btn {
-  width: 19rem;
-  height: 9rem;
+  width: 35%;
+  min-height: 12rem;
   font-family: Typewriter, serif;
-  font-size: 1.12rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: normal;
   border: var(--var-border-width, 0.2rem) solid var(--color-dilation);
   border-radius: var(--var-border-radius, 0.4rem);
   padding: 1rem;
+  margin: 2rem 0;
   transition-duration: 0.2s;
 }
 
