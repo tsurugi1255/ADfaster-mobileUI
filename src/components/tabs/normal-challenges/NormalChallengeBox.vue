@@ -77,13 +77,13 @@ export default {
 
 <style scoped>
 .normal-challenge-header {
-  height: 25rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .normal-challenge-reward {
-  height: 7.5rem;
+  height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
