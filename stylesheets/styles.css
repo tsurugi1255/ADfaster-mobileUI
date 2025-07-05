@@ -1620,9 +1620,11 @@ br {
 }
 
 .o-primary-btn--quick-reset {
-  width: 20rem;
-  height: 7rem;
-  font-size: 1.2rem;
+  width: 35rem;
+  height: 100%;
+  font-size: 2rem;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 
 .o-primary-btn--buy-id {
