@@ -137,21 +137,6 @@ export default {
         v-bind="modeProps(mode).input"
       />
     </template>
-    <template
-      v-if="postBreak && mode === amountMode"
-      #checkboxSlot
-    >
-      <label
-        class="o-autobuyer-toggle-checkbox o-clickable"
-      >
-        <input
-          v-model="increaseWithMult"
-          type="checkbox"
-          class="o-clickable"
-        >
-        Dynamic amount
-      </label>
-    </template>
   </AutobuyerBox>
 </template>
 

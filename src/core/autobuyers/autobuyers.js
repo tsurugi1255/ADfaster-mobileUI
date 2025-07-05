@@ -64,12 +64,12 @@ export const Autobuyers = (function() {
     Autobuyer.sacrifice,
     Autobuyer.replicantiGalaxy,
     Autobuyer.timeTheorem,
-    Autobuyer.ipMult,
-    Autobuyer.epMult,
-    Autobuyer.darkMatterDims,
-    Autobuyer.darkMatterDimsAscension,
-    Autobuyer.singularity,
-    Autobuyer.annihilation,
+    // Autobuyer.ipMult,
+    // Autobuyer.epMult,
+    // Autobuyer.darkMatterDims,
+    // Autobuyer.darkMatterDimsAscension,
+    // Autobuyer.singularity,
+    // Autobuyer.annihilation,
   ];
 
   const singleComplex = [
@@ -90,11 +90,11 @@ export const Autobuyers = (function() {
     Autobuyer.antimatterDimension,
     Autobuyer.infinityDimension,
     Autobuyer.timeDimension,
-    Autobuyer.replicantiUpgrade,
-    Autobuyer.dilationUpgrade,
-    Autobuyer.blackHolePower,
-    Autobuyer.realityUpgrade,
-    Autobuyer.imaginaryUpgrade,
+    // Autobuyer.replicantiUpgrade,
+    // Autobuyer.dilationUpgrade,
+    // Autobuyer.blackHolePower,
+    // Autobuyer.realityUpgrade,
+    // Autobuyer.imaginaryUpgrade,
   ];
 
   return {

@@ -298,12 +298,12 @@ export default {
         >
           Across all scripts: {{ formatInt(totalChars) }}/{{ formatInt(maxTotalChars) }}
         </span>
-        <AutomatorButton
+        <!-- <AutomatorButton
           v-tooltip="fullScreenTooltip"
           :class="fullScreenIconClass"
           class="l-automator__expand-corner"
           @click="fullScreen = !fullScreen"
-        />
+        /> -->
       </div>
       <div class="l-automator-button-row">
         <AutomatorButton

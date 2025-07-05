@@ -81,12 +81,12 @@ export default {
       @click="toggleGroup"
     />
     <div class="l-autobuyer-box__title">
-      {{ name }}<br>Autobuyers
+      {{ name }} Autobuyers
       <!-- If we're showing as a group, then all attributes are the same and we can arbitrarily take the first one -->
       <AutobuyerIntervalLabel
         v-if="displayLabelAsGroup"
         :autobuyer="autobuyers[0]"
-      />
+      /><br>
     </div>
     <div class="l-autobuyer-box__autobuyers">
       <template

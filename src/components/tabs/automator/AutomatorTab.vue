@@ -65,7 +65,7 @@ export default {
     :class="tabClass"
     class="c-automator-tab l-automator-tab"
   >
-    <div v-if="automatorUnlocked">
+    <div v-if="automatorUnlocked" class="c-automator-info">
       <div>
         {{ intervalText }}
       </div>
@@ -88,6 +88,7 @@ export default {
           :min-percent="44"
           :default-percent="50"
           split="vertical"
+          class="l-automator-split-pane"
         >
           <template #paneL>
             <AutomatorEditor />
@@ -109,7 +110,7 @@ export default {
 }
 
 .c-automator-tab {
-  width: 80%;
+  width: 100%;
   min-width: 100rem;
 }
 
@@ -119,10 +120,17 @@ export default {
   margin-top: 0.5rem;
 }
 
+.c-automator-info {
+  width: 95%;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
 .c-automator-split-pane {
   width: 100%;
   height: 57rem;
   background-color: #bbbbbb;
+  margin: 2rem 0;
 }
 
 .s-base--dark .c-automator-split-pane {
