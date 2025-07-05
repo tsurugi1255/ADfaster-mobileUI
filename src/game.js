@@ -10,7 +10,7 @@ import { Cloud } from "./core/storage";
 import { supportedBrowsers } from "./supported-browsers";
 
 import Payments from "./core/payments";
-import { Achievement } from "./core/globals";
+import { Achievement, maxAll } from "./core/globals";
 
 if (GlobalErrorHandler.handled) {
   throw new Error("Initialization failed");
@@ -589,6 +589,10 @@ export function gameLoop(passDiff, options = {}) {
 
   if (InfinityUpgrade.ipOffline.isBought) {
     Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * getGlobalSpeedFactor() / 2));
+  }
+
+  if (player.bottomButtonActive) {
+    maxAll();
   }
 
   updatePrestigeRates();

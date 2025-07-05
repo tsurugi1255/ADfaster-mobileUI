@@ -764,6 +764,7 @@ window.player = {
   triggeredTabNotificationBits: 0,
   tutorialState: 0,
   tutorialActive: true,
+  bottomButtonActive: false,
   options: {
     news: {
       enabled: true,

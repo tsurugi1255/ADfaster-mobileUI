@@ -11,6 +11,7 @@ import PopupModal from "@/components/modals/PopupModal";
 import SaveTimer from "@/components/SaveTimer";
 import SpectateGame from "@/components/SpectateGame";
 import SpeedrunStatus from "@/components/SpeedrunStatus";
+import ModernBottomButtons from "./ui-modes/modern/ModernBottomButtons";
 // import TimeTheoremShop from "@/components/tabs/time-studies/tt-shop/TimeTheoremShop";
 
 export default {
@@ -27,8 +28,9 @@ export default {
     FadeAway,
     CreditsContainer,
     SpectateGame,
-    NewGame
-  },
+    NewGame,
+    ModernBottomButtons
+},
   data() {
     return {
       ending: false
@@ -68,6 +70,9 @@ export default {
       v-if="view.subtab === 'studies'"
       class="l-time-studies-tab__tt-shop"
     /> -->
+    <ModernBottomButtons
+      v-if="view.newUI && view.theme !== 'S12'"
+    />
     <ModernSidebar
       v-if="view.newUI && view.theme !== 'S12'"
       :style="hideIfMatoFullscreen"
