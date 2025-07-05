@@ -197,6 +197,8 @@ body.t-s12 {
   flex-direction: column;
   justify-content: center;
   color: var(--color-text);
+  width: 95%;
+  font-size: 2rem;
 }
 
 .l-antimatter-dim-tab {
@@ -257,7 +259,16 @@ body.t-s12 {
 }
 
 .l-dimensions-container {
-  padding: 0.5rem 5rem 0.5rem 9rem; /* TOP RIGHT BOTTOM LEFT */
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.o-dimension-upgrade-btn {
+  width: 100% !important;
+  height: 90% !important;
+  font-weight: normal;
+  font-size: 2rem;
+  margin: 0 !important;
 }
 
 .o-primary-btn--new {
@@ -278,11 +289,15 @@ body.t-s12 {
 
 .o-primary-btn--dimension-reset {
   display: flex;
-  width: 25rem;
-  height: 6rem;
+  width: 100%;
+  height: 100%;
+  /* min-height: 13rem; */
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  padding: 2rem;
+  margin: 1rem 0;
 }
 
 .button-content {
@@ -322,30 +337,31 @@ body.t-s12 {
 .modes-container {
   display: flex;
   width: 100%;
-  justify-content: space-between;
-  margin-top: 1rem;
+  justify-content: center;
+  margin: 2rem;
   padding: 0 5rem;
 }
 
 .resets-container {
-  display: flex;
-  height: 16rem;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .reset-container h4 {
-  font-size: 1.4rem;
+  font-size: 2rem;
+  font-weight: normal;
   margin: 0;
 }
 
 .reset-container {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 16rem;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.3rem;
 }
 
 .particle {
@@ -566,17 +582,17 @@ body.t-s12 {
 }
 
 .c-dimension-row {
-  font-weight: bold;
+  font-weight: normal;
   color: var(--color-text);
   border-radius: var(--var-border-radius, 0.5rem);
   margin: 0;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding-left: 1rem;
 }
 
 .l-dimension-single-row {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  height: 10rem;
+  height: 100%;
   align-content: center;
 }
 
@@ -619,8 +635,7 @@ body.t-s12 {
 }
 
 .o-primary-btn--id-auto {
-  width: 9rem;
-  height: 4.4rem;
+  flex: 0 0 40%;
 }
 
 .c-time-dim-description__accent {
@@ -646,8 +661,7 @@ body.t-s12 {
 }
 
 .o-primary-btn--buy-td-auto {
-  width: 9rem;
-  height: 4.4rem;
+  flex: 0 0 40%;
 }
 
 .c-modern-dim-tooltip-container {
@@ -792,8 +806,8 @@ body.t-s12 {
 }
 
 .c-progress-bar {
-  width: 80%;
-  margin: 2rem 10%;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .o-primary-btn--respec-active {

@@ -1586,9 +1586,10 @@ br {
 }
 
 .o-primary-btn--sacrifice {
-  width: 48rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-right: 0.8rem;
+  padding: 2rem;
+  height: 100%;
 }
 
 .o-primary-btn--buy-dim {
@@ -2371,6 +2372,8 @@ br {
   grid-column: 5 / 8;
   min-width: 25rem;
   justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }
 
 .l-dim-row-small-text {
@@ -2446,7 +2449,7 @@ br {
 
 .c-dimension-row {
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-top: 1rem;
 }
 
@@ -2501,7 +2504,7 @@ br {
 
 .c-progress-bar__percents {
   overflow-wrap: normal;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: black;
   pointer-events: all;
   -webkit-user-select: none;
@@ -2553,6 +2556,8 @@ br {
   flex-direction: column;
   align-items: center;
   color: var(--color-text);
+  width: 95%;
+  font-size: 2rem;
 }
 
 .l-infinity-dim-tab__ec8-purchases {
@@ -2670,6 +2675,8 @@ br {
   flex-direction: column;
   align-items: center;
   color: var(--color-text);
+  width: 95%;
+  font-size: 2rem;
 }
 
 /* #endregion l-time-dim-tab */

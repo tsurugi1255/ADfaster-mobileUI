@@ -46,7 +46,7 @@ export default {
       if (this.galaxies.dilation > 0) parts.push(this.galaxies.dilation);
       const sum = parts.map(this.formatGalaxies).join(" + ");
       if (parts.length >= 2) {
-        return `${sum} = ${this.formatGalaxies(parts.sum())}`;
+        return `${this.formatGalaxies(parts[0])}`;
       }
       return sum;
     },
@@ -124,7 +124,7 @@ export default {
   <div class="reset-container galaxy">
     <h4>{{ typeName }} ({{ sumText }})</h4>
     <span>Requires: {{ formatInt(requirement.amount) }} {{ dimName }} Antimatter D</span>
-    <span v-if="hasIncreasedScaling">{{ costScalingText }}</span>
+    <!-- <span v-if="hasIncreasedScaling">{{ costScalingText }}</span> -->
     <button
       :class="classObject"
       @click.exact="buyGalaxy(true)"
