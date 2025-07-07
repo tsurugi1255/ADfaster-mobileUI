@@ -524,6 +524,8 @@ body.t-s12 {
   color: var(--color-text);
   background: var(--color-base);
   border: 0.1rem solid var(--color-accent);
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 .t-metro .o-autobuyer-input,

@@ -344,8 +344,8 @@ export default {
     },
     overStyle() {
       return {
-        width: this.size,
-        height: this.size,
+        width: "100%",
+        height: "100%",
         position: "absolute",
         "background-color": "rgba(0, 0, 0, 0)",
         "box-shadow": `0 0 ${this.glowBlur} calc(${this.glowSpread} + 0.1rem) ${this.borderColor} inset`,
@@ -354,8 +354,8 @@ export default {
     },
     outerStyle() {
       return {
-        width: this.size,
-        height: this.size,
+        width: "100%",
+        "aspect-ratio": "1/1",
         "background-color": this.borderColor,
         "box-shadow": `0 0 ${this.glowBlur} ${this.glowSpread} ${this.borderColor}`,
         "border-radius": this.circular ? "50%" : "0",
@@ -365,9 +365,9 @@ export default {
     innerStyle() {
       const color = this.symbolColor;
       return {
-        width: `calc(${this.size} - 0.2rem)`,
-        height: `calc(${this.size} - 0.2rem)`,
-        "font-size": `calc( ${this.size} * ${this.textProportion} )`,
+        width: `calc(100% - 0.2rem)`,
+        height: `calc(100% - 0.2rem)`,
+        "font-size": `calc( 8rem * ${this.textProportion} )`,
         color,
         "text-shadow": this.symbolBlur ? `-0.04em 0.04em 0.08em ${color}` : undefined,
         "border-radius": this.circular ? "50%" : "0",
@@ -694,7 +694,7 @@ export default {
       const angle = this.glyph.type === "effarig"
         ? (Math.PI / 4) * (id + 1)
         : (Math.PI / 2) * (id + 0.5);
-      const scale = 0.28 * this.size.replace("rem", "");
+      const scale = 0.7 * this.size.replace("rem", "");
       const dx = -scale * Math.sin(angle);
       const dy = scale * (Math.cos(angle) + 0.15);
       return { dx, dy };
@@ -705,8 +705,8 @@ export default {
 
       return {
         position: "absolute",
-        width: "0.3rem",
-        height: "0.3rem",
+        width: "0.7rem",
+        height: "0.7rem",
         "border-radius": "50%",
         background: this.symbolColor,
         transform: `translate(${pos.dx - 0.15 * 0.3}rem, ${pos.dy - 0.15 * 0.3}rem)`,
@@ -760,7 +760,7 @@ export default {
         />
       </template>
     </div>
-    <div :style="glyphBorderStyle()" />
+    <!-- <div :style="glyphBorderStyle()" /> -->
     <GlyphTooltip
       v-if="hasTooltip && tooltipLoaded"
       v-show="isCurrentTooltip"

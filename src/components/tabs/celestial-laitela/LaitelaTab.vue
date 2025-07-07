@@ -80,7 +80,7 @@ export default {
 <template>
   <div class="l-laitela-celestial-tab">
     <CelestialQuoteHistory celestial="laitela" />
-    <div class="c-subtab-option-container">
+    <!-- <div class="c-subtab-option-container">
       <PrimaryButton
         class="o-primary-btn--subtab-option"
         @click="showLaitelaHowTo()"
@@ -93,7 +93,7 @@ export default {
       >
         Max all Dark Matter Dimensions
       </PrimaryButton>
-    </div>
+    </div> -->
     <div class="o-laitela-matter-amount">
       You have
       <span :style="styleObject">{{ format(darkMatter, 2) }}</span>
@@ -120,6 +120,12 @@ export default {
     <div class="l-laitela-mechanics-container">
       <LaitelaRunButton />
       <div class="c-dark-matter-dimensions-grp">
+        <button
+          class="o-dark-matter-dimension-button o-max-dark-matter-dim-button"
+          @click="maxAll"
+        >
+          Max all Dark Matter Dimensions
+      </button>
         <DarkMatterDimensionGroup />
         <AnnihilationButton v-if="showAnnihilation" />
       </div>
@@ -127,5 +133,8 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+</style>
 
 

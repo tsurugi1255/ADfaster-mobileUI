@@ -4,6 +4,7 @@ import GlyphSetPreview from "@/components/GlyphSetPreview";
 import PrimaryButton from "@/components/PrimaryButton";
 import { V_REDUCTION_MODE } from "@/core/secret-formula";
 import VUnlockRequirement from "./VUnlockRequirement";
+import { beginProcessReality, getRealityProps } from "../../../core/reality";
 
 export default {
   name: "VTab",
@@ -41,15 +42,11 @@ export default {
     hexGrid() {
       return this.isFlipped && this.wantsFlipped
         ? [
-          VRunUnlocks.all[6],
-          {},
-          {},
-          {},
           { isRunButton: true },
+          {},
+          VRunUnlocks.all[6],
           VRunUnlocks.all[7],
           VRunUnlocks.all[8],
-          {},
-          {}
         ]
         : [
           { isRunButton: true },
@@ -113,7 +110,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "V's", number: 3 });
+      beginProcessReality(getRealityProps(true));
+      return V.initializeRun();
+      // Modal.celestials.show({ name: "V's", number: 3 });
     },
     has(info) {
       return info.isUnlocked;

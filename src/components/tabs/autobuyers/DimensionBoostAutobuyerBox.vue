@@ -89,7 +89,7 @@ export default {
           type="checkbox"
           class="o-clickable"
         >
-        Limit Dimension Boosts to:
+        &nbsp;Limit Dimension Boosts to:
       </label>
       <AutobuyerInput
         :autobuyer="autobuyer"
@@ -106,6 +106,7 @@ export default {
           type="checkbox"
           class="o-clickable"
         >
+        &nbsp;
         <span v-if="isBuyMaxUnlocked">
           Only Dimboost to unlock new<br>
           Dimensions until X Galaxies:
@@ -135,5 +136,10 @@ export default {
 
 .o-clickable {
   cursor: pointer;
+}
+
+input[type="checkbox"].o-clickable {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>

@@ -36,15 +36,15 @@ export default {
       return [
         [
           DilationUpgrade.doubleGalaxies,
-          DilationUpgrade.tdMultReplicanti,
-        ],
-        [
           DilationUpgrade.ndMultDT,
-          DilationUpgrade.ipMultDT,
         ],
         [
+          DilationUpgrade.tdMultReplicanti,
           DilationUpgrade.timeStudySplit,
-          DilationUpgrade.dilationPenalty
+        ],
+        [
+          DilationUpgrade.dilationPenalty,
+          DilationUpgrade.ipMultDT,
         ],
       ];
     },

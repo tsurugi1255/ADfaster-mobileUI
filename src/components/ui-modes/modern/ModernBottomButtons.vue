@@ -58,6 +58,14 @@ export default {
         },
         buyReplicantiGalaxy() {
             replicantiGalaxy();
+        },
+        buttonIsPressedObject(activeState) {
+            if(activeState) {
+                return {
+                    backgroundColor: "white",
+                    color: "black"
+                }
+            }
         }
     }
 }
@@ -72,6 +80,7 @@ export default {
         >
             <button 
                 class="o-bottom-btn" 
+                :style="buttonIsPressedObject(eternityButtonActive)"
                 @click="performEternity"
                 @mousedown="eternityButtonActive = true"
                 @touchstart="eternityButtonActive = true"
@@ -88,6 +97,7 @@ export default {
         >
             <button 
                 class="o-bottom-btn" 
+                :style="buttonIsPressedObject(crunchButtonActive)"
                 @click="performBigCrunch"
                 @mousedown="crunchButtonActive = true"
                 @touchstart="crunchButtonActive = true"
@@ -104,6 +114,7 @@ export default {
         >
             <button 
                 class="o-bottom-btn" 
+                :style="buttonIsPressedObject(replicantiButtonActive)"
                 @click="buyReplicantiGalaxy"
                 @mousedown="replicantiButtonActive = true"
                 @touchstart="replicantiButtonActive = true"
@@ -161,8 +172,10 @@ export default {
     transition: .2s;
 }
 
-.o-bottom-btn:hover {
-    background-color: white;
+.o-eternity-btn-pressed
+.o-infinity-btn-pressed
+.o-replicanti-btn-pressed {
+    background-color: white !important;
     color: black;
 }
 

@@ -61,14 +61,6 @@ export default {
         cursor: "pointer",
       };
     },
-    // "Armageddon" causes the button to have text overflow, so we conditionally make the button taller; this doesn't
-    // cause container overflow due to another button being removed entirely when doomed
-    unequipClass() {
-      return {
-        "l-glyph-equip-button": this.isDoomed,
-        "l-glyph-equip-button-short": !this.isDoomed,
-      };
-    }
   },
   created() {
     this.on$(GAME_EVENT.GLYPHS_EQUIPPED_CHANGED, this.glyphsChanged);
@@ -91,8 +83,8 @@ export default {
       const dy = -this.GLYPH_SIZE / 2 + this.arrangementRadius * Math.cos(angle);
       return {
         position: "absolute",
-        left: `calc(50% + ${dx}rem)`,
-        top: `calc(50% + ${dy}rem)`,
+        left: `calc(50% + ${dx*2}rem)`,
+        top: `calc(50% + ${dy*2}rem)`,
         "z-index": 1,
       };
     },
@@ -186,42 +178,6 @@ export default {
                    {'c-equipped-glyphs__empty--dragover': dragoverIndex === idx}]"
         />
       </div>
-    </div>
-    <div class="l-equipped-glyphs__buttons">
-      <button
-        class="c-reality-upgrade-btn"
-        :class="unequipClass"
-        :style="glyphRespecStyle"
-        :ach-tooltip="respecTooltip"
-        @click="toggleRespec"
-      >
-        {{ unequipText }}
-      </button>
-      <button
-        v-if="undoVisible"
-        class="l-glyph-equip-button c-reality-upgrade-btn"
-        :class="{'c-reality-upgrade-btn--unavailable': !undoAvailable}"
-        :ach-tooltip="undoTooltip"
-        @click="undo"
-      >
-        <span>Rewind to <b>undo</b> the last equipped Glyph</span>
-      </button>
-      <button
-        class="l-glyph-equip-button c-reality-upgrade-btn"
-        @click="toggleRespecIntoProtected"
-      >
-        Unequip Glyphs to:
-        <br>
-        <span v-if="respecIntoProtected">Protected slots</span>
-        <span v-else>Main inventory</span>
-      </button>
-      <button
-        class="l-glyph-equip-button-short c-reality-upgrade-btn"
-        :class="{'tutorial--glow': cosmeticGlow}"
-        @click="showOptionModal"
-      >
-        Open Glyph Visual Options
-      </button>
     </div>
   </div>
 </template>

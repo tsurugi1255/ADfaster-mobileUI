@@ -66,7 +66,7 @@ export default {
     completionOverlay() {
       return {
         position: "absolute",
-        width: `${15 * Math.clampMax(this.completionCount / 5, 1)}rem`,
+        width: `${44 * Math.clampMax(this.completionCount / 5, 1)}%`,
         height: "6rem",
         background: "var(--color-good)",
         opacity: this.completionCount >= 5 ? 0 : 0.3,

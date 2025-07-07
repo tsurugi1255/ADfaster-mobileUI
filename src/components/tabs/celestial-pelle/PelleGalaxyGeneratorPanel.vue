@@ -179,8 +179,9 @@ export default {
 }
 
 .l-galaxy-generator-upgrades-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   justify-content: center;
 }
 

@@ -2,6 +2,8 @@
 import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import EffarigRunUnlockReward from "./EffarigRunUnlockReward";
 import EffarigUnlockButton from "./EffarigUnlockButton";
+import { beginProcessReality, getRealityProps } from "../../../core/reality";
+import { Effarig } from "../../../core/globals";
 
 export default {
   name: "EffarigTab",
@@ -85,7 +87,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "Effarig's", number: 1 });
+      beginProcessReality(getRealityProps(true));
+      return Effarig.initializeRun();
+      // Modal.celestials.show({ name: "Effarig's", number: 1 });
     },
     createCursedGlyph() {
       Glyphs.giveCursedGlyph();
@@ -131,22 +135,23 @@ export default {
           gained. More distinct Glyph effects significantly
           increases Relic Shards gained.
         </div>
-        <EffarigUnlockButton
-          v-for="(unlock, i) in shopUnlocks"
-          :key="i"
-          :unlock="unlock"
-        />
-        <EffarigUnlockButton
-          v-if="!runUnlocked"
-          :unlock="runUnlock"
-        />
-        <button
+        <div class="c-effarig-unlock-buttons">
+          <EffarigUnlockButton
+            v-for="(unlock, i) in shopUnlocks"
+            :key="i"
+            :unlock="unlock"
+          />
+          <EffarigUnlockButton
+            :unlock="runUnlock"
+          />
+        </div>
+        <!-- <button
           v-if="vIsFlipped"
           class="c-effarig-shop-button c-effarig-shop-button--available"
           @click="createCursedGlyph"
         >
           Get a Cursed Glyph...
-        </button>
+        </button> -->
       </div>
       <div
         v-if="runUnlocked"
@@ -184,8 +189,16 @@ export default {
 <style scoped>
 
 .c-effarig-relics,
-.c-effarig-relic-description {
+.c-effarig-relic-description,
+.c-effarig-unlock-buttons {
   width: 100%;
   padding: 0 4rem;
+}
+
+.c-effarig-unlock-buttons {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 </style>

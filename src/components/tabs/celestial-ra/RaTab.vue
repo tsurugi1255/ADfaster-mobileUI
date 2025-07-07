@@ -2,6 +2,8 @@
 import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import RaPet from "./RaPet";
 import RaPetRemembranceButton from "./RaPetRemembranceButton";
+import { beginProcessReality, getRealityProps } from "../../../core/reality";
+import { Ra } from "../../../core/globals";
 
 export default {
   name: "RaTab",
@@ -98,7 +100,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "Ra's", number: 4 });
+      beginProcessReality(getRealityProps(true));
+      return Ra.initializeRun();
+      // Modal.celestials.show({ name: "Ra's", number: 4 });
     },
     toggleMode() {
       Ra.toggleMode();

@@ -3,6 +3,8 @@ import BlackHoleChargingSliders from "@/components/tabs/black-hole/BlackHoleChar
 import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
+import { beginProcessReality, getRealityProps } from "../../../core/reality";
+import { Enslaved } from "../../../core/globals";
 
 export default {
   name: "EnslavedTab",
@@ -168,7 +170,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "The Nameless Ones'", number: 2 });
+      beginProcessReality(getRealityProps(true));
+      return Enslaved.initializeRun();
+      // Modal.celestials.show({ name: "The Nameless Ones'", number: 2 });
     },
     hasUnlock(info) {
       return Enslaved.has(info);
@@ -203,16 +207,6 @@ export default {
 <template>
   <div class="l-enslaved-celestial-tab">
     <CelestialQuoteHistory celestial="enslaved" />
-    <div
-      v-if="hasAutoRelease && canAutoRelease"
-      class="c-subtab-option-container"
-    >
-      <PrimaryToggleButton
-        v-model="autoRelease"
-        class="o-primary-btn--subtab-option"
-        label="Pulse Black Hole:"
-      />
-    </div>
     <div class="l-enslaved-celestial-tab--inner">
       <div class="l-enslaved-run-container">
         <div v-if="hasUnlock(unlocksInfo.RUN)">
@@ -322,7 +316,6 @@ export default {
             </div>
           </div>
         </div>
-        <BlackHoleChargingSliders />
         <br>
         <div class="l-enslaved-shop-container">
           <button

@@ -116,9 +116,10 @@ export default {
       {{ text }}
       <br>
     </span>
-    <span
+    <div
       v-if="glyphs.length !== 0"
       :class="{ 'l-glyph-set-preview': !isInModal}"
+      class="l-glyph-set-preview-inner"
       @click="showModal"
     >
       <GlyphSetName
@@ -144,15 +145,15 @@ export default {
         glow-blur="0.2rem"
         glow-spread="0.1rem"
       />
-    </span>
-    <span v-else>
+    </div>
+    <div v-else>
       <GlyphSetName
         v-if="showName"
         :glyph-set="glyphs"
         :force-color="forceNameColor"
       />
       {{ noneText }}
-    </span>
+    </div>
   </div>
 </template>
 

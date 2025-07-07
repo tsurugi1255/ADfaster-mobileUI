@@ -41,6 +41,11 @@ export default {
       sacrificeUnlocked: false,
       sacrificeDisplayed: false,
       resetRealityDisplayed: false,
+      respec: player.reality.respec,
+      undoVisible: false,
+      undoAvailable: false,
+      respecIntoProtected: player.options.respecIntoProtected,
+      undoSlotsAvailable: 0,
     };
   },
   computed: {
@@ -54,9 +59,39 @@ export default {
         "o-glyph-color-checkbox--inactive": !this.glyphTextColors,
       };
     },
+    isDoomed() {
+      return Pelle.isDoomed;
+    },
+    // "Armageddon" causes the button to have text overflow, so we conditionally make the button taller; this doesn't
+    // cause container overflow due to another button being removed entirely when doomed
+    unequipClass() {
+      return {
+        "l-glyph-equip-button": this.isDoomed,
+        "l-glyph-equip-button-short": !this.isDoomed,
+      };
+    },
+    glyphRespecStyle() {
+      if (this.respec) {
+        return {
+          color: "var(--color-reality-light)",
+          "background-color": "var(--color-reality)",
+          "border-color": "#094e0b",
+          cursor: "pointer",
+        };
+      }
+      return {
+        cursor: "pointer",
+      };
+    },
+    unequipText() {
+      if (Pelle.isDoomed) return "Unequip Glyphs on Armageddon";
+      return "Unequip Glyphs on Reality";
+    }
   },
   methods: {
     update() {
+      this.respec = player.reality.respec;
+      this.undoVisible = TeresaUnlocks.undo.canBeApplied;
       this.resetRealityDisplayed = PlayerProgress.realityUnlocked();
       this.showInstability = player.records.bestReality.glyphLevel > 800;
       this.instabilityThreshold = Glyphs.instabilityThreshold;
@@ -68,6 +103,9 @@ export default {
       this.enslavedHint = "";
       this.sacrificeUnlocked = GlyphSacrificeHandler.canSacrifice;
       this.sacrificeDisplayed = player.reality.showGlyphSacrifice;
+      this.undoAvailable = this.undoVisible && this.undoSlotsAvailable && player.reality.glyphs.undo.length > 0;
+      this.undoSlotsAvailable = this.respecIntoProtected
+      this.respecIntoProtected = player.options.respecIntoProtected;
       if (!Enslaved.isRunning) return;
       const haveBoost = Glyphs.activeWithoutCompanion.find(e => e.level < Enslaved.glyphLevelMin) !== undefined;
       if (haveBoost) {
@@ -103,6 +141,17 @@ export default {
       return {
         "l-half-width": this.canAmplify
       };
+    },
+    toggleRespec() {
+      player.reality.respec = !player.reality.respec;
+    },
+    toggleRespecIntoProtected() {
+      player.options.respecIntoProtected = !player.options.respecIntoProtected;
+    },
+    undo() {
+      if (!this.undoAvailable || Pelle.isDoomed) return;
+      if (player.options.confirmations.glyphUndo) Modal.glyphUndo.show();
+      else Glyphs.undo();
     }
   }
 };
@@ -160,10 +209,10 @@ export default {
       </ExpandingControlBox>
       <div class="l-reality-button-column">
         <div class="l-equipped-glyphs-and-effects-container">
+          <GlyphPeek />
           <EquippedGlyphs />
         </div>
         <div class="l-reality-control-buttons">
-          <GlyphPeek />
           <div
             v-if="resetRealityDisplayed"
             class="l-reality-button-group"
@@ -173,6 +222,40 @@ export default {
               :class="buttonGroupClass()"
             />
             <ResetRealityButton :class="buttonGroupClass()" />
+          </div>
+          <div class="l-equipped-glyphs__buttons">
+            <button
+              class="c-reality-upgrade-btn"
+              :class="unequipClass"
+              :style="glyphRespecStyle"
+              @click="toggleRespec"
+            >
+              {{ unequipText }}
+            </button>
+            <button
+              v-if="undoVisible"
+              class="l-glyph-equip-button c-reality-upgrade-btn"
+              :class="{'c-reality-upgrade-btn--unavailable': !undoAvailable}"
+              @click="undo"
+            >
+              <span>Undo</span>
+            </button>
+            <button
+              class="l-glyph-equip-button c-reality-upgrade-btn"
+              @click="toggleRespecIntoProtected"
+            >
+              Unequip Glyphs to:
+              <br>
+              <span v-if="respecIntoProtected">Protected slots</span>
+              <span v-else>Main inventory</span>
+            </button>
+            <!-- <button
+              class="l-glyph-equip-button-short c-reality-upgrade-btn"
+              :class="{'tutorial--glow': cosmeticGlow}"
+              @click="showOptionModal"
+            >
+              Open Glyph Visual Options
+            </button> -->
           </div>
 
           <div
@@ -194,8 +277,8 @@ export default {
               Repeat this Celestial's Reality
             </label>
           </div>
-          <RealityReminder />
-          <SingleGlyphCustomzationPanel />
+          <!-- <RealityReminder /> -->
+          <!-- <SingleGlyphCustomzationPanel /> -->
         </div>
       </div>
       <div class="l-player-glyphs-column">

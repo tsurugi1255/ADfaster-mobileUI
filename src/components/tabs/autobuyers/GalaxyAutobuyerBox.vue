@@ -81,7 +81,7 @@ export default {
           type="checkbox"
           class="o-clickable"
         >
-        Limit Antimatter Galaxies to:
+        &nbsp;Limit Antimatter Galaxies to:
       </label>
       <AutobuyerInput
         :autobuyer="autobuyer"
@@ -95,5 +95,10 @@ export default {
 <style scoped>
 .o-clickable {
   cursor: pointer;
+}
+
+input[type="checkbox"].o-clickable {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>

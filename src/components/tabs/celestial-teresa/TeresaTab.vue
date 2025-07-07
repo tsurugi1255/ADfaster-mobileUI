@@ -5,6 +5,8 @@ import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import CustomizeableTooltip from "@/components/CustomizeableTooltip";
 import GlyphSetPreview from "@/components/GlyphSetPreview";
 import PerkShopUpgradeButton from "./PerkShopUpgradeButton";
+import { beginProcessReality, getRealityProps } from "../../../core/reality";
+import { Teresa } from "../../../core/globals";
 
 export default {
   name: "TeresaTab",
@@ -121,7 +123,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "Teresa's", number: 0 });
+      beginProcessReality(getRealityProps(true));
+      return Teresa.initializeRun();
+      // Modal.celestials.show({ name: "Teresa's", number: 0 });
     },
     unlockDescriptionHeight(unlockInfo) {
       const maxPrice = TeresaUnlocks[Teresa.lastUnlock].price;

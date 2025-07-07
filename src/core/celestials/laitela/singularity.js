@@ -188,7 +188,7 @@ export const SingularityMilestones = {
   },
 
   get nextMilestoneGroup() {
-    return this.sortedForCompletions(false).filter(m => !m.isMaxed).slice(0, 6);
+    return this.sortedForCompletions(false).filter(m => !m.isMaxed).slice(0, 2);
   },
 
   get unseenMilestones() {

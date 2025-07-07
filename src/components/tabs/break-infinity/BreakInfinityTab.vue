@@ -21,16 +21,16 @@ export default {
           BreakInfinityUpgrade.currentAMMult,
         ],
         [
-          BreakInfinityUpgrade.galaxyBoost,
           BreakInfinityUpgrade.infinitiedMult,
-        ],
-        [
           BreakInfinityUpgrade.achievementMult,
-          BreakInfinityUpgrade.slowestChallengeMult,
         ],
         [
+          BreakInfinityUpgrade.slowestChallengeMult,
           BreakInfinityUpgrade.infinitiedGen,
+        ],
+        [
           BreakInfinityUpgrade.autobuyMaxDimboosts,
+          BreakInfinityUpgrade.galaxyBoost,
         ],
         [
           BreakInfinityUpgrade.autobuyerSpeed,

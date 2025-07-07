@@ -227,7 +227,7 @@ export default {
 .c-pelle-rift-bar {
   display: flex;
   width: 100%;
-  height: 5rem;
+  height: 10rem;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -260,11 +260,11 @@ export default {
 
 .l-overflow-hidden {
   overflow: hidden;
-  width: 32rem;
-  height: 5rem;
+  width: 100%;
+  height: 10rem;
   position: absolute;
   top: -0.2rem;
-  left: -0.2rem;
+  /* left: -0.2rem; */
   z-index: 0;
   border: var(--var-border-width, 0.16rem) solid transparent;
   border-radius: var(--var-border-radius, 0.5rem);

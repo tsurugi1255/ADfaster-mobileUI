@@ -42,7 +42,9 @@ export default {
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "Lai'tela's", number: 5 });
+      beginProcessReality(getRealityProps(true));
+      return Laitela.initializeRun();
+      // Modal.celestials.show({ name: "Lai'tela's", number: 5 });
     },
     classObject() {
       return {

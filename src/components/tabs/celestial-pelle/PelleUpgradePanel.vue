@@ -94,7 +94,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="c-pelle-upgrade-container c-pelle-rebuyable-upgrade-container">
+      <div class="c-pelle-rebuyable-upgrade-container">
         <PelleUpgradeVue
           v-for="upgrade in rebuyables"
           :key="upgrade.config.id"
@@ -160,7 +160,7 @@ export default {
   box-shadow: 0.1rem 0.1rem 0.3rem var(--color-pelle--base);
 }
 
-.c-pelle-upgrade-container {
+.c-pelle-rebuyable-upgrade-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -168,8 +168,29 @@ export default {
   margin: 2rem 0;
 }
 
-.c-pelle-rebuyable-upgrade-container > .c-pelle-upgrade:first-child,
-.c-pelle-single-upgrade-container > .c-pelle-upgrade:last-child {
+.c-pelle-upgrade-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 95%;
+  margin: 2rem 0;
+}
+
+.c-pelle-upgrade-container > .c-pelle-upgrade {
+  width: calc(50% - 0.5rem);
+  margin-top: 1rem;
+}
+
+.c-pelle-upgrade-container > .c-pelle-upgrade:nth-child(odd) {
+  margin-right: 0.5rem;
+}
+
+.c-pelle-upgrade-container > .c-pelle-upgrade:nth-child(even) {
+  margin-left: 0.5rem;
+}
+
+.c-pelle-rebuyable-upgrade-container > .c-pelle-upgrade:first-child {
   grid-column: 1 / -1;
   width: calc(50% - 0.5rem);
   justify-self: center;

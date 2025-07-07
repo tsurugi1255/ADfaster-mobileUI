@@ -150,10 +150,10 @@ export default {
 <style scoped>
 .o-dilation-upgrade {
   width: 100%;
-  min-height: 15rem;
+  min-height: 20rem;
   height: 100%;
   font-family: Typewriter, serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: bold;
   background: black;
   border: 0.1rem solid;

@@ -168,6 +168,7 @@ export default {
   flex-direction: column;
   width: 100%;
   height: auto;
+  min-height: 17rem;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -190,10 +191,16 @@ export default {
 
 /* stylelint-disable-next-line selector-class-pattern */
 .c-pelle-upgrade--galaxyGenerator {
-  font-weight: bold;
+  font-weight: normal;
   color: black;
   background: linear-gradient(var(--color-pelle--secondary), var(--color-pelle--base));
   box-shadow: none;
+}
+
+.c-pelle-upgrade--galaxyGenerator:first-child {
+  grid-column: 1/-1;
+  width: calc(50% - 0.5rem);
+  justify-self: center;
 }
 
 .c-pelle-upgrade--unavailable {
