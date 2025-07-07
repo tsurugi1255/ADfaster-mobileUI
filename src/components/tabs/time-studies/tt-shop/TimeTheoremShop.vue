@@ -242,7 +242,6 @@ export default {
           </button>
           <button
             class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
-            :class="respecClassObject"
             onClick="Modal.preferredTree.show()"
           >
             Select Preferred Path
@@ -258,6 +257,7 @@ export default {
           <div class="l-tt-buy-max-vbox">
             <button
               class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
+              :class="respecClassObject"
               @click="respec = !respec"
             >
               Respec on next Eternity
