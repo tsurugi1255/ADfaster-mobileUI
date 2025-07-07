@@ -466,12 +466,13 @@ button:focus {
 
 .c-tt-buy-button {
   font-family: Typewriter, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   border: 0.1rem solid #691fa5;
   border-radius: var(--var-border-radius, 4px);
   transition-duration: 0.2s;
   height: auto !important;
+  min-height: 7rem;
   padding: 1rem;
 }
 
@@ -516,9 +517,9 @@ button:focus {
 .o-tt-top-row-button {
   flex-grow: 0;
   flex-shrink: 0;
-  min-height: 3rem;
+  min-height: 7rem;
   align-self: stretch;
-  font-size: 2rem;
+  font-size: 2.5rem;
   /* margin: 0.3rem; */
   padding: 1rem;
 }
@@ -740,7 +741,7 @@ button:focus {
 
 .l-reality-button {
   width: 100%;
-  height: 100%;
+  height: 17rem;
   margin-bottom: 1rem;
 }
 
@@ -1988,6 +1989,7 @@ br {
 .o-prestige-button {
   width: 95%;
   height: 100%;
+  min-height: 17rem;
   font-family: Typewriter, serif;
   font-size: 2.3rem;
   border: var(--var-border-width, 0.2rem) solid;
@@ -4135,7 +4137,7 @@ div.l-autobuyers-tab {
 /* #region o-autobuyer-input */
 
 .o-autobuyer-input {
-  height: 3rem;
+  height: auto;
   font-family: typewriter;
   font-size: 2rem;
   border: 0.1rem solid #c2c2c2;
@@ -4270,11 +4272,11 @@ div.l-autobuyers-tab {
 /* #region o-autobuyer-btn */
 
 .o-autobuyer-btn {
-  width: 17.5rem;
-  height: 3.5rem;
+  width: 100%;
+  height: 100%;
   font-family: Typewriter;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: var(--color-text);
   background: var(--color-base);
   border: 0.1rem solid #ed85df;
@@ -4282,6 +4284,7 @@ div.l-autobuyers-tab {
   margin-bottom: -0.1rem;
   transition-duration: 0.2s;
   cursor: pointer;
+  padding: 1rem;
 }
 
 .o-autobuyer-btn:hover {
@@ -4578,8 +4581,8 @@ properly on certain themes. */
 }
 
 .c-small-autobuyer-input {
-  width: 10rem;
-  height: 2rem;
+  width: 15rem;
+  height: auto;
   border-color: var(--color-laitela--accent);
   border-width: var(--var-border-width, 0.2rem);
   border-radius: var(--var-border-radius, 0.5rem);
@@ -5183,7 +5186,7 @@ properly on certain themes. */
   width: 35%;
   min-height: 12rem;
   font-family: Typewriter, serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: normal;
   border: var(--var-border-width, 0.2rem) solid var(--color-dilation);
   border-radius: var(--var-border-radius, 0.4rem);
@@ -6114,10 +6117,10 @@ kbd {
 }
 
 .c-teresa-run-button__icon {
-  width: 12rem;
-  height: 12rem;
+  width: 50%;
+  aspect-ratio: 1/1;
   align-items: center;
-  font-size: 7rem;
+  font-size: 10rem;
   font-weight: bold;
   color: var(--color-teresa--base);
   text-shadow: 0.1rem 0.1rem 0.5rem;
@@ -6261,7 +6264,8 @@ kbd {
 .c-effarig-shop-button {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
+  min-height: 13rem;
   justify-content: center;
   align-items: center;
   font-family: Typewriter;
@@ -6272,7 +6276,7 @@ kbd {
   border: none;
   border-radius: var(--var-border-radius, 0.5rem);
   padding: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   transition-duration: 0.2s;
 }
 
@@ -7180,7 +7184,7 @@ kbd {
 
 .c-ra-exp-bar {
   height: 100%;
-  flex: 0 0 90%;
+  flex: 0 0 87%;
   position: relative;
   z-index: 1;
   border: var(--var-border-width, 0.2rem) solid black;
@@ -7199,7 +7203,7 @@ kbd {
 
 .c-ra-upgrade-bar {
   display: flex;
-  flex: 0 0 75%;
+  flex: 0 0 65%;
   justify-content: flex-end;
   border: var(--var-border-width, 0.2rem) solid black;
 }
@@ -7459,7 +7463,7 @@ kbd {
 
 .c-ra-pet-upgrade {
   display: flex;
-  flex: 0 0 25%;
+  flex: 0 0 35%;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -7604,7 +7608,7 @@ kbd {
 
 .c-ra-level-up-btn {
   display: flex;
-  flex: 0 0 10%;
+  flex: 0 0 13%;
   height: 100%;
   position: relative;
   justify-content: center;
@@ -7680,7 +7684,7 @@ kbd {
 
 .l-ra-pet-middle-container {
   display: flex;
-  height: 10rem;
+  height: 13rem;
   justify-content: center;
   align-items: center;
   margin: 1.5rem 0;
@@ -8015,7 +8019,7 @@ kbd {
   border-radius: var(--var-border-radius, 0.5rem);
   margin-bottom: 1rem;
   transition-duration: 0.15s;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 .o-dark-matter-dimension-button--available {
@@ -8712,10 +8716,11 @@ kbd {
 
 .l-reality-button-group {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  column-gap: 1rem;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
   width: 100%;
   margin: 1rem 0;
+  padding-right: 1rem;
 }
 
 .l-reality-button-group button {
