@@ -974,7 +974,7 @@
 .c-glyph-peek {
   width: 100%;
   max-width: 100%;
-  min-height: 21rem;
+  min-height: 30rem;
   border: 0.1rem solid #b8b8b8;
   border-radius: var(--var-border-radius, 0.5rem);
   padding: 2rem;

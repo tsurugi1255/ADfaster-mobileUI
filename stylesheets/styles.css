@@ -5373,6 +5373,10 @@ properly on certain themes. */
   align-items: center;
 }
 
+.c-modal__inner {
+  width: 100%;
+}
+
 .t-amoled .c-modal,
 .t-amoled-metro .c-modal {
   border-color: var(--color-good-dark);
@@ -5386,9 +5390,9 @@ properly on certain themes. */
 
 .c-modal__title {
   display: inline-block;
-  width: 100rem;
-  font-size: 2rem;
-  font-weight: bold;
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: normal;
   padding: 0 3rem;
 }
 
@@ -8207,6 +8211,7 @@ kbd {
 
 .c-laitela-singularity {
   width: 90%;
+  min-height: 20rem;
   color: white;
   background: black;
   border: var(--var-border-width, 0.2rem) solid white;
@@ -8292,7 +8297,7 @@ kbd {
 .l-singularity-milestone-modal-container-inner {
   display: flex;
   flex-wrap: wrap;
-  width: 111rem;
+  width: 100%;
   height: 120rem;
   justify-content: space-evenly;
   padding-bottom: 2rem;
@@ -8303,29 +8308,28 @@ kbd {
 }
 
 .l-singularity-milestone-sort-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
-  left: -0.5rem;
+  gap: 1rem;
   border: 0.1rem solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.6rem);
   margin: 1rem 0 0 1rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .c-singularity-milestone-modal-sort-button {
-  width: 26.5rem;
-  height: 6rem;
+  height: 100%;
   font-family: Typewriter, serif;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: normal;
   color: var(--color-laitela--accent);
   background-color: var(--color-laitela--base);
   border: 0.1rem solid var(--color-laitela--accent);
   border-radius: var(--var-border-radius, 0.5rem);
-  margin: 0 0.5rem;
   transition-duration: 0.15s;
   cursor: pointer;
+  padding: 1rem;
 }
 
 .c-singularity-milestone-modal-sort-button:hover {
