@@ -456,8 +456,8 @@ export default {
     },
     dotStyles() {
       let ret = {
-        width: this.dotWidthVal,
-        height: this.dotHeightVal,
+        width: this.dotWidthVal*3,
+        height: this.dotHeightVal*2.5,
         position: "absolute",
       }
       if (this.direction === "vertical") {

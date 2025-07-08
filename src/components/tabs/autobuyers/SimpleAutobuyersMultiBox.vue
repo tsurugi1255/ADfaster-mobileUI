@@ -11,7 +11,7 @@ export default {
   },
   computed: {
     multiple() {
-      return Autobuyers.display[0];
+      return [Autobuyers.display[0][0]];
     },
   }
 };

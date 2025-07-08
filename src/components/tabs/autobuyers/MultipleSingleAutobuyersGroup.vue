@@ -9,7 +9,7 @@ export default {
   },
   computed: {
     singles() {
-      return Autobuyers.display[1];
+      return [Autobuyers.display[1][0]];
     },
     entryCount() {
       return this.singles.length;
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <span class="l-autobuyer-singlet-group">
+  <div class="l-autobuyer-singlet-group">
     <template
       v-for="(type, id) in singles"
     >
@@ -44,7 +44,7 @@ export default {
         :key="id"
       >
     </template>
-  </span>
+  </div>
 </template>
 
 <style scoped>

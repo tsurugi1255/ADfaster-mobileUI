@@ -128,23 +128,25 @@ export default {
         :glyph-set="glyphs"
         :force-color="forceNameColor"
       />
-      <GlyphComponent
-        v-for="(g, idx) in orderedGlyphs"
-        :key="idx"
-        class="l-preview"
-        :glyph="g"
-        :show-sacrifice="showSacrifice"
-        :draggable="false"
-        :circular="true"
-        :ignore-modified-level="ignoreModifiedLevel"
-        :reality-glyph-boost="realityGlyphBoost"
-        :flip-tooltip="flipTooltip"
-        :is-in-modal="isInModal"
-        size="3rem"
-        :text-proportion="0.5"
-        glow-blur="0.2rem"
-        glow-spread="0.1rem"
-      />
+      <div class="l-glyph-set-preview-glyphs">
+        <GlyphComponent
+          v-for="(g, idx) in orderedGlyphs"
+          :key="idx"
+          class="l-preview"
+          :glyph="g"
+          :show-sacrifice="showSacrifice"
+          :draggable="false"
+          :circular="true"
+          :ignore-modified-level="ignoreModifiedLevel"
+          :reality-glyph-boost="realityGlyphBoost"
+          :flip-tooltip="flipTooltip"
+          :is-in-modal="isInModal"
+          size="3rem"
+          :text-proportion="0.5"
+          glow-blur="0.2rem"
+          glow-spread="0.1rem"
+        />
+      </div>
     </div>
     <div v-else>
       <GlyphSetName

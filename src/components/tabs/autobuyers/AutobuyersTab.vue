@@ -94,8 +94,7 @@ export default {
     <GalaxyAutobuyerBox />
     <DimensionBoostAutobuyerBox />
     <TickspeedAutobuyerBox v-if="!hasContinuum" class="c-tickspeed-pos" />
-    <MultipleSingleAutobuyersGroup v-if="!hasContinuum" />
-    <MultipleSingleAutobuyersGroup v-if="hasContinuum" class="l-autobuyer-singlet-group__continuum" />
+    <MultipleSingleAutobuyersGroup />
     <template v-if="displayADAutobuyersIndividually">
       <DimensionAutobuyerBox
         v-for="tier in 8"

@@ -694,7 +694,7 @@ export default {
       const angle = this.glyph.type === "effarig"
         ? (Math.PI / 4) * (id + 1)
         : (Math.PI / 2) * (id + 0.5);
-      const scale = 0.7 * this.size.replace("rem", "");
+      const scale = 0.6 * this.size.replace("rem", "");
       const dx = -scale * Math.sin(angle);
       const dy = scale * (Math.cos(angle) + 0.15);
       return { dx, dy };

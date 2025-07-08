@@ -100,5 +100,4 @@ export default {
 </template>
 
 <style scoped>
-
 </style>

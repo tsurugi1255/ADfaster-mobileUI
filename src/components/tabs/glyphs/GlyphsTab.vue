@@ -46,6 +46,7 @@ export default {
       undoAvailable: false,
       respecIntoProtected: player.options.respecIntoProtected,
       undoSlotsAvailable: 0,
+      cosmeticGlow: false
     };
   },
   computed: {
@@ -106,6 +107,7 @@ export default {
       this.undoAvailable = this.undoVisible && this.undoSlotsAvailable && player.reality.glyphs.undo.length > 0;
       this.undoSlotsAvailable = this.respecIntoProtected
       this.respecIntoProtected = player.options.respecIntoProtected;
+      this.cosmeticGlow = player.reality.glyphs.cosmetics.glowNotification;
       if (!Enslaved.isRunning) return;
       const haveBoost = Glyphs.activeWithoutCompanion.find(e => e.level < Enslaved.glyphLevelMin) !== undefined;
       if (haveBoost) {
@@ -152,6 +154,10 @@ export default {
       if (!this.undoAvailable || Pelle.isDoomed) return;
       if (player.options.confirmations.glyphUndo) Modal.glyphUndo.show();
       else Glyphs.undo();
+    },
+    showOptionModal() {
+      player.reality.glyphs.cosmetics.glowNotification = false;
+      Modal.glyphDisplayOptions.show();
     }
   }
 };
@@ -161,18 +167,6 @@ export default {
   <div>
     <div class="l-glyphs-tab">
       <div class="l-glyph-info-wrapper">
-        <span
-          class="l-glyph-color-box"
-          @click="toggleGlyphTextColors"
-        >
-          <div :class="glyphColorPosition()">
-            <label
-              :class="glyphColorState"
-            >
-              <span class="fas fa-palette" />
-            </label>
-          </div>
-        </span>
         <div
           v-if="sacrificeUnlocked"
           class="c-glyph-info-options"
@@ -249,13 +243,13 @@ export default {
               <span v-if="respecIntoProtected">Protected slots</span>
               <span v-else>Main inventory</span>
             </button>
-            <!-- <button
+            <button
               class="l-glyph-equip-button-short c-reality-upgrade-btn"
               :class="{'tutorial--glow': cosmeticGlow}"
               @click="showOptionModal"
             >
               Open Glyph Visual Options
-            </button> -->
+            </button>
           </div>
 
           <div

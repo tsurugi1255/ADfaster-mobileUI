@@ -125,22 +125,18 @@ export default {
         v-model="reality"
         text="Reality:"
       />
-      <div v-if="!isS11Active">
-        <ModalOptionsToggleButton
-          v-if="animatedThemeUnlocked"
-          v-model="background"
-          onclick="Themes.find(Theme.currentName()).set();"
-          text="Background:"
-        />
-      </div>
-      <div v-else>
-        <ModalOptionsToggleButton
-          v-if="animatedThemeUnlocked"
-          v-model="background"
-          onclick="Themes.find(Theme.currentName()).set();"
-          text="Blobsnow:"
-        />
-      </div>
+      <ModalOptionsToggleButton
+        v-if="animatedThemeUnlocked && !isS11Active"
+        v-model="background"
+        onclick="Themes.find(Theme.currentName()).set();"
+        text="Background:"
+      />
+      <ModalOptionsToggleButton
+        v-if="animatedThemeUnlocked && isS11Active"
+        v-model="background"
+        onclick="Themes.find(Theme.currentName()).set();"
+        text="Blobsnow:"
+      />
       <div
         v-if="isS11Active"
         class="c-blobflake-slider o-primary-btn o-primary-btn--modal-option o-primary-btn--slider"
