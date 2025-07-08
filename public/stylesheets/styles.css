@@ -5358,13 +5358,14 @@ properly on certain themes. */
 .c-modal {
   text-align: center;
   font-family: Typewriter, serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: var(--color-text);
   background-color: var(--color-base);
   border: var(--var-border-width, 0.3rem) solid black;
   border-radius: var(--var-border-radius, 0.6rem);
   padding: 1rem;
   transition: all 0.2s, left 0s, top 0s, transform 0s;
+  width: 80vw;
 }
 
 .t-amoled .c-modal,
@@ -5380,8 +5381,8 @@ properly on certain themes. */
 
 .c-modal__title {
   display: inline-block;
-  width: 50rem;
-  font-size: 1.6rem;
+  width: 100rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 0 3rem;
 }
@@ -5573,7 +5574,7 @@ properly on certain themes. */
 /* #region c-modal-message */
 
 .c-modal-message {
-  min-width: 50rem;
+  width: 100%;
 }
 
 .c-modal-message__text {
@@ -5582,6 +5583,11 @@ properly on certain themes. */
 
 .c-modal-message__okay-btn {
   margin: 1rem 0.5rem 0;
+  font-size: 2rem;
+  min-width: 12rem;
+  width: auto;
+  height: 100%;
+  padding: 1rem;
 }
 
 /* #endregion c-modal-message */

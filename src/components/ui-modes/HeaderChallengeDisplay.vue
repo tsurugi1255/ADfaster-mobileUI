@@ -226,6 +226,7 @@ export default {
   font-weight: normal;
   color: var(--color-text);
   margin: 0.5rem;
+  min-height: 9rem;
 }
 
 .challenge-text-only {

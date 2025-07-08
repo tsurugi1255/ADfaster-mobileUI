@@ -85,7 +85,7 @@ export default {
 .modal-progress-bar {
   display: flex;
   flex-direction: column;
-  width: 40rem;
+  width: 100%;
   z-index: 3;
   justify-content: space-between;
   align-items: center;
@@ -113,13 +113,23 @@ export default {
 .modal-progress-bar__buttons {
   display: flex;
   flex-direction: row;
-  width: 25rem;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
   align-items: center;
 }
 
+.modal-progress-bar__buttons button {
+  font-size: 2rem;
+  font-weight: normal;
+  width: auto;
+  min-width: 12rem;
+  height: 100%;
+  padding: 1rem;
+  margin: 2rem;
+}
+
 .modal-progress-bar__label {
-  font-size: large;
+  font-size: 2.5rem;
   padding-bottom: 0.5rem;
 }
 

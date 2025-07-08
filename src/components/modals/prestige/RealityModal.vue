@@ -157,27 +157,21 @@ export default {
       v-if="!firstReality"
       class="l-glyph-selection__row"
     >
-      <GlyphComponent
-        v-for="(glyph, index) in glyphs"
-        :key="index"
-        :class="glyphClass(index)"
-        :glyph="glyph"
-        :is-in-modal="true"
-        :ignore-modified-level="true"
-        :show-sacrifice="canSacrifice"
-        @click.native="select(index)"
-      />
-    </div>
-    <div
-      v-if="!firstReality"
-      class="l-glyph-selection__row"
-    >
-      <PrimaryButton
-	  class="l-glyph-equip-button"
-        v-for="(_, index) in glyphs"
-        :key="index"
-        @click.native="select(index)"
-      >Select glyph {{index+1}}</PrimaryButton>
+      <div
+          class="l-glyph-selection-glyph-wrapper"
+          v-for="(glyph, index) in glyphs"
+          @click="select(index)"
+      >
+        <GlyphComponent
+          :key="index"
+          :class="glyphClass(index)"
+          :glyph="glyph"
+          :is-in-modal="true"
+          :ignore-modified-level="true"
+          :show-sacrifice="canSacrifice"
+        />
+        <button class="l-glyph-equip-button"></button>
+      </div>
     </div>
     <div v-if="!firstReality">
       {{ levelStats }}
@@ -231,6 +225,27 @@ export default {
 </template>
 
 <style scoped>
+.l-glyph-selection__row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 10rem;
+  gap: 1rem;
+}
+
+.l-glyph-selection-glyph-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.l-glyph-equip-button {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border: none;
+  background-color: transparent;
+}
 .o-warning {
   color: var(--color-infinity);
 }
