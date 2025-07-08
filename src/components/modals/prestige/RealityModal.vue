@@ -227,13 +227,13 @@ export default {
 <style scoped>
 .l-glyph-selection__row {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 10rem;
+  grid-template-columns: repeat(4, 10rem);
   gap: 1rem;
 }
 
 .l-glyph-selection-glyph-wrapper {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 

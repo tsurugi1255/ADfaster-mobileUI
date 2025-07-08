@@ -7,6 +7,7 @@ import LaitelaRunButton from "./LaitelaRunButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import SingularityMilestonePane from "./SingularityMilestonePane";
 import SingularityPane from "./SingularityPane";
+import HoldableButton from "@/components/HoldableButton.vue";
 
 export default {
   name: "LaitelaTab",
@@ -18,7 +19,8 @@ export default {
     AnnihilationButton,
     LaitelaAutobuyerPane,
     CelestialQuoteHistory,
-    PrimaryButton
+    PrimaryButton,
+    HoldableButton
   },
   data() {
     return {
@@ -120,12 +122,12 @@ export default {
     <div class="l-laitela-mechanics-container">
       <LaitelaRunButton />
       <div class="c-dark-matter-dimensions-grp">
-        <button
-          class="o-dark-matter-dimension-button o-max-dark-matter-dim-button"
-          @click="maxAll"
+        <HoldableButton
+          className="o-dark-matter-dimension-button o-max-dark-matter-dim-button"
+          :onHoldFunction="maxAll"
         >
-          Max all Dark Matter Dimensions
-      </button>
+        Max all Dark Matter Dimensions
+        </HoldableButton>
         <DarkMatterDimensionGroup />
         <AnnihilationButton v-if="showAnnihilation" />
       </div>

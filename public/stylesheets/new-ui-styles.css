@@ -126,7 +126,7 @@ body.t-s12 {
 .o-tab-btn {
   height: 100%;
   flex: 1 1 15vw;
-  min-width: 15vw;
+  min-width: 12vw;
   position: relative;
   font-size: 3rem;
   border-radius: 0;
@@ -232,10 +232,10 @@ body.t-s12 {
 }
 
 .o-tab-btn--subtab {
-  flex: 1 1 45%;
-  min-width: 45%;
+  flex: 1 1 25%;
+  min-width: 25%;
   height: 100%;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 4.5rem;
   margin-left: -0.1rem;
   transition-duration: 0.15s;

@@ -8,7 +8,7 @@ export const tabs = [
     subtabs: [
       {
         key: "antimatter",
-        name: "Antimatter Dimensions",
+        name: "Antimatter",
         symbol: "Ω",
         component: "AntimatterDimensionsTab",
         id: 0,
@@ -16,7 +16,7 @@ export const tabs = [
       },
       {
         key: "infinity",
-        name: "Infinity Dimensions",
+        name: "Infinity",
         hideAt: 2.7,
         symbol: "∞",
         component: "InfinityDimensionsTab",
@@ -29,7 +29,7 @@ export const tabs = [
       },
       {
         key: "time",
-        name: "Time Dimensions",
+        name: "Time",
         hideAt: 2.6,
         symbol: "Δ",
         component: "TimeDimensionsTab",
@@ -89,7 +89,7 @@ export const tabs = [
       },
       {
         key: "challenges",
-        name: "Challenge records",
+        name: "Records",
         symbol: "<i class='fas fa-stopwatch'></i>",
         component: "ChallengeRecordsTab",
         condition: () =>
@@ -101,7 +101,7 @@ export const tabs = [
       },
       {
         key: "prestige runs",
-        name: "Past Prestige Runs",
+        name: "Past Runs",
         symbol: "<i class='fas fa-list-ol'></i>",
         component: "PastPrestigeRunsTab",
         condition: () => PlayerProgress.infinityUnlocked(),
@@ -110,7 +110,7 @@ export const tabs = [
       },
       {
         key: "multipliers",
-        name: "Multiplier Breakdown",
+        name: "Multipliers",
         symbol: "<i class='fas fa-calculator'></i>",
         component: "MultiplierBreakdownTab",
         condition: () => PlayerProgress.infinityUnlocked(),
@@ -128,7 +128,7 @@ export const tabs = [
       },
       {
         key: "speedrun milestones",
-        name: "Speedrun Milestones",
+        name: "Speedrun",
         symbol: "<i class='fas fa-flag-checkered'></i>",
         component: "SpeedrunMilestonesTab",
         condition: () => player.speedrun.isActive,
@@ -137,7 +137,7 @@ export const tabs = [
       },
       {
         key: "speedrun records",
-        name: "Speedrun Records",
+        name: "Records",
         symbol: "<i class='fas fa-ranking-star'></i>",
         component: "PreviousSpeedrunTab",
         condition: () => Object.keys(player.speedrun.previousRuns).length > 0,
@@ -163,7 +163,7 @@ export const tabs = [
       },
       {
         key: "secret",
-        name: "Secret Achievements",
+        name: "Secret",
         symbol: "<i class='fas fa-question'></i>",
         component: "SecretAchievementTab",
         id: 1,
@@ -219,7 +219,7 @@ export const tabs = [
       },
       {
         key: "infinity",
-        name: "Infinity Challenges",
+        name: "Infinity",
         symbol: "∞",
         component: "infinity-challenges-tab",
         condition: () => PlayerProgress.realityUnlocked() || PlayerProgress.hasBroken() || Pelle.isDoomed,
@@ -228,7 +228,7 @@ export const tabs = [
       },
       {
         key: "eternity",
-        name: "Eternity Challenges",
+        name: "Eternity",
         symbol: "Δ",
         component: "eternity-challenges-tab",
         condition: () =>
@@ -252,7 +252,7 @@ export const tabs = [
     subtabs: [
       {
         key: "upgrades",
-        name: "Infinity Upgrades",
+        name: "Upgrades",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "InfinityUpgradesTab",
         condition: () =>
@@ -264,7 +264,7 @@ export const tabs = [
       },
       {
         key: "break",
-        name: "Break Infinity",
+        name: "Break",
         symbol: "∝",
         component: "BreakInfinityTab",
         condition: () =>
@@ -302,7 +302,7 @@ export const tabs = [
     subtabs: [
       {
         key: "studies",
-        name: "Time Studies",
+        name: "Studies",
         symbol: "<i class='fas fa-book'></i>",
         component: "TimeStudiesTab",
         id: 0,
@@ -310,7 +310,7 @@ export const tabs = [
       },
       {
         key: "upgrades",
-        name: "Eternity Upgrades",
+        name: "Upgrades",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "EternityUpgradesTab",
         id: 1,
@@ -318,7 +318,7 @@ export const tabs = [
       },
       {
         key: "milestones",
-        name: "Eternity Milestones",
+        name: "Milestones",
         symbol: "<i class='fas fa-star'></i>",
         component: "EternityMilestonesTab",
         id: 2,
@@ -326,7 +326,7 @@ export const tabs = [
       },
       {
         key: "dilation",
-        name: "Time Dilation",
+        name: "Dilation",
         symbol: "Ψ",
         component: "TimeDilationTab",
         condition: () => PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked(),
@@ -354,7 +354,7 @@ export const tabs = [
       },
       {
         key: "upgrades",
-        name: "Reality Upgrades",
+        name: "Upgrades",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "RealityUpgradesTab",
         id: 1,
@@ -362,7 +362,7 @@ export const tabs = [
       },
       {
         key: "imag_upgrades",
-        name: "Imaginary Upgrades",
+        name: "Imaginary",
         symbol: "<i class='fas fa-level-up-alt'></i>",
         component: "ImaginaryUpgradesTab",
         condition: () => MachineHandler.isIMUnlocked,
@@ -388,7 +388,7 @@ export const tabs = [
       },
       {
         key: "alchemy",
-        name: "Glyph Alchemy",
+        name: "Alchemy",
         symbol: "<i class='fas fa-vial'></i>",
         component: "AlchemyTab",
         condition: () => Ra.unlocks.unlockGlyphAlchemy.canBeApplied,
@@ -408,7 +408,7 @@ export const tabs = [
     subtabs: [
       {
         key: "celestial-navigation",
-        name: "Celestial Navigation",
+        name: "Navigation",
         symbol: "<i class='fas fa-map-marked-alt'></i>",
         component: "CelestialNavigationTab",
         id: 0,
@@ -433,7 +433,7 @@ export const tabs = [
       },
       {
         key: "enslaved",
-        name: "The Nameless Ones",
+        name: "Nameless Ones",
         symbol: "<div class='o-tab-btn--cel3'>\uf0c1</div>",
         component: "EnslavedTab",
         condition: () => EffarigUnlock.eternity.isUnlocked,

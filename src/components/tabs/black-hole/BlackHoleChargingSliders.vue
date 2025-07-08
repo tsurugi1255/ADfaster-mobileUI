@@ -69,12 +69,6 @@ export default {
     >
       <b>
         Inverted Black Hole divides game speed by {{ format(negativeBHDivisor, 2, 2) }}.
-        (Currently {{ isInverted ? "active" : "inactive" }}<span
-          v-if="negativeSlider !== 0 && !isInverted"
-          :ach-tooltip="infoTooltip"
-        >
-          <i class="fas fa-question-circle l-margin-left" />
-        </span>)
       </b>
       <SliderComponent
         v-if="!isDisabled"
@@ -97,9 +91,10 @@ export default {
 
 <style scoped>
 .l-black-hole-sliders {
-  width: 100%;
+  width: 90%;
   color: var(--color-text);
   font-size: 2rem;
+  justify-self: center;
 }
 
 .l-margin-left {

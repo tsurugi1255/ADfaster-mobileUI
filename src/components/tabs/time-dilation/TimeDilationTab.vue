@@ -1,12 +1,14 @@
 <script>
 import DilationButton from "./DilationButton";
 import DilationUpgradeButton from "./DilationUpgradeButton";
+import HoldableButton from "@/components/HoldableButton.vue";
 
 export default {
   name: "TimeDilationTab",
   components: {
     DilationButton,
-    DilationUpgradeButton
+    DilationUpgradeButton,
+    HoldableButton
   },
   data() {
     return {
@@ -80,6 +82,23 @@ export default {
       if (this.hasPelleDilationUpgrades) upgradeRows.push(this.pelleRebuyables);
       return upgradeRows;
     },
+    allRebuyablesUpgradeOrder() {
+      if(this.hasPelleDilationUpgrades) {
+        return [
+          DilationUpgrade.dtGainPelle,
+          DilationUpgrade.dtGain,
+          DilationUpgrade.galaxyMultiplier,
+          DilationUpgrade.galaxyThreshold,
+          DilationUpgrade.tickspeedPower,
+        ];
+      } else {
+        return [
+          DilationUpgrade.tachyonGain,
+          DilationUpgrade.dtGain,
+          DilationUpgrade.galaxyThreshold
+        ];
+      }
+    },
     allSingleUpgrades() {
       const upgradeRows = [];
       upgradeRows.push(...this.upgrades);
@@ -120,6 +139,11 @@ export default {
       const estimateText = getDilationTimeEstimate(this.maxDT);
       if (this.dilatedTimeIncome.lte(0)) this.toMaxTooltip = "No DT gain";
       else this.toMaxTooltip = estimateText.startsWith("<") ? "Currently Increasing" : estimateText;
+    },
+    buyAllRebuyables() {
+      for(let i=0; i < this.allRebuyablesUpgradeOrder.length; i++) {
+        this.allRebuyablesUpgradeOrder[i].purchase();
+      }
     }
   }
 };
@@ -167,6 +191,9 @@ export default {
         class="max-accent"
       >{{ format(maxDT, 2, 1) }}</span>.
     </span>
+    <HoldableButton className="maxButton" :onHoldFunction="buyAllRebuyables">
+      Max All Rebuyables
+    </HoldableButton>
     <div class="l-dilation-upgrades-grid">
       <div
         v-for="(upgradeRow, row) in allRebuyables"
@@ -208,10 +235,24 @@ export default {
   cursor: default;
 }
 
+.maxButton {
+  font-size: 2rem;
+  color: var(--color-text);
+  background-color: var(--color-base);
+  width: calc(50% - 1rem);
+  padding: 1rem;
+  font-family: Typewriter, serif;
+  border: 0.1rem solid var(--color-good-dark);
+  border-radius: var(--var-border-radius, 0.4rem);
+  margin-top: 2rem;
+  pointer-events: all;
+  cursor: pointer;
+}
+
 .l-dilation-upgrades-grid {
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin-top: 1rem;
   width: 100%;
 }
 
