@@ -587,8 +587,27 @@ export function gameLoop(passDiff, options = {}) {
   const gain = Math.clampMin(FreeTickspeed.fromShards(Currency.timeShards.value).newAmount - player.totalTickGained, 0);
   player.totalTickGained += gain;
 
+  let totalGameTime;
+
+  if (BlackHoles.areUnlocked && !BlackHoles.arePaused) {
+    totalGameTime = BlackHoles.calculateGameTimeFromRealTime(diff, BlackHoles.calculateSpeedups());
+  } else {
+    totalGameTime = getGameSpeedupFactor() * diff;
+  }
+
+  const infinitiedMilestone = getInfinitiedMilestoneReward(totalGameTime * 1000);
+  const eternitiedMilestone = getEternitiedMilestoneReward(totalGameTime * 1000);
+
+  if (eternitiedMilestone.gt(0)) {
+    Currency.eternities.add(eternitiedMilestone);
+  } else if (infinitiedMilestone.gt(0)) {
+    Currency.infinities.add(infinitiedMilestone);
+  } else {
+    Currency.eternityPoints.add(getOfflineEPGain(diff * 1000));
+  }
+
   if (InfinityUpgrade.ipOffline.isBought) {
-    Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * getGlobalSpeedFactor() / 2));
+    Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * 1000 / 2));
   }
 
   if (player.bottomButtonActive) {
