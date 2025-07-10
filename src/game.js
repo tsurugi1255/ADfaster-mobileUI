@@ -1069,7 +1069,7 @@ export function simulateTime(seconds, real, fast) {
               }
             },
             {
-              text: "SKIP",
+              text: "Skip",
               condition: (current, max) => max - current > 10,
               click: () => {
                 // We jump to 10 from the end (condition guarantees there are at least 10 left).

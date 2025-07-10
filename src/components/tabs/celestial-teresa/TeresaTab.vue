@@ -52,8 +52,8 @@ export default {
         PerkShopUpgrade.bulkDilation,
         PerkShopUpgrade.autoSpeed,
         PerkShopUpgrade.musicGlyph,
+        PerkShopUpgrade.fillMusicGlyph,
       ];
-      if (this.raisedPerkShop) upgrades.push(PerkShopUpgrade.fillMusicGlyph);
       return upgrades;
     },
     runButtonClassObject() {
