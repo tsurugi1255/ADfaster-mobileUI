@@ -9,12 +9,24 @@ export default {
         onHoldFunction: {
             type: Function,
             required: true
+        },
+        onHoldClass: {
+            type: String,
+            default: ""
         }
     },
     data() {
         return {
             isPressed: false
         };
+    },
+    computed: {
+        StyleObject() {
+            return {
+                [this.onHoldClass]: this.isPressed,
+                [this.className]: true
+            }
+        }
     },
     methods: {
         update() {
@@ -29,7 +41,7 @@ export default {
 
 <template>
     <button
-        :class="className"
+        :class="StyleObject"
         @click="onHoldFunction"
         @mousedown="isPressed = true"
         @touchstart="isPressed = true"

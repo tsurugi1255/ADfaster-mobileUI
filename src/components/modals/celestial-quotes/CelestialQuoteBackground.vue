@@ -73,8 +73,8 @@ export default {
 .l-modal-celestial-quote {
   display: flex;
   flex-direction: row;
-  width: 30rem;
-  height: 30rem;
+  width: 60vw;
+  height: 60vw;
   position: absolute;
   /* stylelint-disable-next-line unit-allowed-list */
   top: 50vh;
@@ -116,5 +116,6 @@ export default {
 .c-modal-celestial-quote__text {
   z-index: 2;
   padding: 5rem;
+  font-size: 2.5rem;
 }
 </style>

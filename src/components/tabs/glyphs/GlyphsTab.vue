@@ -11,6 +11,8 @@ import RealityReminder from "./RealityReminder";
 import ResetRealityButton from "./ResetRealityButton";
 import SacrificedGlyphs from "./SacrificedGlyphs";
 import SingleGlyphCustomzationPanel from "./SingleGlyphCustomzationPanel";
+import { Glyphs } from "../../../core/globals";
+import RealityButton from "@/components/ui-modes/prestige-header/RealityButton";
 
 export default {
   name: "GlyphsTab",
@@ -26,7 +28,8 @@ export default {
     GlyphLevelsAndWeights,
     ResetRealityButton,
     RealityReminder,
-    SingleGlyphCustomzationPanel
+    SingleGlyphCustomzationPanel,
+    RealityButton
   },
   data() {
     return {
@@ -158,6 +161,9 @@ export default {
     showOptionModal() {
       player.reality.glyphs.cosmetics.glowNotification = false;
       Modal.glyphDisplayOptions.show();
+    },
+    clearVisualFlags() {
+      Glyphs.removeAllVisualFlags();
     }
   }
 };
@@ -207,6 +213,7 @@ export default {
           <EquippedGlyphs />
         </div>
         <div class="l-reality-control-buttons">
+          <RealityButton class="mini-reality-btn" />
           <div
             v-if="resetRealityDisplayed"
             class="l-reality-button-group"
@@ -215,11 +222,11 @@ export default {
               v-if="!isInCelestialReality"
               :class="buttonGroupClass()"
             />
-            <ResetRealityButton :class="buttonGroupClass()" />
+            <ResetRealityButton :class="buttonGroupClass()" class="reset-reality-button" />
           </div>
           <div class="l-equipped-glyphs__buttons">
             <button
-              class="c-reality-upgrade-btn"
+              class="c-reality-upgrade-btn glyph-unequip-button"
               :class="unequipClass"
               :style="glyphRespecStyle"
               @click="toggleRespec"
@@ -228,14 +235,14 @@ export default {
             </button>
             <button
               v-if="undoVisible"
-              class="l-glyph-equip-button c-reality-upgrade-btn"
+              class="l-glyph-equip-button c-reality-upgrade-btn glyph-undo-button"
               :class="{'c-reality-upgrade-btn--unavailable': !undoAvailable}"
               @click="undo"
             >
               <span>Undo</span>
             </button>
             <button
-              class="l-glyph-equip-button c-reality-upgrade-btn"
+              class="l-glyph-equip-button c-reality-upgrade-btn glyph-unequip-to-button"
               @click="toggleRespecIntoProtected"
             >
               Unequip Glyphs to:
@@ -244,11 +251,17 @@ export default {
               <span v-else>Main inventory</span>
             </button>
             <button
-              class="l-glyph-equip-button-short c-reality-upgrade-btn"
+              class="l-glyph-equip-button-short c-reality-upgrade-btn glyph-visual-options-button"
               :class="{'tutorial--glow': cosmeticGlow}"
               @click="showOptionModal"
             >
               Open Glyph Visual Options
+            </button>
+            <button
+              class="l-glyph-equip-button c-reality-upgrade-btn glyph-clear-new-button"
+              @click="clearVisualFlags"
+            >
+              Clear "New"
             </button>
           </div>
 
@@ -313,5 +326,33 @@ export default {
   flex-direction: row;
   align-items: center;
   user-select: none;
+}
+
+.mini-reality-btn {
+  height: 20rem;
+}
+
+.reset-reality-button {
+  min-height: 8rem;
+}
+
+.glyph-unequip-button {
+  grid-column: 1/4;
+}
+
+.glyph-undo-button {
+  grid-column: 4/4;
+}
+
+.glyph-unequip-to-button {
+  grid-column: 1/3;
+}
+
+.glyph-visual-options-button {
+  grid-column: 3/-1;
+}
+
+.glyph-clear-new-button {
+  grid-column: 1/-1;
 }
 </style>

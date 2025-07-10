@@ -82,20 +82,6 @@ export default {
 <template>
   <div class="l-laitela-celestial-tab">
     <CelestialQuoteHistory celestial="laitela" />
-    <!-- <div class="c-subtab-option-container">
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        @click="showLaitelaHowTo()"
-      >
-        Click for Lai'tela info
-      </PrimaryButton>
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        @click="maxAll"
-      >
-        Max all Dark Matter Dimensions
-      </PrimaryButton>
-    </div> -->
     <div class="o-laitela-matter-amount">
       You have
       <span :style="styleObject">{{ format(darkMatter, 2) }}</span>
@@ -125,6 +111,7 @@ export default {
         <HoldableButton
           className="o-dark-matter-dimension-button o-max-dark-matter-dim-button"
           :onHoldFunction="maxAll"
+          onHoldClass="o-max-dark-matter-dim-button-pressed"
         >
         Max all Dark Matter Dimensions
         </HoldableButton>
@@ -137,6 +124,10 @@ export default {
 </template>
 
 <style scoped>
+.o-max-dark-matter-dim-button-pressed {
+  background-color: white;
+  color: black;
+}
 </style>
 
 

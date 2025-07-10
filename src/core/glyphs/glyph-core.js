@@ -452,6 +452,12 @@ export const Glyphs = {
     const index = Glyphs[target].indexOf(glyph.id);
     if (index > -1) Glyphs[target].splice(index, 1);
   },
+  removeAllVisualFlags() {
+    const inventoryId = this.inventoryList.map(glyph => glyph.id);
+    ["unseen", "unequipped"].forEach(target => {
+      Glyphs[target] = Glyphs[target].filter(id => !inventoryId.includes(id));
+    });
+  },
   isMusicGlyph(glyph) {
     return glyph?.cosmetic === "music";
   },

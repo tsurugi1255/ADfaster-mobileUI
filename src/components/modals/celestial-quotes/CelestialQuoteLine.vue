@@ -106,7 +106,6 @@ export default {
       @click="$emit('progress-in', 'right')"
     />
     <i
-      v-if="closeVisible"
       class="c-modal-celestial-quote__end fas fa-check-circle"
       @click="emitClose"
     />
@@ -120,6 +119,7 @@ export default {
   right: 0;
   left: 0;
   font-weight: bold;
+  font-size: 2.5rem;
 }
 
 .c-modal-celestial-quote__arrow {

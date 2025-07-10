@@ -212,7 +212,7 @@ function easeOut(x) {
 .c-modal-celestial-quote-history__close {
   position: absolute;
   z-index: 1;
-  font-size: 2.5rem;
+  font-size: 5rem;
   cursor: pointer;
 }
 
@@ -230,33 +230,33 @@ function easeOut(x) {
 }
 
 .c-modal-celestial-quote-history__arrow-down {
-  top: calc(50% + 16rem);
+  top: calc(50% + 32vw);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .c-modal-celestial-quote-history__arrow-up {
-  bottom: calc(50% + 16rem);
+  bottom: calc(50% + 32vw);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .c-modal-celestial-quote-history__arrow-left {
   top: 50%;
-  right: calc(50% + 16rem);
+  right: calc(50% + 32vw);
   transform: translateY(-50%);
 }
 
 .c-modal-celestial-quote-history__arrow-right {
   top: 50%;
-  left: calc(50% + 16rem);
+  left: calc(50% + 32vw);
   transform: translateY(-50%);
 }
 
 .c-modal-celestial-quote-history__close {
   position: absolute;
-  bottom: calc(50% + 16rem);
-  left: calc(50% + 16rem);
+  bottom: calc(50% + 32vw);
+  left: calc(50% + 32vw);
   z-index: 1;
   animation: a-fade-in 0.5s;
 }

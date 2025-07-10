@@ -35,10 +35,10 @@ export default {
 
 <template>
   <div :class="groupClass">
-    <GlyphSortButtonGroup />
-    <GlyphProtectedRowButtonGroup />
     <GlyphAutosortButtonGroup />
     <GlyphCleanButtonGroup />
+    <GlyphSortButtonGroup />
+    <GlyphProtectedRowButtonGroup />
   </div>
 </template>
 

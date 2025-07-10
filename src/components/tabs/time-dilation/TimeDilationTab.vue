@@ -1,4 +1,5 @@
 <script>
+import { buyDilationUpgrade } from "../../../core/dilation";
 import DilationButton from "./DilationButton";
 import DilationUpgradeButton from "./DilationUpgradeButton";
 import HoldableButton from "@/components/HoldableButton.vue";
@@ -85,17 +86,17 @@ export default {
     allRebuyablesUpgradeOrder() {
       if(this.hasPelleDilationUpgrades) {
         return [
-          DilationUpgrade.dtGainPelle,
-          DilationUpgrade.dtGain,
-          DilationUpgrade.galaxyMultiplier,
-          DilationUpgrade.galaxyThreshold,
-          DilationUpgrade.tickspeedPower,
+          DilationUpgrade.dtGainPelle.id,
+          DilationUpgrade.dtGain.id,
+          DilationUpgrade.galaxyMultiplier.id,
+          DilationUpgrade.galaxyThreshold.id,
+          DilationUpgrade.tickspeedPower.id,
         ];
       } else {
         return [
-          DilationUpgrade.tachyonGain,
-          DilationUpgrade.dtGain,
-          DilationUpgrade.galaxyThreshold
+          DilationUpgrade.tachyonGain.id,
+          DilationUpgrade.dtGain.id,
+          DilationUpgrade.galaxyThreshold.id
         ];
       }
     },
@@ -141,8 +142,8 @@ export default {
       else this.toMaxTooltip = estimateText.startsWith("<") ? "Currently Increasing" : estimateText;
     },
     buyAllRebuyables() {
-      for(let i=0; i < this.allRebuyablesUpgradeOrder.length; i++) {
-        this.allRebuyablesUpgradeOrder[i].purchase();
+      for(const id of this.allRebuyablesUpgradeOrder) {
+        buyDilationUpgrade(id, 1000);
       }
     }
   }
@@ -191,7 +192,11 @@ export default {
         class="max-accent"
       >{{ format(maxDT, 2, 1) }}</span>.
     </span>
-    <HoldableButton className="maxButton" :onHoldFunction="buyAllRebuyables">
+    <HoldableButton 
+      className="maxButton" 
+      onHoldClass="maxButtonPressed"
+      :onHoldFunction="buyAllRebuyables
+    ">
       Max All Rebuyables
     </HoldableButton>
     <div class="l-dilation-upgrades-grid">
@@ -247,6 +252,12 @@ export default {
   margin-top: 2rem;
   pointer-events: all;
   cursor: pointer;
+  transition: .2s;
+}
+
+.maxButtonPressed {
+  color: var(--color-text-inverted);
+  background-color: var(--color-good);
 }
 
 .l-dilation-upgrades-grid {
