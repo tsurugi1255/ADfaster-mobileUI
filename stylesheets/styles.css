@@ -4183,11 +4183,11 @@ div.l-autobuyers-tab {
 
 .o-autobuyer-toggle-checkbox__label {
   display: flex;
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   color: black;
   background: var(--color-gh-purple);
@@ -4661,8 +4661,9 @@ properly on certain themes. */
 
 .l-autobuyer-box__autobuyers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
+  gap: 1rem;
 }
 
 .l-autobuyer-box__autobuyers-internal {
@@ -4670,6 +4671,7 @@ properly on certain themes. */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 15rem;
 }
 
 .l-autobuyer-box__content {
@@ -4684,7 +4686,7 @@ properly on certain themes. */
   width: 0%;
   position: absolute;
   top: -0.2rem;
-  right: 1.8rem;
+  right: 3.6rem;
 }
 
 .s-base--metro .l-autobuyer-box__footer,
@@ -7372,14 +7374,13 @@ kbd {
 }
 
 .c-ra-remembrance-unlock-inner {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 .c-ra-pet-remembrance-button {
-  width: 100%;
+  width: calc(50% - 1rem);
   min-height: 10rem;
   text-align: center;
   font-family: Typewriter;
@@ -7387,6 +7388,7 @@ kbd {
   border: 0.1rem solid #222222;
   border-radius: var(--var-border-radius, 1rem);
   cursor: pointer;
+  margin: 0.5rem;
 }
 
 .c-ra-pet-remembrance-button:hover {
