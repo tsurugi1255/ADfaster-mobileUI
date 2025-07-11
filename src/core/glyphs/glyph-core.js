@@ -577,7 +577,8 @@ export const Glyphs = {
     for (let inventoryIndex = this.totalSlots - 1; inventoryIndex >= this.protectedSlots; --inventoryIndex) {
       const glyph = (inventoryCopy ?? this.inventory)[inventoryIndex];
       // Never clean companion, and only clean cursed if we choose to sacrifice all
-      if (glyph === null || glyph.type === "companion" || (glyph.type === "cursed" && threshold !== 0)) continue;
+      if (glyph === null || (glyph.type === "cursed" && threshold !== 0)) continue;
+      if (glyph.type === "companion" && !player.options.allowCompanionClean) continue;
       // Don't auto-clean custom glyphs (eg. music glyphs) unless it's harsh or delete all
       const isCustomGlyph = glyph.color !== undefined || glyph.symbol !== undefined;
       if (isCustomGlyph && !isHarsh) continue;

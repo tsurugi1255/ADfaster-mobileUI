@@ -778,6 +778,7 @@ window.player = {
       comma: 5,
       notation: 9
     },
+    allowCompanionClearn: false,
     sidebarResourceID: 0,
     retryChallenge: false,
     retryCelestial: false,

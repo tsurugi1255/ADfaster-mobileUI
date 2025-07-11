@@ -24,6 +24,7 @@ export default {
       automatorUnlocked: false,
       automatorLogSize: 0,
       gamePaused: false,
+      allowCompanionClean: false,
     };
   },
   computed: {
@@ -71,6 +72,9 @@ export default {
       }
       player.options.gamePaused = newValue;
     },
+    allowCompanionClean(newValue) {
+      player.options.allowCompanionClean = newValue;
+    }
   },
   // This puts the slider in the right spot on initialization
   created() {
@@ -91,6 +95,7 @@ export default {
       this.automatorUnlocked = Player.automatorUnlocked;
       this.automatorLogSize = options.automatorEvents.maxEntries;
       this.gamePaused = options.gamePaused;
+      this.allowCompanionClean = options.allowCompanionClean;
     },
     // Given the endpoints of 22-54, this produces 500, 600, ... , 900, 1000, 2000, ... , 1e6 ticks
     // It's essentially 10^(x/10) but with the mantissa spaced linearly instead of logarithmically
@@ -174,6 +179,13 @@ export default {
             @input="adjustSliderValueAutomatorLogSize($event)"
           />
         </div>
+        <PrimaryToggleButton 
+          v-model="allowCompanionClean"
+          class="o-primary-btn--option l-options-grid__button"
+          label="Allow Companion Glyphs to be Auto-Sacrificed: "
+          on="ON"
+          off="OFF"
+        />
       </div>
       <OpenModalHotkeysButton />
     </div>
