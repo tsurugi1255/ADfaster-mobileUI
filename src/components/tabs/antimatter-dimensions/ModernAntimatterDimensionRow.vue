@@ -144,9 +144,9 @@ export default {
       :rate="rateOfChange"
     />
     <div class="l-dim-row-multi-button-container c-modern-dim-tooltip-container">
-      <div class="c-modern-dim-purchase-count-tooltip">
+      <!-- <div class="c-modern-dim-purchase-count-tooltip">
         {{ boughtTooltip }}
-      </div>
+      </div> -->
       <button
         class="o-dimension-upgrade-btn"
         :class="buttonClass()"

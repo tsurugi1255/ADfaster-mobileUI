@@ -71,7 +71,6 @@ export default {
   <div class="l-autobuyers-tab">
     <div class="autobuyer-header">
       <AutobuyerToggles />
-      <OpenModalHotkeysButton />
       <div v-if="hasSeenGamespeedAlteringEffects" class="autobuyer-info">
         Autobuyer intervals and time-based settings are always <b>real time</b> and therefore
         <br>

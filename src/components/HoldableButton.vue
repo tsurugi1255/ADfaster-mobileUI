@@ -17,7 +17,8 @@ export default {
     },
     data() {
         return {
-            isPressed: false
+            isPressed: false,
+            onPressTimeout: null
         };
     },
     computed: {
@@ -33,6 +34,16 @@ export default {
             if(this.isPressed) {
                 this.onHoldFunction();
             }
+        },
+        onPress() {
+            this.onPressTimeout = setTimeout(() => {
+                this.isPressed = true;
+            }, 700);
+        },
+        releasePress() {
+            clearTimeout(this.onPressTimeout);
+            this.onPressTimeout = null;
+            this.isPressed = false;
         }
         
     }
@@ -43,11 +54,11 @@ export default {
     <button
         :class="StyleObject"
         @click="onHoldFunction"
-        @mousedown="isPressed = true"
-        @touchstart="isPressed = true"
-        @mouseup="isPressed = false"
-        @touchend="isPressed = false"
-        @mouseleave="isPressed = false"
+        @mousedown="onPress"
+        @touchstart="onPress"
+        @mouseup="releasePress"
+        @touchend="releasePress"
+        @mouseleave="releasePress"
     >
         <slot />
     </button>

@@ -35,6 +35,7 @@ export default {
       STCost: 0,
       eternityChallengeRunning: false,
       isCompleteEC: false,
+      holdTimeout: null,
     };
   },
   computed: {
@@ -152,6 +153,15 @@ export default {
     },
     shiftClick() {
       if (this.study.purchaseUntil) this.study.purchaseUntil();
+    },
+    holdClick() {
+      this.holdTimeout = setTimeout(() => {
+        this.shiftClick();
+      }, 700);
+    },
+    releaseHoldClick() {
+      clearTimeout(this.holdTimeout);
+      this.holdTimeout = null;
     }
   }
 };
@@ -183,6 +193,11 @@ export class TimeStudySetup {
     :style="styleObject"
     @click.exact="handleClick"
     @click.shift.exact="shiftClick"
+    @mousedown="holdClick"
+    @touchstart="holdClick"
+    @mouseup="releaseHoldClick"
+    @touchend="releaseHoldClick"
+    @mouseleave="releaseHoldClick"
   >
     <slot />
     <CostDisplay

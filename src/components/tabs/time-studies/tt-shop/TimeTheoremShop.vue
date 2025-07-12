@@ -3,6 +3,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import TimeStudySaveLoadButton from "./TimeStudySaveLoadButton";
 import TimeTheoremBuyButton from "./TimeTheoremBuyButton";
+import HoldableButton from "@/components/HoldableButton";
 
 export default {
   name: "TimeTheoremShop",
@@ -10,7 +11,8 @@ export default {
     PrimaryButton,
     PrimaryToggleButton,
     TimeTheoremBuyButton,
-    TimeStudySaveLoadButton
+    TimeStudySaveLoadButton,
+    HoldableButton
   },
   data() {
     return {
@@ -198,12 +200,12 @@ export default {
           :style="shopBottomRowHeightStyle"
         >
           <div class="tt-max-auto-btn-grp">
-            <button
-              class="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
-              @click="buyMaxTheorems"
+            <HoldableButton
+              className="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
+              :onHoldFunction="buyMaxTheorems"
             >
               Buy max
-            </button>
+            </HoldableButton>
             <PrimaryToggleButton
               v-if="hasTTAutobuyer"
               v-model="isAutobuyerOn"

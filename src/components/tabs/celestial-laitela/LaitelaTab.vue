@@ -90,8 +90,8 @@ export default {
     </div>
     <div class="o-laitela-matter-amount">
       Your maximum Dark Matter ever is
-      <span :style="styleObject">{{ format(maxDarkMatter, 2) }}</span><span v-if="!isDoomed">,
-        giving {{ formatPercents(matterExtraPurchasePercentage, 2) }} more purchases from Continuum</span>.
+      <b><i><span :style="styleObject">{{ format(maxDarkMatter, 2) }}</span></i></b><span v-if="!isDoomed">,
+        giving <b><i>{{ formatPercents(matterExtraPurchasePercentage, 2) }} </i></b> more purchases from Continuum</span>.
     </div>
     <div class="o-laitela-matter-amount">
       Dark Matter Dimensions are unaffected by storing real time.

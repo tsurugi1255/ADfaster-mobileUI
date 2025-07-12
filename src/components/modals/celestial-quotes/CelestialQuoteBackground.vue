@@ -101,7 +101,7 @@ export default {
 
 .c-modal-celestial-quote__symbol {
   z-index: 1;
-  font-size: 25rem;
+  font-size: 40rem;
   text-shadow: 0 0 2rem;
 }
 
