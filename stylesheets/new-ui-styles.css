@@ -413,7 +413,7 @@ body.t-s12 {
 }
 
 .information-header {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: bold;
   height: fit-content;
   color: var(--color-text);

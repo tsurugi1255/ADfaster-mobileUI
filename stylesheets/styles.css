@@ -2579,6 +2579,7 @@ br {
 
 .c-infinity-dim-tab__tesseract-button {
   font-family: Typewriter, serif;
+  font-size: 2rem;
   color: #2ebce6;
   background: #111117;
   border: var(--var-border-width, 0.2rem) solid;
@@ -5377,6 +5378,9 @@ properly on certain themes. */
 
 .c-modal__inner {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .t-amoled .c-modal,
