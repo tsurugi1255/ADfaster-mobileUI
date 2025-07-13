@@ -483,7 +483,7 @@ button:focus {
   cursor: pointer;
 }
 
-.c-tt-buy-button--unlocked:hover {
+.c-tt-buy-button--active {
   color: #232028;
   background: #3aacd6;
 }
