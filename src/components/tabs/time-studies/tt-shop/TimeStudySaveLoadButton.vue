@@ -172,6 +172,7 @@ export default {
 <style scoped>
 .l-tt-save-load-btn__wrapper {
   position: relative;
+  width: 100%;
   /* margin: 0.3rem; */
 }
 
@@ -191,11 +192,12 @@ export default {
 .c-tt-save-load-btn__menu {
   text-align: left;
   font-family: Typewriter;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
   background: black;
   border-radius: var(--var-border-radius, 0.5rem);
+  width: 100%;
 }
 
 .l-tt-save-load-btn__menu::after {
@@ -209,18 +211,16 @@ export default {
   margin-left: -0.5rem;
 }
 
-.l-tt-save-load-btn__menu-rename {
-  margin: 0.3rem 0.5rem 0.5rem 0.7rem;
-}
 
 .c-tt-save-load-btn__menu-rename {
   text-align: left;
   font-family: Typewriter;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   border: none;
   border-radius: var(--var-border-radius, 0.3rem);
   padding: 0.2rem;
+  width: 95%;
 }
 
 .l-tt-save-load-btn__menu-item {
@@ -229,7 +229,7 @@ export default {
 }
 
 .c-tt-save-load-btn__menu-item {
-  text-align: left;
+  text-align: center;
   padding: 0.25rem 1rem;
 }
 

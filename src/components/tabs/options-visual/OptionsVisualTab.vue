@@ -139,7 +139,6 @@ export default {
           </template>
         </ExpandingControlBox>
       </div>
-      <OpenModalHotkeysButton />
     </div>
   </div>
 </template>

@@ -217,7 +217,6 @@ export default {
           Change Glyph RNG Seed
         </OptionsButton>
       </div>
-      <OpenModalHotkeysButton />
     </div>
     <h2
       v-if="cloudAvailable"
