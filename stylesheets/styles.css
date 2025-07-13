@@ -47,6 +47,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 /* css vars */
