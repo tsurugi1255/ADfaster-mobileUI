@@ -984,6 +984,15 @@
   align-items: center;
 }
 
+.c-glyph-peek .l-glyph-set-preview-inner {
+  width: 32rem;
+  max-width: 32rem;
+}
+
+.c-glyph-peek .l-preview {
+  margin: 0.5rem !important;
+}
+
 .c-glyph-choice-icon {
   display: flex;
   flex-direction: column;
@@ -1371,28 +1380,18 @@
 }
 
 .l-glyph-set-preview-inner {
-  /* display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 7rem;
-  column-gap: 1rem; */
-  /* overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  justify-content: center; */
   width: 100%;
   max-width: 100%;
 }
 
 .l-glyph-set-preview-glyphs {
-  display: grid;
-  grid-template-columns: repeat(4, 7rem);
-  gap: 1rem;
-  overflow-x: scroll;
-  margin: 1rem 0;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 100%;
+}
+
+.l-glyph-set-preview-glyphs .l-glyph-component {
+  width: 7rem !important;
 }
 
 .l-glyph-set-preview-inner::-webkit-scrollbar {

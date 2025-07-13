@@ -107,11 +107,11 @@ export default {
           You have {{ quantify("Relic Shard", relicShards, 2, 0) }}.
           <br>
           <span v-if="relicShardRarityAlwaysMax">
-            The rarity of new Glyphs is being increased by +{{ formatPercents(shardRarityBoost, 2) }}.
+            The rarity of new Glyphs is being increased by <b><i>+{{ formatPercents(shardRarityBoost, 2) }}</i></b>.
           </span>
           <span v-else>
             Each new Glyph will have its rarity increased
-            by a random value between +{{ formatPercents(0) }} and +{{ formatPercents(shardRarityBoost, 2) }}.
+            by a random value between <b><i>+{{ formatPercents(0) }}</i></b> and <b><i>+{{ formatPercents(shardRarityBoost, 2) }}</i></b>.
           </span>
           <span v-if="shardPower > 1">
             <br>
@@ -119,14 +119,14 @@ export default {
           </span>
         </div>
         <div class="c-effarig-relic-description">
-          You will gain {{ quantify("Relic Shard", shardsGained, 2) }} next Reality
+          You will gain <b><i>{{ quantify("Relic Shard", shardsGained, 2) }}</i></b> next Reality
           ({{ format(currentShardsRate, 2) }}/min).
           <span v-if="amplification !== 0">
             <br>
             Due to amplification of your current Reality,
             <br>
             you will actually gain a total of
-            {{ quantify("Relic Shard", amplifiedShards, 2) }} ({{ format(amplifiedShardsRate, 2) }}/min).
+            <b><i>{{ quantify("Relic Shard", amplifiedShards, 2) }}</i></b> ({{ format(amplifiedShardsRate, 2) }}/min).
           </span>
         </div>
         <div class="c-effarig-relic-description">

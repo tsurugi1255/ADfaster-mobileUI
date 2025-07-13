@@ -244,7 +244,7 @@ export default {
   font-size: 2rem;
   color: var(--color-text);
   background-color: var(--color-base);
-  width: calc(50% - 1rem);
+  width: calc(50% - 0.5rem);
   padding: 1rem;
   font-family: Typewriter, serif;
   border: 0.1rem solid var(--color-good-dark);

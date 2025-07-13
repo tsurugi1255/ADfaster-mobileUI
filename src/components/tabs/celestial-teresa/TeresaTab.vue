@@ -170,7 +170,7 @@ export default {
               This Reality can be repeated for a stronger reward based on the antimatter gained within it.
               <br><br>
               <span v-if="showRunReward">
-                Your record antimatter in Teresa's Reality is {{ format(bestAM, 2) }},
+                Your record antimatter in Teresa's Reality is <b><i>{{ format(bestAM, 2) }}</i></b>,
                 achieved with {{ lastMachinesString }}.
                 <br><br>
                 Glyph Set used:

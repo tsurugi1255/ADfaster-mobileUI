@@ -1,4 +1,5 @@
 <script>
+import { playerInfinityUpgradesOnReset } from "../../../game";
 import AutobuyerGroupToggleLabel from "./AutobuyerGroupToggleLabel";
 import AutobuyerIntervalLabel from "./AutobuyerIntervalLabel";
 import SingleAutobuyerInRow from "./SingleAutobuyerInRow";
@@ -65,6 +66,18 @@ export default {
     },
     toggleGroup() {
       this.type.toggle();
+    },
+    toggleBuy10() {
+      const hasSingle = this.autobuyers.some(buyer => buyer.mode === AUTOBUYER_MODE.BUY_SINGLE);
+      for (const auto of this.autobuyers) {
+        hasSingle ? auto.mode = AUTOBUYER_MODE.BUY_10 : auto.toggleMode();
+      }
+    },
+    toggleAutobuyerActiveState() {
+      const hasInactive = player.auto.antimatterDims.all.some(buyer => buyer.isActive === false);
+      for (const auto of player.auto.antimatterDims.all) {
+        hasInactive ? auto.isActive = true : auto.isActive = !auto.isActive;
+      }
     }
   }
 };
@@ -88,6 +101,11 @@ export default {
         :autobuyer="autobuyers[0]"
       /><br>
     </div>
+    <div class="l-autobuyer-box-toggle-buttons">
+      <button class="o-autobuyer-btn o-autobuyer-toggle-btn" @click="toggleBuy10">Toggle Buy 10</button>
+      <button class="o-autobuyer-btn o-autobuyer-toggle-btn" @click="toggleAutobuyerActiveState">Toggle Autobuyers</button>
+    </div>
+    <br>
     <div class="l-autobuyer-box__autobuyers">
       <template
         v-for="(autobuyer, id) in autobuyers"
@@ -118,5 +136,15 @@ export default {
 </template>
 
 <style scoped>
+.l-autobuyer-box-toggle-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%
+}
 
+.o-autobuyer-toggle-btn {
+  width: 30%;
+  margin: 0 1rem;
+}
 </style>

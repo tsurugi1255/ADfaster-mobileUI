@@ -38,7 +38,7 @@ export default {
         onPress() {
             this.onPressTimeout = setTimeout(() => {
                 this.isPressed = true;
-            }, 700);
+            }, 100);
         },
         releasePress() {
             clearTimeout(this.onPressTimeout);
@@ -52,6 +52,7 @@ export default {
 
 <template>
     <button
+        class="o-holdable-button"
         :class="StyleObject"
         @click="onHoldFunction"
         @mousedown="onPress"
@@ -63,3 +64,13 @@ export default {
         <slot />
     </button>
 </template>
+
+<style scoped>
+/* On mobile when holding the button there is a tendency for button text to be selected. This mitigates that. */
+.o-holdable-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style>

@@ -84,7 +84,7 @@ export default {
     <CelestialQuoteHistory celestial="laitela" />
     <div class="o-laitela-matter-amount">
       You have
-      <span :style="styleObject">{{ format(darkMatter, 2) }}</span>
+      <b><i><span :style="styleObject">{{ format(darkMatter, 2) }}</span></i></b>
       Dark Matter<span v-if="isDMCapped"> (capped)</span>.
       <span v-if="!isDMCapped">(Average: {{ format(darkMatterGain, 2, 2) }}/s)</span>
     </div>

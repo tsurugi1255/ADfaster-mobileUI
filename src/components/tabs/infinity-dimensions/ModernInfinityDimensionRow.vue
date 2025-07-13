@@ -127,9 +127,6 @@ export default {
       :rate="rateOfChange"
     />
     <div class="l-dim-row-multi-button-container c-modern-dim-tooltip-container">
-      <div class="c-modern-dim-purchase-count-tooltip">
-        {{ capTooltip }}
-      </div>
       <PrimaryButton
         :enabled="isAvailableForPurchase || (!isUnlocked && canUnlock)"
         class="o-primary-btn--buy-id o-primary-btn o-primary-btn--new o-primary-btn--buy-dim o-dimension-upgrade-btn"
