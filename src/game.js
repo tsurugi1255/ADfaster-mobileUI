@@ -610,10 +610,6 @@ export function gameLoop(passDiff, options = {}) {
     Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * 1000 / 2));
   }
 
-  if (player.bottomButtonActive) {
-    maxAll();
-  }
-
   updatePrestigeRates();
   tryCompleteInfinityChallenges();
 

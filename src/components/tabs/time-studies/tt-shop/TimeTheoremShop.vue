@@ -203,6 +203,7 @@ export default {
             <HoldableButton
               className="o-tt-top-row-button c-tt-buy-button c-tt-buy-button--unlocked"
               :onHoldFunction="buyMaxTheorems"
+              onHoldClass="c-tt-buy-button--active"
             >
               Buy max
             </HoldableButton>

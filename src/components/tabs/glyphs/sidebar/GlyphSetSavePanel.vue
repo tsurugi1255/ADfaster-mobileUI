@@ -285,14 +285,14 @@ export default {
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  margin: 1rem auto 0;
+  margin: 1rem auto 2rem;
 }
 
 .c-glyph-single-set-save-flexbox {
-  width: 17rem;
+  flex: 0 0 40%;
 }
 
 .c-glyph-set-preview-area {
-  width: 18rem;
+  flex: 0 0 60%;
 }
 </style>

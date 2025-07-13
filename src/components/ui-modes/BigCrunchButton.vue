@@ -26,12 +26,12 @@ export default {
 <template>
   <span v-if="shouldDisplay">
     <div v-if="isModern">
-      <h3
+      <h1
         v-if="!smallCrunch"
         class="l-spacing"
       >
         The world has collapsed due to excess antimatter.
-      </h3>
+      </h1>
       <button
         :class="{
           'btn-big-crunch': true,
@@ -66,6 +66,6 @@ export default {
 
 <style scoped>
 .l-spacing {
-  margin-top: 1rem;
+  margin: 2rem 0;
 }
 </style>

@@ -382,7 +382,7 @@ body.t-s12 {
 }
 
 .btn-big-crunch {
-  z-index: 1;
+  /* z-index: 1; */
   font-family: Typewriter;
   font-size: 5rem;
   color: var(--color-infinity);
@@ -395,10 +395,10 @@ body.t-s12 {
 }
 
 .btn-big-crunch--small {
-  position: absolute;
+  /* position: absolute; */
   top: 4.3rem;
-  font-size: 3rem;
-  transform: translateX(-50%);
+  /* font-size: 3rem;
+  transform: translateX(-50%); */
 }
 
 .btn-big-crunch:hover {

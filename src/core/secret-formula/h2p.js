@@ -96,12 +96,15 @@ ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?"":
 Also, there are some extra buffs to the game.<br>
 ${Autobuyer.bigCrunch.hasMaxedInterval||PlayerProgress.eternityUnlocked()?`
 - The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
+- You get certain achievements automatically unlocked for better QoL.<br>
 ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - You gain a multiplier to eternities gained on eternity based on your current eternities, to a minimal of ${formatX(5)} and a maximal of ${formatX(1000)}.<br>
+- Eternity milestones that generate offline resources now do so passively, though the requirements to activate them remain.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Realities are always simuated +${format(4)}× (additive with other amplify mutipliers).<br>
 - You gain a multiplier to perk points gained on reality based on your current realities, to a maximal of ${formatX(20)}.<br>
+- The option to fill your inventory with Music Glyphs is unlocked by default in the Perk Point shop.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?"":
 `More buffs will show here as you reach them.<br>`
