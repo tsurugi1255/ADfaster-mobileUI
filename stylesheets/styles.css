@@ -578,18 +578,15 @@ button:focus {
   margin-left: -0.5rem;
 }
 
-.l-tt-save-load-btn__menu-rename {
-  margin: 0.3rem 0.5rem 0.5rem 0.7rem;
-}
-
 .c-tt-save-load-btn__menu-rename {
-  text-align: left;
+  text-align: center;
   font-family: Typewriter;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   border: none;
   border-radius: var(--var-border-radius, 0.3rem);
-  padding: 0.2rem;
+  padding: 1rem;
+  width: 100%
 }
 
 .c-tt-autobuyer-toggle {
@@ -5214,30 +5211,30 @@ properly on certain themes. */
   cursor: pointer;
 }
 
-.o-dilation-btn--unlocked:hover {
+/* .o-dilation-btn--unlocked:hover {
   background-color: white;
-}
+} */
 
 .t-dark .o-dilation-btn--unlocked {
   color: var(--color-dilation);
   background-color: black;
 }
 
-.t-dark .o-dilation-btn--unlocked:hover,
+/* .t-dark .o-dilation-btn--unlocked:hover,
 .t-s6 .o-dilation-btn--unlocked:hover,
 .t-s10 .o-dilation-btn--unlocked:hover {
   color: var(--color-dilation);
   background-color: white;
-}
+} */
 
 .t-s4 .o-dilation-btn {
   animation: a-dilation-btn-glow--cancer 10s infinite;
 }
 
-.o-dilation-btn--locked:hover {
+/* .o-dilation-btn--locked:hover {
   color: #1d1d1d;
   background-color: #660000;
-}
+} */
 
 .s-base--metro .o-dilation-btn--locked,
 .t-s1 .o-dilation-btn--locked {
@@ -5247,13 +5244,13 @@ properly on certain themes. */
   box-shadow: 0.1rem 0.1rem 0.1rem 0 black;
 }
 
-.s-base--metro .o-dilation-btn--locked:hover {
+/* .s-base--metro .o-dilation-btn--locked:hover {
   background-color: #ef5350;
-}
+} */
 
-.t-s1 .o-dilation-btn--locked:hover {
+/* .t-s1 .o-dilation-btn--locked:hover {
   background-color: #d72621;
-}
+} */
 
 .t-s6 .o-dilation-btn--locked,
 .t-s10 .o-dilation-btn--locked {
@@ -5266,13 +5263,13 @@ properly on certain themes. */
   background-color: #23292a;
 }
 
-.t-dark .o-dilation-btn--locked:hover,
+/* .t-dark .o-dilation-btn--locked:hover,
 .t-s6 .o-dilation-btn--locked:hover,
 .t-s10 .o-dilation-btn--locked:hover {
   color: black;
   background-color: #b84b5f;
   border-color: #b84b5f;
-}
+} */
 
 @keyframes a-dilation-btn-glow {
   0% { box-shadow: inset 0.5rem  0       2rem; }
@@ -5593,9 +5590,9 @@ properly on certain themes. */
   width: 100%;
 }
 
-.c-modal-message__text {
+/* .c-modal-message__text {
   max-width: 50rem;
-}
+} */
 
 .c-modal-message__okay-btn {
   margin: 1rem 0.5rem 0;
@@ -6240,10 +6237,10 @@ kbd {
   cursor: pointer;
 }
 
-.o-teresa-shop-button--available:hover {
+/* .o-teresa-shop-button--available:hover {
   color: var(--color-teresa--accent);
   background-color: var(--color-teresa--base);
-}
+} */
 
 .o-teresa-shop-button--capped {
   color: var(--color-teresa--accent);
@@ -8242,6 +8239,8 @@ kbd {
 
 .c-laitela-singularity--active {
   cursor: pointer;
+  background-color: white;
+  color: black;
 }
 
 .c-laitela-singularity--active:hover {
@@ -8818,10 +8817,10 @@ kbd {
   font-weight: bold;
 }
 
-.c-reality-upgrade-btn:hover {
+/* .c-reality-upgrade-btn:hover {
   color: black;
   background-color: var(--color-reality-light);
-}
+} */
 
 .c-reality-upgrade-btn--unavailable {
   color: var(--color-reality-light);
@@ -8829,10 +8828,10 @@ kbd {
   cursor: default;
 }
 
-.c-reality-upgrade-btn--unavailable:hover {
+/* .c-reality-upgrade-btn--unavailable:hover {
   color: var(--color-reality-light);
   background-color: var(--color-glyph-undo-disabled);
-}
+} */
 
 .c-reality-upgrade-btn--useless {
   background-color: var(--color-pelle--base);
@@ -8841,11 +8840,11 @@ kbd {
   cursor: default;
 }
 
-.c-reality-upgrade-btn--useless:hover {
+/* .c-reality-upgrade-btn--useless:hover {
   color: var(--color-reality-light);
   background-color: var(--color-pelle--base);
   filter: grayscale(50%);
-}
+} */
 
 .c-reality-upgrade-btn--bought {
   color: var(--color-reality-light);
@@ -8854,10 +8853,10 @@ kbd {
   cursor: default;
 }
 
-.c-reality-upgrade-btn--bought:hover {
+/* .c-reality-upgrade-btn--bought:hover {
   color: var(--color-reality-light);
   background-color: var(--color-reality);
-}
+} */
 
 .c-reality-upgrade-btn--possible {
   /* Text color gets inherited from other pseudo-classes; so we use !important here in order to ensure good contrast
@@ -8874,10 +8873,10 @@ kbd {
   cursor: default;
 }
 
-.c-reality-upgrade-btn--possible:hover {
-  /* This is actually a solid color, but it flickers on hover if we don't make it a linear-gradient */
+/* .c-reality-upgrade-btn--possible:hover {
+  This is actually a solid color, but it flickers on hover if we don't make it a linear-gradient
   background: linear-gradient(0deg, #919122, #919122);
-}
+} */
 
 .c-reality-upgrade-btn--locked {
   color: white !important;
@@ -8892,9 +8891,9 @@ kbd {
   cursor: default;
 }
 
-.c-reality-upgrade-btn--locked:hover {
+/* .c-reality-upgrade-btn--locked:hover {
   background-color: #802222;
-}
+} */
 
 .o-requirement-lock {
   position: absolute;
@@ -9344,7 +9343,7 @@ input.o-automator-block-input {
 .l-hide-modal-subtab-container {
   display: flex;
   flex-wrap: wrap;
-  width: 61rem;
+  width: auto;
   position: relative;
   justify-content: center;
 }
@@ -9359,19 +9358,20 @@ input.o-automator-block-input {
 .c-hide-modal-tab-button {
   display: flex;
   white-space: normal;
-  width: 12rem;
-  height: 3.4rem;
+  width: 80%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   font: 1rem Typewriter, serif;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 2rem;
   color: var(--color-text);
   background-color: var(--color-text-inverted);
   border: 0.1rem solid black;
   border-radius: var(--var-border-radius, 0.4rem);
   box-shadow: none;
   margin: 0.2rem;
-  padding: 0.3rem 1rem;
+  padding: 1rem;
   transition-duration: 0.2s;
   user-select: none;
   cursor: pointer;
