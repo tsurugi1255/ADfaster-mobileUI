@@ -81,8 +81,13 @@ export default {
         : this.goalAtCompletions(this.challenge.maxCompletions - 1);
     },
     start() {
+      if(this.isCompleted) {
+        if(!this.canBeUnlocked) return;
+      }
+
       if (this.canBeUnlocked) {
         TimeStudy.eternityChallenge(this.challenge.id).purchase();
+        this.challenge.requestStart();
       } else this.challenge.requestStart();
     },
     goalAtCompletions(completions) {

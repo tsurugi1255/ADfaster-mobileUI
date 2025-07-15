@@ -326,6 +326,13 @@ export default {
   flex-direction: row;
   align-items: center;
   user-select: none;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+#autoRestart {
+  transform: scale(2);
+  margin-right: 1.5rem;
 }
 
 .mini-reality-btn {

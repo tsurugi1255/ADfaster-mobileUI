@@ -171,11 +171,12 @@ export default {
 }
 
 .o-bottom-btn-active {
-    border: 0.4rem solid white;
+    border: 0.4rem solid white !important;
 }
 
 .o-bottom-btn-pressed {
     background-color: gray;
+    border: 0.4rem solid gray;
 }
 
 </style>

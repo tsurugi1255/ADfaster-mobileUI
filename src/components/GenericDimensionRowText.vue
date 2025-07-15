@@ -98,7 +98,7 @@ export default {
 }
 
 .l-narrow-box:first-child {
-  flex: 0 0 65%;
+  flex: 0 0 50%;
 }
 
 .l-wide-box {

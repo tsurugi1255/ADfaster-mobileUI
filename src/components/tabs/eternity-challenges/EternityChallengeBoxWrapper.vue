@@ -51,12 +51,12 @@ export default {
       // ECs can be not unlocked and also not locked, because they're fully completed,
       // but in that case you can't enter them and so it's important to give them a property
       // that disables cursor on hover. The same thing happens if it is running.
-      const challengeClickable = !this.isRunning && ((!this.isCompleted && this.canBeUnlocked) || this.isUnlocked);
+      const challengeClickable = !this.isRunning && ((this.isCompleted && this.canBeUnlocked) || this.isUnlocked);
       return {
         "o-challenge-btn": true,
         "o-challenge-btn--running": this.isRunning,
         "o-challenge-btn--completed": challengeDone,
-        "o-challenge-btn--redo": challengeRedo,
+        // "o-challenge-btn--redo": challengeRedo,
         "o-challenge-btn--unlocked": !challengeDone && challengeUnlock,
         "o-challenge-btn--locked": challengeLocked,
         "o-challenge-btn--unenterable": !challengeClickable,
@@ -79,11 +79,11 @@ export default {
       if (this.overrideLabel.length) return this.overrideLabel;
       if (this.isRunning) return "Running";
       if (this.isCompleted) {
-        if (this.isUnlocked) return "Redo";
+        // if (this.isUnlocked) return "Redo";
         return "Completed";
       }
-      if (this.isUnlocked) return "Start";
-      if (this.canBeUnlocked) return "Unlock";
+      if (this.isUnlocked || this.canBeUnlocked) return "Start";
+      // if (this.canBeUnlocked) return "Unlock";
       return "Locked";
     }
   }

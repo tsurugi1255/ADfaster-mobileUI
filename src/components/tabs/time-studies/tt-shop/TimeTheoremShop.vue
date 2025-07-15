@@ -265,6 +265,12 @@ export default {
             >
               Respec on next Eternity
             </button>
+            <button
+              class="o-tt-top-row-button  c-tt-buy-button c-tt-buy-button--unlocked"
+              onClick="Modal.timeStudyOptions.show()"
+            >
+              Time Study Preset Options
+            </button>
           </div>
           <div class="l-tree-load-button-wrapper">
             <TimeStudySaveLoadButton

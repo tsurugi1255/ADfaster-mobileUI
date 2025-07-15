@@ -43,7 +43,7 @@ export default {
       return ui.view.shiftDown;
     },
     name() {
-      return `${InfinityDimension(this.tier).shortDisplayName} Infinity Dimension`;
+      return `${InfinityDimension(this.tier).shortDisplayName} Dimension`;
     },
     costDisplay() {
       if (this.isUnlocked || this.shiftDown) {

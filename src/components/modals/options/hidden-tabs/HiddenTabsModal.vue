@@ -59,6 +59,7 @@ export default {
       </div>
       <PrimaryButton
         @click="showAllTabs"
+        class="o-show-all-tabs-btn"
       >
         Show all tabs
       </PrimaryButton>
@@ -75,7 +76,14 @@ export default {
 
 <style scoped>
 .l-wrapper {
-  width: 62rem;
+  width: 100%;
+}
+
+.o-show-all-tabs-btn {
+  font-size: 2rem;
+  height: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
 .t-s12 .l-wrapper {

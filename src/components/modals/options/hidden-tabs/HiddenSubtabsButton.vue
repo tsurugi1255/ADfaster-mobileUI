@@ -79,12 +79,12 @@ export default {
 }
 
 .l-hide-modal-button__subtab-icon {
-  font-size: 1.5rem;
-  width: 2rem;
-  margin: 0.2rem;
+  font-size: 2rem;
+  /* width: 2rem; */
+  margin: 0 1rem;
 }
 
-.l-hide-modal-button__subtab-name {
+/* .l-hide-modal-button__subtab-name {
   width: 8.2rem;
-}
+} */
 </style>

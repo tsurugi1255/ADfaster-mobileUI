@@ -86,32 +86,42 @@ export default {
 </script>
 
 <template>
-  <div
-    v-if="isVisible"
-    :class="rowClass"
-    @click.self="toggleVisibility"
-  >
-    <HiddenSubtabsButton
-      v-for="(subtab, i) in unlockedSubtabs"
-      :key="i"
-      :subtab="subtab"
-      :tab="tab"
-      :change-enabled="changeEnabled"
-    />
+  <div>
+    <div class="hidden-tab-group-name">{{ tab.name }}</div>
     <div
-      v-tooltip="rowVisibleIndicatorTooltip"
-      :class="rowVisibleIndicatorClass"
-      @click="toggleVisibility"
-    />
+      v-if="isVisible"
+      :class="rowClass"
+      @click.self="toggleVisibility"
+    >
+      <HiddenSubtabsButton
+        v-for="(subtab, i) in unlockedSubtabs"
+        :key="i"
+        :subtab="subtab"
+        :tab="tab"
+        :change-enabled="changeEnabled"
+      />
+      <div
+        v-tooltip="rowVisibleIndicatorTooltip"
+        :class="rowVisibleIndicatorClass"
+        @click="toggleVisibility"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
+
+.hidden-tab-group-name {
+  margin: 1rem 0;
+  text-align: left;
+  padding: 0 0.5rem;
+}
 .c-indicator-icon {
   width: 2rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
   color: black;
   text-shadow: none;
   padding: 0.2rem;
