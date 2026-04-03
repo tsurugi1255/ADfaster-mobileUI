@@ -96,9 +96,9 @@ export default {
       <br>
       and costs increase much faster after {{ format(costIncreases[2]) }} Eternity Points.
       <br>
-      <div v-if="showLockedDimCostNote">
+      <!-- <div v-if="showLockedDimCostNote">
         Hold shift to see the Eternity Point cost for locked Time Dimensions.
-      </div>
+      </div> -->
       Any 8th Time Dimensions purchased above {{ format(1e8) }} will not further increase the multiplier.
     </div>
   </div>

@@ -37,7 +37,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  min-height: 40%;
+  min-height: 20%;
 }
 
 .l-game-header__eternity {

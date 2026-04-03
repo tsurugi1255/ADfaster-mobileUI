@@ -69,12 +69,12 @@ export default {
       <span class="c-dim-row__large">
         {{ amountText }}
       </span>
-      <span
+      <!-- <span
         v-if="rate.neq(0) && showPercentage"
         class="c-dim-row__small"
       >
         {{ rateText }}
-      </span>
+      </span> -->
     </div>
   </div>
 </template>

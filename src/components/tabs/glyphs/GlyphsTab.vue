@@ -116,6 +116,7 @@ export default {
       if (haveBoost) {
         this.enslavedHint = "done... what little... I can... with Glyphs...";
       }
+      this.glyphSacrificeUnlocked = GlyphSacrificeHandler.canSacrifice && !Pelle.isDoomed;
     },
     toggleAutoRestartCelestial() {
       player.options.retryCelestial = !player.options.retryCelestial;
@@ -164,6 +165,13 @@ export default {
     },
     clearVisualFlags() {
       Glyphs.removeAllVisualFlags();
+    },
+    deleteAllUnprotected() {
+      if (player.options.confirmations.sacrificeAll) {
+        Modal.deleteAllUnprotectedGlyphs.show();
+      } else {
+        Glyphs.autoClean(0);
+      }
     }
   }
 };
@@ -262,6 +270,13 @@ export default {
               @click="clearVisualFlags"
             >
               Clear "New"
+            </button>
+            <button
+              v-if="sacrificeUnlocked"
+              class="c-reality-upgrade-btn glyph-clear-new-button"
+              @click="deleteAllUnprotected"
+            >
+              Sacrifice all unprotected Glyphs
             </button>
           </div>
 

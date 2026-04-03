@@ -80,7 +80,7 @@ window.player = {
       mode: 0,
       amount: DC.D1,
       increaseWithMult: true,
-      time: 1,
+      time: 5,
       xHighest: DC.D1,
       isActive: true,
       lastTick: 0
@@ -88,7 +88,7 @@ window.player = {
     galaxy: {
       cost: 1,
       interval: 20000,
-      limitGalaxies: false,
+      limitGalaxies: true,
       maxGalaxies: 1,
       buyMax: false,
       buyMaxInterval: 0,
@@ -98,8 +98,8 @@ window.player = {
     dimBoost: {
       cost: 1,
       interval: 4000,
-      limitDimBoosts: false,
-      maxDimBoosts: 1,
+      limitDimBoosts: true,
+      maxDimBoosts: 4,
       limitUntilGalaxies: false,
       galaxies: 10,
       buyMaxInterval: 0,

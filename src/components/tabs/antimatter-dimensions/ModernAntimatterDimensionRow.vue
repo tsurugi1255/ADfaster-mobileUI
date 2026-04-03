@@ -60,13 +60,15 @@ export default {
       if (!this.isUnlocked) return "Locked";
       if (this.isCapped) return "Shattered by Nameless";
       if (this.isContinuumActive) return "Continuum: ";
-      return `Buy ${formatInt(this.howManyCanBuy)}`;
+      // return `Buy ${formatInt(this.howManyCanBuy)}`;
     },
     buttonValue() {
       if (this.isCapped) return "";
       if (this.isContinuumActive) return this.continuumString;
-      const prefix = this.showCostTitle(this.buyUntil10 ? this.until10Cost : this.singleCost) ? "Cost: " : "";
-      const suffix = this.isCostsAD ? this.costUnit : "AM";
+      // const prefix = this.showCostTitle(this.buyUntil10 ? this.until10Cost : this.singleCost) ? "Cost: " : "";
+      const prefix = "Cost: ";
+      // const suffix = this.isCostsAD ? this.costUnit : "AM";
+      const suffix = "";
       return `${prefix}${this.costDisplay} ${suffix}`;
     },
     hasLongText() {
