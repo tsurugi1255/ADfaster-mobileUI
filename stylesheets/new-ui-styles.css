@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Typewriter;
+  font-family: 'Typewriter';
   src: url("MonospaceTypewriter.ttf");
 }
 
@@ -12,7 +12,7 @@
   --navbar-height: 5vh;
   --tab-width: 15vw;
   --subtab-width: 30vw;
-  --color-antimatter--bg: #df50504d;
+  --color-antimatter--bg: #56292c;
   --color-infinity--bg: #b67f334d;
   --color-eternity--bg: #b341e04d;
 }
@@ -68,7 +68,7 @@ body.t-s12 {
   height: 100%;
   justify-content: flex-start;
   align-items: stretch;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   background: none;
   margin: auto;
 }
@@ -277,10 +277,10 @@ body.t-s12 {
   width: 25rem;
   height: 4.4rem;
   position: relative;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   color: var(--color-text);
   background-color: var(--color-base);
-  border: 0.1rem solid var(--color-good);
+  border: 0.2rem solid var(--color-good);
   border-radius: var(--var-border-radius, 0.5rem);
   margin: 0.5rem;
   padding: 1rem;
@@ -383,7 +383,7 @@ body.t-s12 {
 
 .btn-big-crunch {
   /* z-index: 1; */
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 5rem;
   color: var(--color-infinity);
   background-color: black;
@@ -464,7 +464,7 @@ body.t-s12 {
 }
 
 .o-primary-btn--disabled {
-  background: #752626;
+  background: #272727;
   border-color: var(--color-bad);
 }
 

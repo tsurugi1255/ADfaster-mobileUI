@@ -288,7 +288,7 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.5;
@@ -460,14 +460,14 @@ button:focus {
 /* #region TT shop */
 
 .time-theorem-buttons {
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   color: var(--color-text);
   pointer-events: all;
   width: 100%;
 }
 
 .c-tt-buy-button {
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.5rem;
   font-weight: bold;
   border: 0.1rem solid #691fa5;
@@ -559,7 +559,7 @@ button:focus {
 
 .c-tt-save-load-btn__menu {
   text-align: left;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: bold;
   color: white;
@@ -580,7 +580,7 @@ button:focus {
 
 .c-tt-save-load-btn__menu-rename {
   text-align: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.5rem;
   font-weight: bold;
   border: none;
@@ -657,7 +657,7 @@ button:focus {
   width: 20rem;
   height: 6rem;
   position: relative;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.65rem;
   font-weight: bold;
   background-color: black;
@@ -671,7 +671,7 @@ button:focus {
 
 .o-tab-btn {
   white-space: nowrap;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.8rem;
   /* font-weight: bold; */
   color: var(--color-text);
@@ -762,7 +762,7 @@ button:focus {
 .c-reality-button {
   width: 100%;
   height: 100%;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.3rem;
   font-weight: bold;
   background: var(--color-background);
@@ -834,7 +834,7 @@ button:focus {
 }
 
 .c-reset-reality-button {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--color-bad);
@@ -873,7 +873,7 @@ button:focus {
 }
 
 .l-reality-amplify-button {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   background-color: #fdd3b0;
   border: var(--var-border-width, 0.2rem) solid sandybrown;
   border-radius: var(--var-border-radius, 0.5rem);
@@ -1533,7 +1533,7 @@ br {
 
 .o-primary-btn {
   height: 2.5rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.3rem;
   font-weight: bold;
   color: var(--color-text);
@@ -1986,13 +1986,14 @@ br {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
+  height: 80%;
 }
 
 .o-prestige-button {
   width: 95%;
   height: 100%;
   min-height: 17rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.3rem;
   border: var(--var-border-width, 0.2rem) solid;
   border-radius: var(--var-border-radius, 1.4rem);
@@ -2214,7 +2215,7 @@ br {
 /* #region IP Amount */
 
 .c-game-header__tesseract-available {
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   color: #2ebce6;
   background: #111117;
   border-width: var(--var-border-width, 0.2rem) solid;
@@ -2576,7 +2577,7 @@ br {
 }
 
 .c-infinity-dim-tab__tesseract-button {
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: #2ebce6;
   background: #111117;
@@ -3026,7 +3027,7 @@ br {
 .o-achievement {
   position: relative;
   text-align: center;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 0.8rem;
   color: black;
   border: var(--var-border-width, 0.1rem) solid;
@@ -3547,7 +3548,7 @@ br {
 .o-challenge-btn {
   width: 20rem;
   height: 6rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: bold;
   border: var(--var-border-width, 0.3rem) solid #127a20;
@@ -3818,7 +3819,7 @@ br {
   flex: 1;
   height: auto;
   min-height: 20rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   color: white;
@@ -4136,7 +4137,7 @@ div.l-autobuyers-tab {
 
 .o-autobuyer-input {
   height: auto;
-  font-family: typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   border: 0.1rem solid #c2c2c2;
   border-radius: var(--var-border-radius, 0.4rem);
@@ -4272,7 +4273,7 @@ div.l-autobuyers-tab {
 .o-autobuyer-btn {
   width: 100%;
   height: 100%;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   color: var(--color-text);
@@ -4403,7 +4404,7 @@ div.l-autobuyers-tab {
   align-items: center;
   text-align: center;
   text-align-last: center;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   color: black;
@@ -4861,7 +4862,7 @@ properly on certain themes. */
 .o-eternity-upgrade {
   width: 100%;
   min-height: 17rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   border: 0.1rem solid var(--color-eternity);
@@ -5039,7 +5040,7 @@ properly on certain themes. */
   width: 100%;
   height: 100%;
   min-height: 17rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   color: black;
@@ -5188,7 +5189,7 @@ properly on certain themes. */
 .o-dilation-btn {
   width: 35%;
   min-height: 12rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   border: var(--var-border-width, 0.2rem) solid var(--color-dilation);
@@ -5360,7 +5361,7 @@ properly on certain themes. */
 
 .c-modal {
   text-align: center;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-text);
   background-color: var(--color-base);
@@ -5785,7 +5786,7 @@ properly on certain themes. */
 .o-modal-store-label {
   min-width: 10rem;
   text-align: right;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   margin-right: 1.5rem;
 }
@@ -5795,7 +5796,7 @@ properly on certain themes. */
   min-width: 12rem;
   justify-content: center;
   align-items: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   background: burlywood;
   border: none;
@@ -5865,7 +5866,7 @@ kbd {
 
 .o-notification {
   white-space: nowrap;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.3rem;
   font-weight: bold;
   color: black;
@@ -6221,7 +6222,7 @@ kbd {
 .o-teresa-shop-button {
   width: 100%;
   height: 100%;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: black;
   background-color: var(--color-disabled);
@@ -6287,7 +6288,7 @@ kbd {
   min-height: 13rem;
   justify-content: center;
   align-items: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   line-height: 1.5;
   color: black;
@@ -6665,7 +6666,7 @@ kbd {
 }
 
 .o-enslaved-mechanic-button {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.2rem;
   background-color: #fdd3b0;
   border: var(--var-border-width, 0.2rem) solid sandybrown;
@@ -6700,7 +6701,7 @@ kbd {
 .o-enslaved-shop-button {
   width: 100%;
   min-height: 10rem;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-text-inverted);
   background-color: var(--color-disabled);
@@ -6736,7 +6737,7 @@ kbd {
   flex-direction: column;
   width: 100%;
   align-items: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   background: none;
   border: var(--var-border-width, 0.2rem) solid #cd945c;
@@ -6989,7 +6990,7 @@ kbd {
 }
 
 .c-v-run-button {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: black;
   background: var(--color-v--base);
@@ -7286,7 +7287,7 @@ kbd {
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   color: #9575cd;
   background: black;
   border: var(--var-border-width, 0.2rem) solid #9575cd;
@@ -7385,7 +7386,7 @@ kbd {
   width: calc(50% - 1rem);
   min-height: 10rem;
   text-align: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2.5rem;
   border: 0.1rem solid #222222;
   border-radius: var(--var-border-radius, 1rem);
@@ -7408,7 +7409,7 @@ kbd {
   height: 33rem;
   justify-content: center;
   align-items: center;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   color: black;
   border-radius: var(--var-border-radius, 2rem);
   margin: 2rem;
@@ -7990,7 +7991,7 @@ kbd {
 
 .o-laitela-run-button {
   width: 100%;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
@@ -8030,7 +8031,7 @@ kbd {
 }
 
 .o-dark-matter-dimension-button {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
@@ -8226,7 +8227,7 @@ kbd {
 }
 
 .c-laitela-singularity span {
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   margin: 0;
@@ -8251,7 +8252,7 @@ kbd {
 
 .c-laitela-singularity__cap-control {
   width: 49%;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: bold;
   color: var(--color-laitela--accent);
@@ -8326,7 +8327,7 @@ kbd {
 
 .c-singularity-milestone-modal-sort-button {
   height: 100%;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: normal;
   color: var(--color-laitela--accent);
@@ -8426,7 +8427,7 @@ kbd {
 
 .l-laitela-annihilation-container {
   width: 100%;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
@@ -8437,7 +8438,7 @@ kbd {
 
 .l-laitela-annihilation-button {
   width: 70%;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-laitela--accent);
   background: var(--color-laitela--base);
@@ -8483,7 +8484,7 @@ kbd {
 .c-laitela-automation-toggle {
   width: 45%;
   height: fit-content;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   font-weight: bold;
   color: var(--color-laitela--accent);
@@ -8684,7 +8685,7 @@ kbd {
 
 .c-glyph-levels-and-weights__auto-btn {
   height: 2.5rem;
-  font-family: Typewriter;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1rem;
   font-weight: bold;
   color: var(--color-reality);
@@ -8799,7 +8800,7 @@ kbd {
 
 .c-reality-upgrade-btn {
   text-align: center;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 2rem;
   color: var(--color-reality-dark);
   background-color: var(--color-background);
@@ -9099,7 +9100,7 @@ kbd {
 .o-automator-block-input {
   display: inline-block;
   width: fit-content;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', serif;
   font-size: 1.1rem;
   background: var(--color-blockmator-block-background);
   border: 0.1rem solid var(--color-blockmator-block-border);
@@ -9362,7 +9363,7 @@ input.o-automator-block-input {
   height: 100%;
   justify-content: center;
   align-items: center;
-  font: 1rem Typewriter, serif;
+  font: 1rem 'Trebuchet MS', serif;
   font-weight: normal;
   font-size: 2rem;
   color: var(--color-text);
@@ -9503,7 +9504,7 @@ input.o-automator-block-input {
 
 .o-celestial-nav__symbol {
   text-anchor: middle;
-  font-family: "Font Awesome", Typewriter;
+  font-family: "Font Awesome", 'Trebuchet MS';
   font-weight: bold;
 }
 
