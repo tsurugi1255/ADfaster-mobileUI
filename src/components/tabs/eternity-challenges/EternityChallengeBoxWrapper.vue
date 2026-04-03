@@ -51,7 +51,7 @@ export default {
       // ECs can be not unlocked and also not locked, because they're fully completed,
       // but in that case you can't enter them and so it's important to give them a property
       // that disables cursor on hover. The same thing happens if it is running.
-      const challengeClickable = !this.isRunning && ((this.isCompleted && this.canBeUnlocked) || this.isUnlocked);
+      const challengeClickable = !this.isRunning && (this.canBeUnlocked || this.isUnlocked);
       return {
         "o-challenge-btn": true,
         "o-challenge-btn--running": this.isRunning,
