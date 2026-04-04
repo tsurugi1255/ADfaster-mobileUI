@@ -90,7 +90,8 @@ export default {
       if (Replicanti.galaxies.max > 0) {
         // If the player has max RGs, don't display the "You are gaining blah" text
         if (player.replicanti.galaxies === Replicanti.galaxies.max) {
-          this.galaxyText = "You have reached the maximum amount of Replicanti Galaxies";
+          // this.galaxyText = "You have reached the maximum amount of Replicanti Galaxies";
+          this.galaxyText = "";
         } else {
           this.galaxyText = `You are gaining a Replicanti Galaxy every
             ${TimeSpan.fromSeconds(secondsPerGalaxy.toNumber())}`;

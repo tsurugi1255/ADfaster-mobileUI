@@ -77,10 +77,10 @@ export default {
         Tickspeed upgrade gained.
       </p>
     </div>
-    <div>
+    <!-- <div>
       The amount each additional upgrade requires will start
       increasing above {{ formatInt(tickspeedSoftcap) }} Tickspeed upgrades.
-    </div>
+    </div> -->
     <div>You are getting {{ format(shardsPerSecond, 2, 0) }} {{ incomeType }} per second.</div>
     <div class="l-dimensions-container">
       <NewTimeDimensionRow

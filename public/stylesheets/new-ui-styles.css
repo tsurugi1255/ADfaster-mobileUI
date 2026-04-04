@@ -464,7 +464,7 @@ body.t-s12 {
 }
 
 .o-primary-btn--disabled {
-  background: #272727;
+  background: #272627;
   border-color: var(--color-bad);
 }
 
@@ -583,7 +583,7 @@ body.t-s12 {
 }
 
 .c-dimension-row {
-  font-weight: normal;
+  font-weight: bold;
   color: var(--color-text);
   border-radius: var(--var-border-radius, 0.5rem);
   margin: 0;

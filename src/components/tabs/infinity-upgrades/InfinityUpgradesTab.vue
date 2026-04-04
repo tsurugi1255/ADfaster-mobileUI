@@ -135,12 +135,11 @@ export default {
       You have charged {{ formatInt(chargesUsed) }}/{{ formatInt(totalCharges) }} Infinity Upgrades.
       Charged Infinity Upgrades have their effect altered.
       <br>
-      Hold shift to show Charged Infinity Upgrades. You can freely respec your choices on Reality.
+      <!-- Hold shift to show Charged Infinity Upgrades. You can freely respec your choices on Reality. -->
     </div>
     <div v-if="isUseless">
       You cannot Charge Infinity Upgrades while Doomed.
     </div>
-    <br>
     Within each column, the upgrades must be purchased from top to bottom.
     <br>
     <div

@@ -266,14 +266,14 @@ export default {
               Open Glyph Visual Options
             </button>
             <button
-              class="l-glyph-equip-button c-reality-upgrade-btn glyph-clear-new-button"
+              class="l-glyph-equip-button-short c-reality-upgrade-btn glyph-clear-new-button"
               @click="clearVisualFlags"
             >
               Clear "New"
             </button>
             <button
               v-if="sacrificeUnlocked"
-              class="c-reality-upgrade-btn glyph-clear-new-button"
+              class="l-glyph-equip-button-short c-reality-upgrade-btn glyph-sac-btn"
               @click="deleteAllUnprotected"
             >
               Sacrifice all unprotected Glyphs
@@ -375,6 +375,10 @@ export default {
 }
 
 .glyph-clear-new-button {
-  grid-column: 1/-1;
+  grid-column: 1/3;
+}
+
+.glyph-sac-btn {
+  grid-column: 3/-1;
 }
 </style>

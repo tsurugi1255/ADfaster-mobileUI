@@ -244,13 +244,13 @@ export default {
         <ReplicantiUpgradeButton :setup="replicantiIntervalSetup" />
         <ReplicantiUpgradeButton :setup="maxGalaxySetup" />
       </div>
-      <div>
+      <!-- <div>
         The Max Replicanti Galaxy upgrade can be purchased endlessly, but costs increase
         <br>
         more rapidly above {{ formatInt(distantRG) }} Replicanti Galaxies
         and even more so above {{ formatInt(remoteRG) }} Replicanti Galaxies.
-      </div>
-      <br>
+      </div> -->
+      <!-- <br> -->
       <ReplicantiGainText />
       <br>
       <ReplicantiGalaxyButton v-if="canSeeGalaxyButton" class="l-replicanti-galaxy-btn" />

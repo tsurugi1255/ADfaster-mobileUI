@@ -82,7 +82,7 @@ window.player = {
       increaseWithMult: true,
       time: 5,
       xHighest: DC.D1,
-      isActive: true,
+      isActive: false,
       lastTick: 0
     },
     galaxy: {

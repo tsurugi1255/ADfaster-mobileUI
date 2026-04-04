@@ -58,7 +58,7 @@ export default {
 <template>
   <div class="l-dimension-text-container">
     <div :class="adjustableTextClass()">
-      <span class="c-dim-row__large">
+      <span class="c-dim-row__small">
         {{ name }}
       </span>
       <span class="c-dim-row__small">
@@ -98,7 +98,7 @@ export default {
 }
 
 .l-narrow-box:first-child {
-  flex: 0 0 50%;
+  flex: 0 0 40%;
 }
 
 .l-wide-box {
