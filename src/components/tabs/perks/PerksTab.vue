@@ -95,7 +95,7 @@ export const PerkLayouts = [
   {
     // This is the perks laid out in the same way that they're laid out in the Android version
     buttonText: "Android Layout",
-    position: config => globalScale(positionNumToVector(config.layoutPosList[1]), 20, 1.5),
+    position: config => globalScale(positionNumToVector(config.layoutPosList[1]), 50, 1.5),
     centerOffset: new Vector(0, 120),
     forcePhysics: false,
     straightEdges: true,
@@ -135,8 +135,8 @@ export const PerkNetwork = {
   container: undefined,
   network: undefined,
   nodes: undefined,
-  minScale: 0.2,
-  maxScale: 4,
+  minScale: 0.0,
+  maxScale: 1,
   lastPerkNotation: "",
   pulseTimer: 0,
   initialStabilization: false,
@@ -204,15 +204,17 @@ export const PerkNetwork = {
       id: perk.id,
       label: perk.config.label,
       shape: perk.config.automatorPoints ? "diamond" : "dot",
-      // As far as I am aware, vis.js doesn't support arbitrary CSS styling; nevertheless, we still want the original
-      // description to be visible instead of being hidden by disable/lock text
       title: (isDisabled(perk)
         ? htmlTitle(
-          `<span style='text-decoration: line-through;'>${perk.config.description}</span>`
+          `<span style='text-decoration: line-through; font-size:2.5rem;'>${perk.config.description}</span>`
         )
-        : `${perk.config.description} ${perk.config.automatorPoints && !isDisabled(perk)
-          ? `(+${formatInt(perk.config.automatorPoints)} AP)`
-          : ""}`
+        : htmlTitle(
+          `<span style="font-size:2.5rem;">
+            ${perk.config.description} ${perk.config.automatorPoints && !isDisabled(perk)
+              ? `(+${formatInt(perk.config.automatorPoints)} AP)`
+              : "" }
+          </span>`
+        )
       ),
       x: selectPos(perk.config).x,
       y: selectPos(perk.config).y,
@@ -239,6 +241,9 @@ export const PerkNetwork = {
         hoverConnectedEdges: false,
         selectConnectedEdges: false,
         tooltipDelay: 0,
+        // dragView: false,
+        zoomView: false,
+        dragNodes: false,
       },
       nodes: {
         shape: "dot",
@@ -246,11 +251,11 @@ export const PerkNetwork = {
         font: {
           size: 0
         },
-        borderWidth: 2,
+        borderWidth: 4,
         shadow: true
       },
       edges: {
-        width: 4,
+        width: 6,
         shadow: true,
         hoverWidth: width => width,
         selectionWidth: width => width,
@@ -312,8 +317,9 @@ export const PerkNetwork = {
     const options = {
       nodes: {
         font: {
-          size: areVisible ? 20 : 0,
+          size: areVisible ? 50 : 0,
           color: Theme.current().isDark() ? "#DDDDDD" : "#222222",
+          face: "Arial Black, sans-serif",                   // use a bold font variant
         }
       }
     };
@@ -385,10 +391,10 @@ export const PerkNetwork = {
       const mod = Theme.current().name === "S4"
         ? 10 * Math.sin(5 * PerkNetwork.pulseTimer + 0.1 * perk._config.id)
         : 0;
-      if (perk._config.label === "START") return 35 + mod;
-      if (perk.isBought) return 25 + mod;
-      if (perk.canBeBought) return 20 + mod;
-      return 12 + mod;
+      // if (perk._config.label === "START") return 105 + mod;
+      // if (perk.isBought) return 128 + mod;
+      // if (perk.canBeBought) return 138 + mod;
+      return 65 + mod;
     }
 
     const data = Perks.all
@@ -403,7 +409,7 @@ export const PerkNetwork = {
     ref="tab"
     class="c-perk-tab"
   >
-    <PerkPointLabel />
+    <!-- <PerkPointLabel /> -->
   </div>
 </template>
 
