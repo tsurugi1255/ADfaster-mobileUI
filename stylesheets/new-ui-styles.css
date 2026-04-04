@@ -68,7 +68,7 @@ body.t-s12 {
   height: 100%;
   justify-content: flex-start;
   align-items: stretch;
-  font-family: 'Trebuchet MS', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   background: none;
   margin: auto;
 }
@@ -277,7 +277,7 @@ body.t-s12 {
   width: 25rem;
   height: 4.4rem;
   position: relative;
-  font-family: 'Trebuchet MS', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   color: var(--color-text);
   background-color: var(--color-base);
   border: 0.2rem solid var(--color-good);
@@ -383,7 +383,7 @@ body.t-s12 {
 
 .btn-big-crunch {
   /* z-index: 1; */
-  font-family: 'Trebuchet MS', serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 5rem;
   color: var(--color-infinity);
   background-color: black;
