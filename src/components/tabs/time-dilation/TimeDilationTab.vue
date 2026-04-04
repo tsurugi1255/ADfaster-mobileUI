@@ -246,7 +246,7 @@ export default {
   background-color: var(--color-base);
   width: calc(50% - 0.5rem);
   padding: 1rem;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', sans-serif;
   border: 0.1rem solid var(--color-good-dark);
   border-radius: var(--var-border-radius, 0.4rem);
   margin-top: 2rem;

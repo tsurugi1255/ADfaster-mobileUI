@@ -152,7 +152,7 @@ export default {
   width: 100%;
   min-height: 20rem;
   height: 100%;
-  font-family: Typewriter, serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   background: black;
