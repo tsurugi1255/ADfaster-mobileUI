@@ -406,14 +406,14 @@ export const tabs = [
     id: 9,
     hidable: true,
     subtabs: [
-      {
-        key: "celestial-navigation",
-        name: "Navigation",
-        symbol: "<i class='fas fa-map-marked-alt'></i>",
-        component: "CelestialNavigationTab",
-        id: 0,
-        hidable: true,
-      },
+      // {
+      //   key: "celestial-navigation",
+      //   name: "Navigation",
+      //   symbol: "<i class='fas fa-map-marked-alt'></i>",
+      //   component: "CelestialNavigationTab",
+      //   id: 0,
+      //   hidable: true,
+      // },
       {
         key: "teresa",
         name: "Teresa",
