@@ -96,7 +96,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
-      ).toNumber() * destabilizeBoost;
+      ).toNumber() * destabilizeBoost * 3;
   }
 
   get intervalAfterAscension() {
