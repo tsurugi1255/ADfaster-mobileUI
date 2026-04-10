@@ -84,6 +84,12 @@ export function breakInfinity() {
   Achievement(124).unlock();
   Achievement(138).unlock();
   Achievement(143).unlock();
+  Achievement(145).unlock();
+  Achievement(148).unlock();
+  Achievement(154).unlock();
+  Achievement(155).unlock();
+  Achievement(156).unlock();
+  Achievement(168).unlock();
   Achievement(175).unlock();
   // There's a potential migration edge case involving already-maxed autobuyers; this should give the achievement
   Achievement(61).tryUnlock();
