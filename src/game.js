@@ -940,7 +940,7 @@ function recursiveTimeOut(fn, iterations, endFn) {
 function afterSimulation(seconds, playerBefore) {
   if (seconds > 600) {
     const playerAfter = deepmergeAll([{}, player]);
-    Modal.awayProgress.show({ playerBefore, playerAfter, seconds });
+    // Modal.awayProgress.show({ playerBefore, playerAfter, seconds });
   }
 
   GameUI.notify.showBlackHoles = true;
