@@ -348,7 +348,7 @@ export const EternityChallenges = {
       }
       const interval = this.interval;
       let next = this.nextChallenge;
-      while (player.reality.lastAutoEC - interval > 0 && next !== undefined) {
+      while (player.reality.lastAutoEC - interval >= 0 && next !== undefined) {
         player.reality.lastAutoEC -= interval;
         next.addCompletion(true);
         next = this.nextChallenge;
