@@ -3836,9 +3836,9 @@ br {
   box-shadow: 0 0 0.7rem 0.2rem #111111;
 }
 
-.o-infinity-upgrade-btn:hover {
+/* .o-infinity-upgrade-btn:hover {
   color: var(--color-text-inverted);
-}
+} */
 
 /* #region o-infinity-upgrade-btn--available */
 
@@ -4138,7 +4138,7 @@ div.l-autobuyers-tab {
 .o-autobuyer-input {
   height: auto;
   font-family: 'Trebuchet MS', sans-serif;
-  font-size: 2rem;
+  font-size: 16px;
   border: 0.1rem solid #c2c2c2;
   border-radius: var(--var-border-radius, 0.4rem);
   box-sizing: border-box;
@@ -6737,7 +6737,7 @@ kbd {
   flex-direction: column;
   width: 100%;
   align-items: center;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: Typewriter, serif;
   font-size: 2rem;
   background: none;
   border: var(--var-border-width, 0.2rem) solid #cd945c;
