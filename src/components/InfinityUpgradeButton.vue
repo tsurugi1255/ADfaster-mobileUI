@@ -40,7 +40,8 @@ export default {
       return ui.view.shiftDown;
     },
     showChargedEffect() {
-      return this.chargePossible && (this.isCharged || this.showingCharged || this.shiftDown);
+      // return this.chargePossible && (this.isCharged || this.showingCharged || this.shiftDown);
+      return this.chargePossible && true;
     },
     config() {
       const config = this.upgrade.config;
@@ -103,8 +104,6 @@ export default {
 <template>
   <button
     :class="classObject"
-    @mouseenter="showingCharged = canBeCharged"
-    @mouseleave="showingCharged = false"
     @click="upgrade.purchase()"
   >
     <span :class="{ 'o-pelle-disabled': isUseless }">

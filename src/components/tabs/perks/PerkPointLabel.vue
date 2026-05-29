@@ -72,13 +72,13 @@ export default {
   <div class="c-perk-tab__header">
     <div>
       You have <span class="c-perk-tab__perk-points">{{ format(pp, 2) }}</span> {{ pluralize("Perk Point", pp) }}.
-      <br>
+      <!-- <br>
       Perk choices are permanent and cannot be respecced.
       <br>
       Diamond-shaped perks also give Automator Points.
-      <br>
+      <br> -->
     </div>
-    <div class="perk-settings">
+    <!-- <div class="perk-settings">
       <PrimaryButton
         class="o-primary-btn c-button-perk-layout"
         @click="cycleLayout"
@@ -103,7 +103,7 @@ export default {
       >
         Straighten Edges
       </PrimaryButton>
-    </div>
+    </div> -->
   </div>
 </template>
 

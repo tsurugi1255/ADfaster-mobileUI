@@ -409,7 +409,7 @@ export const PerkNetwork = {
     ref="tab"
     class="c-perk-tab"
   >
-    <!-- <PerkPointLabel /> -->
+    <PerkPointLabel />
   </div>
 </template>
 
