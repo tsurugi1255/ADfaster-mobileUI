@@ -12,7 +12,7 @@ export class DilationUpgradeAutobuyerState extends IntervaledAutobuyerState {
   }
 
   get interval() {
-    return 1000 * Perk.autobuyerFasterDilation.effectOrDefault(1) / PerkShopUpgrade.autoSpeed.effectOrDefault(1);
+    return 1000 * Perk.autobuyerFasterDilation.effectOrDefault(1) / Math.max(PerkShopUpgrade.autoSpeed.effectOrDefault(1), 4);
   }
 
   get isUnlocked() {
@@ -24,7 +24,8 @@ export class DilationUpgradeAutobuyerState extends IntervaledAutobuyerState {
   }
 
   get bulk() {
-    return Effects.product(PerkShopUpgrade.bulkDilation, Perk.dilationAutobuyerBulk);
+    // return Effects.product(PerkShopUpgrade.bulkDilation, Perk.dilationAutobuyerBulk);
+    return Math.max(16, PerkShopUpgrade.bulkDilation.effectOrDefault(1)) * Perk.dilationAutobuyerBulk.effectOrDefault(1);
   }
 
   tick() {

@@ -12,7 +12,7 @@ export class ReplicantiUpgradeAutobuyerState extends IntervaledAutobuyerState {
   }
 
   get interval() {
-    return 1000 * Perk.autobuyerFasterReplicanti.effectOrDefault(1) / PerkShopUpgrade.autoSpeed.effectOrDefault(1);
+    return 1000 * Perk.autobuyerFasterReplicanti.effectOrDefault(1) / Math.max(PerkShopUpgrade.autoSpeed.effectOrDefault(1), 4);
   }
 
   get isUnlocked() {
