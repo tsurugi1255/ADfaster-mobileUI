@@ -4138,7 +4138,7 @@ div.l-autobuyers-tab {
 .o-autobuyer-input {
   height: auto;
   font-family: 'Trebuchet MS', sans-serif;
-  font-size: 16px;
+  font-size: 2.5rem;
   border: 0.1rem solid #c2c2c2;
   border-radius: var(--var-border-radius, 0.4rem);
   box-sizing: border-box;
@@ -5716,6 +5716,7 @@ properly on certain themes. */
   border: 0.1rem solid black;
   border-radius: var(--var-border-radius, 0.3rem);
   margin: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .c-modal-options {

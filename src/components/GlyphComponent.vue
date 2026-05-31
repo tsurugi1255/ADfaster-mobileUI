@@ -801,7 +801,7 @@ export default {
       @click.shift.exact="$emit('shiftClicked', glyph.id)"
       @click.ctrl.shift.exact="$emit('ctrlShiftClicked', glyph.id)"
       @click.meta.shift.exact="$emit('ctrlShiftClicked', glyph.id)"
-      @click.exact="$emit('clicked', glyph.id)"
+      @pointerup="$emit('clicked', glyph.id)"
     />
   </div>
 </template>
