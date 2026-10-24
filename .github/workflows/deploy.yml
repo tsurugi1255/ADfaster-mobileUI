@@ -1,0 +1,41 @@
+name: Deploy Vue App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # change if your default branch is different
+
+permissions:
+  contents: write 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - uses: actions/checkout@v3
+
+      # 2. Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build Vue app
+      - name: Build app
+        run: npm run build:release
+
+      # 5. Deploy to GitHub Pages
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages        # target branch
+          folder: dist            # folder to deploy
+          clean: true             # remove old files
+          token: ${{ secrets.GITHUB_TOKEN }}
+

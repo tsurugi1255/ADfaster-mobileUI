@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage": "https://tsurugi1255.github.io/ADfaster-mobileUI",
   "scripts": {
     "serve": "node build/check-npm.js && vue-cli-service serve",
     "build:master": "node build/pre-build.js && vue-cli-service build --mode master && node build/post-build.js",
