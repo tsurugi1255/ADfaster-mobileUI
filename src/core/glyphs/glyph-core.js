@@ -522,6 +522,62 @@ export const Glyphs = {
   sortByLevel() {
     this.sort((a, b) => b.level - a.level);
   },
+  replaceProtectedWithBetterGlyphs() {
+    this.validate();
+
+    let replacedCount = 0;
+
+    // Scan all protected inventory slots.
+    for (let i = 0; i < this.protectedSlots; i++) {
+      const oldGlyph = this.inventory[i];
+
+      // Skip empty protected slots.
+      if (oldGlyph === null) continue;
+
+      let bestCandidate = null;
+      let bestScore = -Infinity;
+
+      // Search only unprotected inventory slots.
+      for (let j = this.protectedSlots; j < this.totalSlots; j++) {
+        const candidate = this.inventory[j];
+
+        if (candidate === null) continue;
+
+        // Glyph types must match.
+        if (candidate.type !== oldGlyph.type) continue;
+
+        // Effects must be exactly identical.
+        if (candidate.effects !== oldGlyph.effects) continue;
+
+        // The candidate must have a strictly higher level.
+        if (candidate.level <= oldGlyph.level) continue;
+
+        // Rarity may be equal because it can be capped.
+        if (candidate.strength < oldGlyph.strength) continue;
+
+        // Prefer the candidate with the highest level × strength.
+        const score = candidate.level * candidate.strength;
+
+        if (score > bestScore) {
+          bestCandidate = candidate;
+          bestScore = score;
+        }
+      }
+
+      // Leave the existing glyph untouched if no candidate qualifies.
+      if (bestCandidate === null) continue;
+
+      // Swap the better glyph into the protected slot.
+      // The old glyph moves to the unprotected slot.
+      this.swap(oldGlyph, bestCandidate);
+
+      replacedCount++;
+    }
+
+    this.validate();
+
+    return replacedCount;
+  },
   sortByPower() {
     this.sort((a, b) => b.level * b.strength - a.level * a.strength);
   },
